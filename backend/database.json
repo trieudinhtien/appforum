@@ -1,0 +1,105 @@
+{
+  "protected_resources": {
+    "users": [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "products": [
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "post": [
+      "POST",
+      "GET"
+    ]
+  },
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Administrator",
+      "lastName": "",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "avatar": "https://robohash.org/eaquequasincidunt.png?size=50x50&set=set1",
+      "gender": "Genderfluid",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1609483221000
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Pork Salted Bellies",
+      "price": 442,
+      "quantity": 16,
+      "thumbnail": "http://dummyimage.com/213x100.png/dddddd/000000",
+      "status": true,
+      "createdAt": 1610632995000,
+      "modifiedAt": 1615620960000
+    }
+  ],
+  "post": [
+    {
+      "id": 1,
+      "name": "Hello",
+      "content": "test"
+    },
+    {
+      "createdAt": 1641721832957,
+      "modifiedAt": 1641721832957,
+      "id": 2
+    },
+    {
+      "createdAt": 1641722363980,
+      "modifiedAt": 1641722363980,
+      "id": 3
+    },
+    {
+      "createdAt": 1641722401560,
+      "modifiedAt": 1641722401560,
+      "id": 4
+    },
+    {
+      "content": "123",
+      "password": "name",
+      "createdAt": 1641723232337,
+      "modifiedAt": 1641723232337,
+      "id": 5
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "edited-2",
+      "createdAt": 1641725722707,
+      "modifiedAt": 1641736861587,
+      "id": 6
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "edited-2",
+      "modifiedAt": 1641736835421,
+      "id": 7
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "edited-2",
+      "createdAt": 1641738350436,
+      "modifiedAt": 1641738350436,
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "name": "abc",
+      "id": 1
+    }
+  ]
+}
