@@ -51,17 +51,6 @@ server.post("/login", (req, res) => {
   loginHandler(db, req, res);
 });
 
-// logout in request
-app.post('/logout', checkToken, (req, res) => {
-  const currentUser = response.locals.currentUser;
-  
-  currentUser.token = '';
-
-  console.log(currentUser);
-
-  res.json({ success: true });
-});
-
 // Upload 1 file
 server.post("/upload-file", uploadFileHandler);
 

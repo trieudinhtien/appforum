@@ -47,10 +47,6 @@ module.exports = {
     }
   },
 
-  logout: (db, req, res) => {
-    const
-  },
-
   registerHandler: (db, req, res) => {
     const { username, email, password } = req.body;
 

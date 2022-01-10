@@ -13,7 +13,7 @@
       "PATCH",
       "DELETE"
     ],
-    "post": [
+    "posts": [
       "POST",
       "GET"
     ]
@@ -22,12 +22,18 @@
     {
       "id": 1,
       "firstName": "Administrator",
-      "lastName": "",
+      "lastName": "is me",
       "username": "admin",
       "email": "admin@gmail.com",
       "password": "admin",
-      "avatar": "https://robohash.org/eaquequasincidunt.png?size=50x50&set=set1",
-      "gender": "Genderfluid",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/1/cover-image/5f6d2c93c75db-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg",
+      "gender": "female",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": "https://www.youtube.com/c/MixiGamingofficial"
+      },
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
       "status": true,
@@ -47,7 +53,7 @@
       "modifiedAt": 1615620960000
     }
   ],
-  "post": [
+  "posts": [
     {
       "id": 1,
       "name": "Hello",
