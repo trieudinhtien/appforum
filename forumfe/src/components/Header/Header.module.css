@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,900&amp;display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&amp;display=swap");
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  background-color: #615dfa;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  font-family: Rajdhani, sans-serif;
+}
+
+.header_actions {
+  display: flex;
+  align-items: center;
+}
+
+.header_brand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.header_brand_text {
+  margin-left: 26px;
+  color: #fff;
+  font-family: Titillium Web, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.navigation {
+  height: 80px;
+  width: 600px;
+}
+
+.menu_main {
+  display: flex;
+  list-style: none;
+}
+
+.menu_main_item_link {
+  padding: 0 24px;
+  display: block;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 80px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  word-break: break-word;
+}
+
+.menu_main_item_link:hover {
+  color: #23d2e2;
+  text-decoration: none;
+}
+
+.search_bar {
+  width: 30%;
+}
+
+.interactive_input {
+  width: 100%;
+  height: 52px;
+  position: relative;
+}
+
+.interactive_input > input {
+  border: none;
+  background-color: #4e4ac8;
+  color: #fff;
+  height: 100%;
+  padding: 0 18px;
+  width: 100%;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.interactive_input > input::placeholder {
+  color: #6a67e1;
+  font-weight: 100;
+}
+
+.interactive_input_icon_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.interactive_input_icon_wrap > i {
+  color: #6a67e1;
+}
+
+.header_actions_list {
+  color: #fff;
+}
+
+.header_actions_list i {
+  cursor: pointer;
+}
+
+.notifications {
+  font-size: 20px;
+  padding: 0 24px;
+  border-left: 1px solid #7a77fd;
+  position: relative;
+}
+
+.notifications > i {
+  color: #fff;
+}
+
+.notifications > i:hover {
+  color: #23d2e2;
+}
+
+.notifications > span {
+  color: #41efff;
+  position: absolute;
+  top: -16px;
+  font-weight: 900;
+}
+
+.settings {
+  font-size: 20px;
+  padding: 0 24px;
+  border-left: 1px solid #7a77fd;
+  position: relative;
+}
+
+.settings > i {
+  color: #fff;
+}
+
+.settings > i:hover {
+  color: #23d2e2;
+}
+
+.settings > div {
+  position: absolute;
+  top: 40px;
+  right: 30%;
+  z-index: 9999;
+}
+
+.settings > div > ul {
+  list-style: none;
+  background-color: #fff;
+  padding: 20px 28px;
+  border-radius: 10px;
+  width: 220px;
+}
+
+.settings_header {
+  display: flex;
+  align-items: center;
+}
+
+.settings_header > img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  border: 2px solid #49cbfe;
+}
+
+.settings_header > p {
+  color: #3e3f5e;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.settings > div > ul > li > a {
+  padding: 8px 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #000;
+}
+
+.settings > div > ul > li > a:hover {
+  color: #49cbfe;
+}
+
+.settings > div > ul > li > button {
+  border: none;
+  background-color: #615dfa;
+  color: #fff;
+  box-shadow: 4px 7px 12px 0 rgb(97 93 250 / 20%);
+  display: inline-block;
+  height: 48px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.settings > div > ul > li > button:hover{
+  background-color: #6610f2;
+}
+
+.login > button {
+  border: none;
+  background-color: none;
+  background-color: #23d2e2;
+  padding: 0 26px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 28px;
+}
+
+.login > button:hover {
+  background-color: #1bc5d4;
+}
