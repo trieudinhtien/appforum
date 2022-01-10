@@ -1,0 +1,91 @@
+.banner {
+  display: flex;
+  align-items: center;
+  background-image: url("./images/banner-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -999;
+}
+.module {
+  margin-left: 3rem;
+  margin-top: 6rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p {
+  line-height: 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+.banner_title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #fff;
+}
+.banner_text {
+  margin-top: 10px;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.forum_heading {
+  margin-top: 5rem;
+}
+.forum_pretitle {
+  color: #9395af;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.forum_title {
+  margin-top: 6px;
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+.search {
+  background-color: #fff;
+  border-radius: 12px;
+}
+.button_search {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 48px;
+  border-radius: 10px;
+  background-color: #3e3f5e;
+  color: #fff;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 3px 5px 10px 0 rgba(62, 63, 94, 0.2);
+}
+label{
+    display: block;
+}
+.form_item{
+    width: 100%;
+}
+.form_row{
+    width: 100%;
+}

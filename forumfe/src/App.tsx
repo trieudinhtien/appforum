@@ -3,7 +3,8 @@ import './App.css';
 import Profile from './components/Profile/Profile/Profile'
 import { UserContext } from './context/UserContext'
 import { login } from './apis/users-apis'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from './components/Home/Home';
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
         <p>hello Minh meo, zo /profile de link den Profile nha</p>
         <Routes>
           <Route path="/profile/*" element={<Profile />} />
+          <Route path="/" element={<Navigate to="/home" />}> </Route>
+          <Route path="/home" element={<Home />} />
+
         </Routes>
       </div>
     </BrowserRouter>
