@@ -6,16 +6,16 @@ import styles from './Navigation.module.css'
 export default function Navigation() {
 
     return (
-        <BrowserRouter>
+        <>
             <div className={"nav " + styles.nav}>
-                <NavLink to="/about" >About</NavLink>
-                <NavLink to="/settings" >Settings</NavLink>
-                <NavLink to="/followings" >Followings</NavLink>
+                <NavLink to="/profile/about" >About</NavLink>
+                <NavLink to="/profile/settings" >Settings</NavLink>
+                <NavLink to="/profile/followings" >Followings</NavLink>
             </div>
             <Routes>
-                <Route path="/about" element={<About/>} />
-                <Route path="/settings/*" element={<Settings/>} />
+                <Route path="/about" element={<About />} />
+                <Route path="/settings/*" element={<Settings />} />
             </Routes>
-        </BrowserRouter>
+        </>
     )
 }

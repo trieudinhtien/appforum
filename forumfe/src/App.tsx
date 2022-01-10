@@ -3,6 +3,7 @@ import './App.css';
 import Profile from './components/Profile/Profile/Profile'
 import { UserContext } from './context/UserContext'
 import { login } from './apis/users-apis'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
@@ -15,9 +16,14 @@ function App() {
   }, [])
 
   return (
-    <div style={{ backgroundColor: '#c1c1c1' }}>
-      <Profile />
-    </div>
+    <BrowserRouter>
+      <div style={{ backgroundColor: '#F7F7FB' }}>
+        <p>hello Minh meo, zo /profile de link den Profile nha</p>
+        <Routes>
+          <Route path="/profile/*" element={<Profile />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
