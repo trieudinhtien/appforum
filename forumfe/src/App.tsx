@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useContext, useEffect } from 'react';
 import './App.css';
+import Profile from './components/Profile/Profile/Profile'
+import { UserContext } from './context/UserContext'
+import { login } from './apis/users-apis'
 
 function App() {
+
+  const context = useContext(UserContext)
+
+  useEffect(() => {
+    login()
+      .then((user: User) => context.setUser(user))
+      .catch(err => console.error(err))
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <div>dasdasdasdas</div>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ backgroundColor: '#c1c1c1' }}>
+      <Profile />
     </div>
   );
 }
