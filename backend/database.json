@@ -14,8 +14,7 @@
       "DELETE"
     ],
     "posts": [
-      "POST",
-      "GET"
+      "POST"
     ]
   },
   "users": [
@@ -42,71 +41,63 @@
       "modifiedAt": 1641826931516
     }
   ],
-  "products": [
-    {
-      "id": 1,
-      "name": "Pork Salted Bellies",
-      "price": 442,
-      "quantity": 16,
-      "thumbnail": "http://dummyimage.com/213x100.png/dddddd/000000",
-      "status": true,
-      "createdAt": 1610632995000,
-      "modifiedAt": 1615620960000
-    }
-  ],
+ 
   "posts": [
     {
       "id": 1,
-      "name": "Hello",
-      "content": "test"
+      "userId": 1 ,
+      "content": "test",
+      "modifiedAt": "01/02/2021",
+      "comments": [
+        {
+          "id": 1,
+          "userId": 1,
+          "comment": "so good",
+          "createAt": "01/02/2021"
+        }
+      ],
+      "createdAt": "01/02/2021",
+      "likes": 12,
+      "tags": ["fiction","Anime"],
+      "img": ""
     },
     {
-      "createdAt": 1641721832957,
-      "modifiedAt": 1641721832957,
-      "id": 2
+      "id": 3,
+      "userId": "" ,
+      "content": "test",
+      "modifiedAt": "01/02/2021",
+      "comments": [
+        {
+          "id": 1,
+          "userId": 1,
+          "comment": "so good",
+          "createAt": "01/02/2021"
+        }
+      ],
+      "createdAt": "01/02/2021",
+      "likes": 12,
+      "tags": ["fiction","Anime"],
+      "img": ""
     },
     {
-      "createdAt": 1641722363980,
-      "modifiedAt": 1641722363980,
-      "id": 3
-    },
-    {
-      "createdAt": 1641722401560,
-      "modifiedAt": 1641722401560,
-      "id": 4
-    },
-    {
-      "content": "123",
-      "password": "name",
-      "createdAt": 1641723232337,
-      "modifiedAt": 1641723232337,
-      "id": 5
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "edited-2",
-      "createdAt": 1641725722707,
-      "modifiedAt": 1641736861587,
-      "id": 6
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "edited-2",
-      "modifiedAt": 1641736835421,
-      "id": 7
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "edited-2",
-      "createdAt": 1641738350436,
-      "modifiedAt": 1641738350436,
-      "id": 8
+      "id": 2,
+      "userId": "" ,
+      "content": "test",
+      "modifiedAt": "01/02/2021",
+      "comments": [
+        {
+          "id": 1,
+          "userId": "",
+          "comment": "so good",
+          "createAt": "01/02/2021"
+        }
+      ],
+      "createdAt": "01/02/2021",
+      "likes": 12,
+      "tags": ["fiction","Anime"],
+      "img": ""
     }
-  ],
-  "comments": [
-    {
-      "name": "abc",
-      "id": 1
-    }
+    
   ]
+  
 }

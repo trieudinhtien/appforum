@@ -23,4 +23,19 @@ interface User {
     "modifiedAt": number,
     "token": string
 }
-
+interface Post{
+    id: number,
+    user_id: number,
+    title: string,
+    createdAt: string,
+    likes: number,
+    comments: {
+        id: number,
+        userId: number,
+        comment: string,
+        createdAt: string,
+    }[],
+    tags: string[],
+    img: string,
+    content: string,
+}

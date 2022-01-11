@@ -6,9 +6,11 @@
   background-size: contain;
   z-index: -999;
 }
+.banner_img{
+}
 .module {
-  margin-left: 3rem;
-  margin-top: 6rem;
+  margin: auto;
+  margin-top: 5rem;
 }
 h1,
 h2,
@@ -60,32 +62,27 @@ h6 {
   border-radius: 12px;
 }
 .button_search {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 48px;
   border-radius: 10px;
-  background-color: #3e3f5e;
   color: #fff;
-  font-family: var(--font-primary);
+  background-color: #23d2e2;
   font-size: 0.875rem;
   font-weight: 700;
   text-align: center;
-  line-height: 48px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  box-shadow: 3px 5px 10px 0 rgba(62, 63, 94, 0.2);
+  padding: 0.5rem 0.7rem;
+  padding-top: 0.7rem;
+  margin-left: 1rem;
+  border: none;
 }
-label{
-    display: block;
+.labeltop {
+  display: block;
 }
-.form_item{
-    width: 100%;
+
+input {
+  width: 90%;
 }
-.form_row{
-    width: 100%;
+.blank {
+  padding-left: 5.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
 }

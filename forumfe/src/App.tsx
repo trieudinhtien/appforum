@@ -5,11 +5,11 @@ import { UserContext } from './context/UserContext'
 import { login } from './apis/users-apis'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/Home/Home';
+import { PostContext } from './context/PostContext';
 
 function App() {
 
   const context = useContext(UserContext)
-
   useEffect(() => {
     login()
       .then((user: User) => context.setUser(user))

@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Card } from 'react-bootstrap';
+import { getPost } from '../../apis/home-apies';
 import styles from "./Home.module.css"
 
 export default function Home() {
-    return (
-        <div>
 
-            <div className={styles.module}>
+    const [post, setpost] = useState<Post[]>([]);
+    useEffect(() => {
+        getPost().then(data => setpost(data))
+        .catch(err => console.error(err))
+        console.log(post);
+    }, [])
+
+    return (
+        <div className={"container " + styles.module}>
+            <div>
                 <div className={styles.banner}>
-                    <img src={require("./images/forums-icon.png")} alt="" />
+                    <img className={styles.banner_img} src={require("./images/forums-icon.png")} alt="" />
                     <div className={" mx-3"}>
                         <p className={styles.banner_title}>Forums</p>
                         <p className={styles.banner_text}>Talk about anything you want!</p>
@@ -20,15 +29,31 @@ export default function Home() {
                 <div className={styles.search}>
                     <div>
                         <form action="">
-                            <div>
-                                <label htmlFor="search">Search Post</label>
-                                <input type="text" id='search' name='search' value="" />
-                                <button className={styles.button_search}>Search</button>
+                            <div className={styles.blank}>
+                                <label htmlFor="search" className={styles.labeltop}>Search Post</label>
+                                <input type="text" placeholder='Search...' id='search' name='search' value="" />
+                                <button className={styles.button_search}><i className="fas fa-search"></i></button>
+
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+            {
+                post?.map(item =>(
+                    <Card>
+                        <Card.Body>
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Text>
+                                Popularity: {item.content}
+                            </Card.Text>
+                            <Card.Text>
+                                {item.user_id}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
+                ))
+            }
         </div>
     )
 }
