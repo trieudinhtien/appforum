@@ -8,7 +8,11 @@ body {
 }
 
 html{
-  background-color: grey;
+  background-color: #f8f8fb;
+}
+
+#root{
+  background-color: #f8f8fb;
 }
 
 *{

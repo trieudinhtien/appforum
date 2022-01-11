@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,900&amp;display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&amp;display=swap");
+
+.mypost_item {
+  display: flex;
+  font-family: Rajdhani, sans-serif;
+  height: 70px;
+  align-items: center;
+}
+
+.mypost_item > div:nth-child(1) {
+  width: 60%;
+  line-height: 1em;
+  color: #3e3f5e;
+}
+
+.mypost_item_title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.mypost_item_user {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.mypost_item > div:nth-child(2) {
+  width: 10%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.mypost_item > div:nth-child(3) {
+  width: 10%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.mypost_item > div:nth-child(4) {
+  width: 20%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}

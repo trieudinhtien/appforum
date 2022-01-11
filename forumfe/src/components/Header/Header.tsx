@@ -49,7 +49,7 @@ const Header: FC<{}> = () => {
           <input
             type="text"
             name="search_main"
-            placeholder="Search here for people or groups"
+            placeholder="Search here for people or posts"
           />
           <div className={styles.interactive_input_icon_wrap}>
             <i className="fas fa-search"></i>
@@ -67,7 +67,6 @@ const Header: FC<{}> = () => {
         {/* Setting */}
         <div className={styles.settings}>
           <i className="fas fa-cog"></i>
-
           <div>
             <ul>
               <li>

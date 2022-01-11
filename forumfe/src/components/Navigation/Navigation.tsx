@@ -8,29 +8,56 @@ const Navigation: FC<{}> = () => {
       <ul className={styles.navigation_list}>
         <li>
           <NavLink
+            title="Profile"
             style={({ isActive }) => {
               return {
                 color: isActive ? "#fff" : "",
                 backgroundColor: isActive ? "#23d2e2" : "",
-                boxShadow: isActive ? "4px 7px 12px 0 rgba(35, 210, 226, 0.2)" : "",
+                boxShadow: isActive
+                  ? "4px 7px 12px 0 rgba(35, 210, 226, 0.2)"
+                  : "",
               };
             }}
-            to={`/test`}
+            to={`/user`}
           >
             <i className="far fa-user"></i>
           </NavLink>
         </li>
+
         <li>
           <NavLink
+            title="Create Post"
             style={({ isActive }) => {
               return {
                 color: isActive ? "#fff" : "",
                 backgroundColor: isActive ? "#23d2e2" : "",
-                boxShadow: isActive ? "4px 7px 12px 0 rgba(35, 210, 226, 0.2)" : "",
+                boxShadow: isActive
+                  ? "4px 7px 12px 0 rgba(35, 210, 226, 0.2)"
+                  : "",
               };
             }}
-            to={`/test2`}
+            to={`/createpost`}
           >
+            {/* <i className="far fa-address-card"></i> */}
+            <i className="fas fa-plus-square"></i>
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            title="My Posts"
+            style={({ isActive }) => {
+              return {
+                color: isActive ? "#fff" : "",
+                backgroundColor: isActive ? "#23d2e2" : "",
+                boxShadow: isActive
+                  ? "4px 7px 12px 0 rgba(35, 210, 226, 0.2)"
+                  : "",
+              };
+            }}
+            to={`/myposts`}
+          >
+            {/* <i className="fas fa-copy"></i> */}
             <i className="far fa-address-card"></i>
           </NavLink>
         </li>
