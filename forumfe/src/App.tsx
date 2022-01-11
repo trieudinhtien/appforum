@@ -1,29 +1,34 @@
 import { useContext, useEffect } from 'react';
-import './App.css';
-import Profile from './components/Profile/Profile/Profile'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Navigation from './components/Navigation/Navigation';
+import CreatePost from './components/CreatePost/CreatePost';
+import MyPosts from './components/MyPosts/MyPosts';
+import Profile from './components/Profile/Profile/Profile';
 import { UserContext } from './context/UserContext'
 import { login } from './apis/users-apis'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-
-  const context = useContext(UserContext)
+  const context = useContext(UserContext);
 
   useEffect(() => {
     login()
       .then((user: User) => context.setUser(user))
       .catch(err => console.error(err))
   }, [])
-
   return (
     <BrowserRouter>
-      <div style={{ backgroundColor: '#F7F7FB' }}>
-        <Routes>
-          <Route path="/profile/*" element={<Profile />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
-}
+      <Header/>
+      <Navigation/>
+      <Routes>
+        <Route path="/createpost" element={<CreatePost/>}/>
+        <Route path="/myposts" element={<MyPosts/>}/>
+        <Route path="/profile/*" element={<Profile />} />
+      </Routes>
+      <Footer/>
+      </BrowserRouter>
+
+  )}
 
 export default App;

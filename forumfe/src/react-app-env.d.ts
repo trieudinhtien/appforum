@@ -1,4 +1,27 @@
 /// <reference types="react-scripts" />
+interface Post{
+    id: number,
+    user_id: number,
+    title: string,
+    createdAt: string,
+    likes: number,
+    comments: {
+        id: number,
+        user_id: number,
+        comment: string,
+        createdAt: string,
+    }[],
+    tags: string[],
+    img: string,
+    content: string,
+}
+
+interface CreatePostForm{
+    title: string,
+    content: string,
+    tags: string
+}
+
 
 interface User {
     "id": number,

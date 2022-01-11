@@ -2,7 +2,6 @@
   "protected_resources": {
     "users": [
       "GET",
-      "POST",
       "PUT",
       "PATCH",
       "DELETE"
@@ -176,57 +175,56 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "name": "Hello",
-      "content": "test"
+      "id": 123,
+      "user_id": 123,
+      "title": "Post 1",
+      "createdAt": "",
+      "likes": 3,
+      "comments": [
+        {
+          "id": 1,
+          "user_id": 123,
+          "comment": "ok",
+          "createdAt": ""
+        },
+        {
+          "id": 2,
+          "user_id": 124,
+          "comment": "ok nice",
+          "createdAt": ""
+        }
+      ],
+      "tags": [
+        "nice",
+        "amazing"
+      ],
+      "img": "",
+      "content": "Loremmmmmmmmmmmmmmmmm"
     },
     {
-      "createdAt": 1641721832957,
-      "modifiedAt": 1641721832957,
-      "id": 2
+      "id": 684,
+      "user_id": 234,
+      "title": "Post 2",
+      "createdAt": "",
+      "likes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "user_id": 123,
+          "comment": "ok",
+          "createdAt": ""
+        }
+      ],
+      "tags": [
+        "nice"
+      ],
+      "img": "",
+      "content": "Loremmmmmmmmmmmmmmmmm  2"
     },
     {
-      "createdAt": 1641722363980,
-      "modifiedAt": 1641722363980,
-      "id": 3
-    },
-    {
-      "createdAt": 1641722401560,
-      "modifiedAt": 1641722401560,
-      "id": 4
-    },
-    {
-      "content": "123",
-      "password": "name",
-      "createdAt": 1641723232337,
-      "modifiedAt": 1641723232337,
-      "id": 5
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "edited-2",
-      "createdAt": 1641725722707,
-      "modifiedAt": 1641736861587,
-      "id": 6
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "edited-2",
-      "modifiedAt": 1641736835421,
-      "id": 7
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "edited-2",
-      "createdAt": 1641738350436,
-      "modifiedAt": 1641738350436,
-      "id": 8
-    }
-  ],
-  "comments": [
-    {
-      "name": "abc",
-      "id": 1
+      "createdAt": 1641887131009,
+      "modifiedAt": 1641887131009,
+      "id": 685
     }
   ]
 }

@@ -6,6 +6,18 @@
   font-size: 14px;
 }
 
+html{
+  background-color: #f8f8fb;
+}
+
+#root{
+  background-color: #f8f8fb;
+}
+
+*{
+  color: #3e3f5e;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
