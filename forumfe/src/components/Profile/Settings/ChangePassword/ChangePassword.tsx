@@ -28,7 +28,7 @@ export default function ChangePassword() {
                         .then((res) => {
                             console.log('hello')
                             alert('password is changed successfully')
-                            navigate('/profile')
+                            navigate('/about')
                         })
                         .catch((err) => console.log(err))
                 } else {

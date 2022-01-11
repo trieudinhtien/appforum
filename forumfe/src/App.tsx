@@ -18,7 +18,6 @@ function App() {
   return (
     <BrowserRouter>
       <div style={{ backgroundColor: '#F7F7FB' }}>
-        <p>hello Minh meo, zo /profile de link den Profile nha</p>
         <Routes>
           <Route path="/profile/*" element={<Profile />} />
         </Routes>
