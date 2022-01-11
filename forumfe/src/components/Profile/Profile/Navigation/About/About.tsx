@@ -12,8 +12,7 @@ export default function About() {
         <div className={styles.outer + " d-flex justify-content-between"}>
             <div className={styles.main_left}>
                 <h3>About Me</h3>
-                <p>Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I
-                    stream, play and review all the newest games.</p>
+                <p>{user.introduce}</p>
             </div>
             <div className={styles.main_center}>
                 <h3>Interests</h3>
