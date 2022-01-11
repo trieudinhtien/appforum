@@ -39,6 +39,31 @@
       "status": true,
       "createdAt": 1609483221000,
       "modifiedAt": 1609483221000
+    },
+    {
+      "id": 2,
+      "username": "trieutien",
+      "email": "tien@tien.com",
+      "password": "123456",
+      "createdAt": 1641798432179,
+      "modifiedAt": 1641798432179
+    },
+    {
+      "id": 3,
+      "username": "hihi",
+      "email": "hihi@gmail.com",
+      "password": "hihi",
+      "phone": "0914567231",
+      "createdAt": 1641807708847,
+      "modifiedAt": 1641807708847
+    },
+    {
+      "id": 4,
+      "username": "sss",
+      "email": "sss@gmail.com",
+      "password": "123456",
+      "createdAt": 1641808577482,
+      "modifiedAt": 1641808577482
     }
   ],
   "products": [

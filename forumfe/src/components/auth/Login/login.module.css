@@ -1,0 +1,37 @@
+.logo{
+    display: block;
+    margin: 0 auto;
+}
+.Wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapperForm{
+    width: 360px;
+    margin: auto;
+}
+.formInput{
+    width: 100%;
+    border-radius: 12px; 
+    height: 57px;
+}
+.buttonForm{
+    width: 100%;
+    background-color: #615DFA;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 14px 0;
+}
+.buttonForm:hover{
+    background-color: #7a77d1;
+}
+.titleForm{
+    text-align: center;
+    margin-bottom: 70px;
+}

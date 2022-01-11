@@ -1,0 +1,38 @@
+.logo1{
+    display: block;
+    margin: 0 auto;
+}
+.wrapper_register1{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url('../../images/backgoundLogin.jpg'); */
+}
+.wrapperForm1{
+    width: 360px;
+    margin: auto;
+}
+.formInput1{
+    width: 100%;
+    border-radius: 12px; 
+    height: 57px;
+}
+.buttonForm1{
+    width: 100%;
+    background-color: #615DFA;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 14px 0;
+}
+.buttonForm1:hover{
+    background-color: #7a77d1;
+}
+.titleForm1{
+    text-align: center;
+    margin-bottom: 70px;
+}
