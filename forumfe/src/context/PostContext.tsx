@@ -1,62 +1,60 @@
-// import { createContext, useState, ReactElement } from "react";
-// import { Post } from "../react-app-env";
+import { createContext, useState, ReactElement } from "react";
 
-// interface Context {
-//     posts: Post[],
-//     setPosts: React.Dispatch<React.SetStateAction<Post[]>>
-// }
-
-// const PostContext = createContext<Context>({ posts: [{
-//     id: 0,
-//     user_id: 0,
-//     title: "",
-//     createdAt: "",
-//     likes: "",
-//     comments: {
-//         id: 0,
-//         user_id: 0,
-//         comment: "",
-//         createdAt: "",
-//     }[],
-//     tags: [],
-//     img: "",
-//     content: "",]
-// }, setPosts: () => { } })
-
-// function PostContextProvider({ children }: { children: ReactElement }) {
-
-//     const [posts, setPosts] = useState({
-//         id: 0,
-//     user_id: 0,
-//     title: "",
-//     createdAt: "",
-//     likes: "",
-//     comments: {
-//         id: 0,
-//         user_id: 0,
-//         comment: "",
-//         createdAt: "",
-//     }[],
-//     tags: [],
-//     img: "",
-//     content: "",
-//     })
-
-//     const value = {
-//         posts: posts,
-//         setPosts: setPosts
-//     }
-
-//     return (
-//         <PostContext.Provider value={value}>
-//             {children}
-//         </PostContext.Provider>
-//     )
-
-// }
-
-// export { PostContext, PostContextProvider }
-
-export const a = () => {
-    
+interface Context {
+    post: Post,
+    setPost: React.Dispatch<React.SetStateAction<Post>>
 }
+
+const PostContext = createContext<Context>({
+    post: {
+        "id": 0,
+        "user_id": 0,
+        "createdAt": "",
+        "likes": 1,
+        "comments": [] as {
+            id: number,
+            user_id: number,
+            comment: string,
+            createdAt: string,
+        }[],
+        "tags": [] as string[],
+        "img": "string" ,
+        "content": "string",
+        "title":""
+    }, setPost: () => { }
+})
+
+function PostContextProvider({ children }: { children: ReactElement }) {
+
+    const [post, setPost] = useState({
+        "id": 0,
+        "user_id": 0,
+        "createdAt": "",
+        "likes": 1,
+        "comments": [] as {
+            id: number,
+            user_id: number,
+            comment: string,
+            createdAt: string,
+        }[],
+        "tags": [] as string[],
+        "img": "string",
+        "content": "string",
+        "title":""
+
+    })
+
+    const value = {
+        post: post,
+        setPost: setPost
+    }
+
+    return (
+        <PostContext.Provider value={value}>
+            {children}
+        </PostContext.Provider>
+    )
+
+}
+
+export { PostContext, PostContextProvider }

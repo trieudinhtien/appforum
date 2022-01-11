@@ -7,8 +7,7 @@
       "DELETE"
     ],
     "posts": [
-      "POST",
-      "GET"
+      "POST"
     ]
   },
   "users": [
@@ -226,5 +225,7 @@
       "modifiedAt": 1641887131009,
       "id": 685
     }
+    
   ]
+  
 }
