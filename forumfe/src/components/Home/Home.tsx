@@ -8,7 +8,7 @@ export default function Home() {
     const [post, setpost] = useState<Post[]>([]);
     useEffect(() => {
         getPost().then(data => setpost(data))
-        .catch(err => console.error(err))
+            .catch(err => console.error(err))
         console.log(post);
     }, [])
 
@@ -39,21 +39,30 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {
-                post?.map(item =>(
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>{item.title}</Card.Title>
-                            <Card.Text>
-                                Popularity: {item.content}
-                            </Card.Text>
-                            <Card.Text>
-                                {item.user_id}
-                            </Card.Text>
-                        </Card.Body>
-                    </Card>
-                ))
-            }
+            <div className={styles.post}>
+
+                <div className={styles.post_title}>
+                    <div>POSTS</div>
+                    <div>LIKES</div>
+                    <div>COMMENTS</div>
+                    <div>TAGS</div>
+                </div>
+                {
+                    post?.map(item => (
+                        <div className={styles.post_item}>
+                            <div>
+                                <div className={styles.post_item_title}>{item.title}</div>
+                                <div className={styles.post_item_user}>Created 5 hours ago</div>
+                            </div>
+                            <div>{item.likes}</div>
+                            <div>{item.comments?.length}</div>
+                            <div>{item.tags?.map(tag =>(
+                                tag +" "
+                            ))}</div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 }

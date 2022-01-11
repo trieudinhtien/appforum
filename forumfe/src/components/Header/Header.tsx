@@ -21,7 +21,7 @@ const Header: FC<{}> = () => {
         <nav className={styles.navigation}>
           <ul className={styles.menu_main}>
             <li className="menu-main-item">
-              <a className={styles.menu_main_item_link} href="#">
+              <a className={styles.menu_main_item_link} href="/">
                 Home
               </a>
             </li>
