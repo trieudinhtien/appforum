@@ -28,17 +28,19 @@ export default function Profile() {
             <div className={styles.profile_inner}>
                 <img className={styles.profile_inner_img} src={user && user.cover} alt="cover" />
                 <img className={styles.profile_inner_avatar} src={user && user.avatar} alt="avatar" />
-                <div className={"d-flex " + styles.profile_inner_description}>
-                    <div className={"d-flex col " + styles.description_inner}>
+                <div className={"d-flex align-items-center " + styles.profile_inner_description}>
+                    <div className={"d-flex col align-items-center " + styles.description_inner}>
                         <div className={"text-center " + styles.des_left}>
                             <p className={"m-0"}>10</p>
                             <p className={"text-muted"}>POSTS</p>
                         </div>
-                        <div className={"text-center border-left " + styles.des_left}>
-                            <p className={"m-0"}>10</p>
+                        <div className={styles.divide}></div>
+                        <div className={"text-center " + styles.des_left}>
+                            <p className={"m-0"}>{user.followings.length}</p>
                             <p className={"text-muted"}>FOLLOWINGS</p>
                         </div>
-                        <div className={"text-center border-left " + styles.des_left}>
+                        <div className={styles.divide}></div>
+                        <div className={"text-center " + styles.des_left}>
                             <p className={"m-0"}>10</p>
                             <p className={"text-muted"}>FOLLOWERS</p>
                         </div>

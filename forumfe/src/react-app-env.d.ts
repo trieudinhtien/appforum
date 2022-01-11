@@ -1,4 +1,27 @@
 /// <reference types="react-scripts" />
+interface Post{
+    id: number,
+    user_id: number,
+    title: string,
+    createdAt: string,
+    likes: number,
+    comments: {
+        id: number,
+        user_id: number,
+        comment: string,
+        createdAt: string,
+    }[],
+    tags: string[],
+    img: string,
+    content: string,
+}
+
+interface CreatePostForm{
+    title: string,
+    content: string,
+    tags: string
+}
+
 
 interface User {
     "id": number,
@@ -15,6 +38,8 @@ interface User {
         "instagram": string,
         "youtube": string
     },
+    "followings": Following[],
+    "introduce": string,
     "phone": string,
     "birthday": string,
     "address": string,
@@ -23,19 +48,20 @@ interface User {
     "modifiedAt": number,
     "token": string
 }
-interface Post{
-    id: number,
-    user_id: number,
-    title: string,
-    createdAt: string,
-    likes: number,
-    comments: {
-        id: number,
-        userId: number,
-        comment: string,
-        createdAt: string,
-    }[],
-    tags: string[],
-    img: string,
-    content: string,
+
+interface Following {
+    "id": number,
+    "firstName": string,
+    "lastName": string,
+    "gender": string,
+    "email": string,
+    "avatar": string,
+    "cover": string,
+    "socialMedia": {
+        "facebook": string,
+        "instagram": string,
+        "youtube": string
+    },
+    "introduce": string
 }
+

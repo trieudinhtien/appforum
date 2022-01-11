@@ -13,7 +13,7 @@ const PostContext = createContext<Context>({
         "likes": 1,
         "comments": [] as {
             id: number,
-            userId: number,
+            user_id: number,
             comment: string,
             createdAt: string,
         }[],
@@ -33,7 +33,7 @@ function PostContextProvider({ children }: { children: ReactElement }) {
         "likes": 1,
         "comments": [] as {
             id: number,
-            userId: number,
+            user_id: number,
             comment: string,
             createdAt: string,
         }[],

@@ -1,6 +1,10 @@
 import { useContext, useEffect } from 'react';
-import './App.css';
-import Profile from './components/Profile/Profile/Profile'
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Navigation from './components/Navigation/Navigation';
+import CreatePost from './components/CreatePost/CreatePost';
+import MyPosts from './components/MyPosts/MyPosts';
+import Profile from './components/Profile/Profile/Profile';
 import { UserContext } from './context/UserContext'
 import { login } from './apis/users-apis'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
@@ -15,20 +19,20 @@ function App() {
       .then((user: User) => context.setUser(user))
       .catch(err => console.error(err))
   }, [])
-
   return (
     <BrowserRouter>
-      <div style={{ backgroundColor: '#F7F7FB' }}>
-        <p>hello Minh meo, zo /profile de link den Profile nha</p>
-        <Routes>
-          <Route path="/profile/*" element={<Profile />} />
-          <Route path="/" element={<Navigate to="/home" />}> </Route>
+      <Header/>
+      <Navigation/>
+      <Routes>
+         <Route path="/" element={<Navigate to="/home" />}> </Route>
           <Route path="/home" element={<Home />} />
+        <Route path="/createpost" element={<CreatePost/>}/>
+        <Route path="/myposts" element={<MyPosts/>}/>
+        <Route path="/profile/*" element={<Profile />} />
+      </Routes>
+      <Footer/>
+      </BrowserRouter>
 
-        </Routes>
-      </div>
-    </BrowserRouter>
-  );
-}
+  )}
 
 export default App;

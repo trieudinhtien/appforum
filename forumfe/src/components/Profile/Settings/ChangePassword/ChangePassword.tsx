@@ -1,4 +1,4 @@
-import { Formik, Field, Form as FormikForm, ErrorMessage, FormikErrors } from "formik"
+import { Formik, Field, Form as FormikForm, ErrorMessage, FormikErrors } from "formik";
 import { Form } from 'react-bootstrap'
 import { useContext, useState } from 'react'
 import { UserContext } from '../../../../context/UserContext'
@@ -28,7 +28,7 @@ export default function ChangePassword() {
                         .then((res) => {
                             console.log('hello')
                             alert('password is changed successfully')
-                            navigate('/profile')
+                            navigate('/about')
                         })
                         .catch((err) => console.log(err))
                 } else {
