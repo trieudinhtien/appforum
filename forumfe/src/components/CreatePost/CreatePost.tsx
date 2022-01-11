@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import styles from "./CreatePost.module.css";
 import Banner from "../../images/banners/banner.png";
 import NewPost from "../../images/banners/newpost.png";
-import { CreatePostForm } from "../../react-app-env";
+// import { CreatePostForm } from "../../react-app-env";
 import { useNavigate } from "react-router-dom";
 
 const CreatePost: FC<{}> = () => {

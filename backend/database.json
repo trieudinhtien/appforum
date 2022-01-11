@@ -6,12 +6,6 @@
       "PATCH",
       "DELETE"
     ],
-    "products": [
-      "POST",
-      "PUT",
-      "PATCH",
-      "DELETE"
-    ],
     "posts": [
       "POST",
       "GET"
@@ -24,7 +18,7 @@
       "lastName": "is me",
       "username": "admin",
       "email": "admin@gmail.com",
-      "password": "admin",
+      "password": "123",
       "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/1/cover-image/5f6d2c93c75db-bp-cover-image.jpg",
       "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg",
       "gender": "female",
@@ -33,23 +27,150 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
+      "followings": [
+        {
+          "id": 2,
+          "firstName": "Bearded",
+          "lastName": "Wonder",
+          "gender": "male",
+          "email": "brdwonder@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/6/5f6d2f1e67572-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/6/cover-image/5f6d2f48ef65e-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "I will post really cool images of all street art from around the country!"
+        },
+        {
+          "id": 3,
+          "firstName": "Neko",
+          "lastName": "Bebop",
+          "gender": "female",
+          "email": "nekobebop@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/2/5f6d2ea82117b-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/2/cover-image/5f6d2ea856514-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "Hello to everyone! Hope we have a great time!"
+        },
+        {
+          "id": 4,
+          "firstName": "Nicholas",
+          "lastName": "Grissom",
+          "gender": "male",
+          "email": "nickgrissom@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/4/5f6d2f1fd4af8-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/4/cover-image/5f6d2f203fecb-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "My name is Destroy and I stream video games everyday!"
+        },
+        {
+          "id": 5,
+          "firstName": "Sarah",
+          "lastName": "Diamond",
+          "gender": "male",
+          "email": "diamond@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/5/5f6d2f582b140-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/5/cover-image/5f6d2f589c282-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "My name is Destroy and I stream video games everyday!"
+        },
+        {
+          "id": 6,
+          "firstName": "Destroy",
+          "lastName": "Dex",
+          "gender": "male",
+          "email": "destroydx@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "My name is Destroy and I stream video games everyday!"
+        },
+        {
+          "id": 7,
+          "firstName": "Destroy",
+          "lastName": "Dex",
+          "gender": "male",
+          "email": "destroydx@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "My name is Destroy and I stream video games everyday!"
+        },
+        {
+          "id": 8,
+          "firstName": "Destroy",
+          "lastName": "Dex",
+          "gender": "male",
+          "email": "destroydx@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "My name is Destroy and I stream video games everyday!"
+        },
+        {
+          "id": 9,
+          "firstName": "Destroy",
+          "lastName": "Dex",
+          "gender": "male",
+          "email": "destroydx@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "My name is Destroy and I stream video games everyday!"
+        },
+        {
+          "id": 10,
+          "firstName": "Destroy",
+          "lastName": "Dex",
+          "gender": "male",
+          "email": "destroydx@gmail.com",
+          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+          "socialMedia": {
+            "facebook": "https://facebook.com.vn/minhdat.dongoc",
+            "instagram": "https://instagram.com/fanta.2hand",
+            "youtube": ""
+          },
+          "introduce": "My name is Destroy and I stream video games everyday!"
+        }
+      ],
+      "introduce": "Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1609483221000
-    }
-  ],
-  "products": [
-    {
-      "id": 1,
-      "name": "Pork Salted Bellies",
-      "price": 442,
-      "quantity": 16,
-      "thumbnail": "http://dummyimage.com/213x100.png/dddddd/000000",
-      "status": true,
-      "createdAt": 1610632995000,
-      "modifiedAt": 1615620960000
+      "modifiedAt": 1641897299041
     }
   ],
   "posts": [

@@ -1,34 +1,37 @@
 import { createContext, useState, ReactElement } from "react";
-import { User } from "../react-app-env";
 
 interface Context {
     user: User,
     setUser: React.Dispatch<React.SetStateAction<User>>
 }
 
-const UserContext = createContext<Context>({ user: {
-    "id": 0,
-    "firstName": "",
-    "lastName": "",
-    "username": "",
-    "email": "",
-    "password": "",
-    "cover": "",
-    "avatar": "",
-    "gender": "",
-    "socialMedia": {
-        "facebook": "",
-        "instagram": "",
-        "youtube": ""
-    },
-    "phone": "",
-    "birthday": "",
-    "address": "",
-    "status": false,
-    "createdAt": 0,
-    "modifiedAt": 0,
-    "token": ""
-}, setUser: () => { } })
+const UserContext = createContext<Context>({
+    user: {
+        "id": 0,
+        "firstName": "",
+        "lastName": "",
+        "username": "",
+        "email": "",
+        "password": "",
+        "cover": "",
+        "avatar": "",
+        "gender": "",
+        "followings": [] as Following [],
+        "socialMedia": {
+            "facebook": "",
+            "instagram": "",
+            "youtube": ""
+        },
+        "introduce": "",
+        "phone": "",
+        "birthday": "",
+        "address": "",
+        "status": false,
+        "createdAt": 0,
+        "modifiedAt": 0,
+        "token": ""
+    }, setUser: () => { }
+})
 
 function UserContextProvider({ children }: { children: ReactElement }) {
 
@@ -42,11 +45,13 @@ function UserContextProvider({ children }: { children: ReactElement }) {
         "cover": "",
         "avatar": "",
         "gender": "",
+        "followings": [] as Following [],
         "socialMedia": {
             "facebook": "",
             "instagram": "",
             "youtube": ""
         },
+        "introduce": "",
         "phone": "",
         "birthday": "",
         "address": "",

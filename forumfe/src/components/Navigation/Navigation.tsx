@@ -18,7 +18,7 @@ const Navigation: FC<{}> = () => {
                   : "",
               };
             }}
-            to={`/user`}
+            to={`/profile`}
           >
             <i className="far fa-user"></i>
           </NavLink>
