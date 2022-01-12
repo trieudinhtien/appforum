@@ -77,49 +77,55 @@ const Header: FC<{}> = () => {
 
       <div className={`${styles.header_actions} ${styles.header_actions_list}`}>
         {/* Notification */}
-        <div className={styles.notifications}>
-          <i className="far fa-bell"></i>
-          <span>.</span>
-        </div>
+        {
+          localStorage.getItem('user') ?
+            (
+              <div className={styles.notifications}>
+                <i className="far fa-bell"></i>
+                <span>.</span>
+              </div>
+            ) : ""
+        }
+
 
         {/* Setting */}
         {
-        localStorage.getItem('user') ?
-        <div className={styles.settings}>
-          <i onClick={turnSetting} className="fas fa-cog"></i>
-          <div className={turnSet ? styles.turn_On_setting : styles.turn_Off_setting}>
-            <ul>
-              <li>
-                <div className={styles.settings_header}>
-                  <img src={Avatar} alt="avatar" />
-                  <p>
-                    Hi Marina!
-                  </p>
-                </div>
-                <hr />
-              </li>
-              <li>
-                <NavLink to="/profile">Profile Info</NavLink>
-              </li>
-              <li>
-                <NavLink to="/profile/settings/password">Change password</NavLink>
-              </li>
-              <li>
-                <Logout />
-              </li>
-            </ul>
-          </div>
-        </div> : ""
+          localStorage.getItem('user') ?
+            <div className={styles.settings}>
+              <i onClick={turnSetting} className="fas fa-cog"></i>
+              <div className={turnSet ? styles.turn_On_setting : styles.turn_Off_setting}>
+                <ul>
+                  <li>
+                    <div className={styles.settings_header}>
+                      <img src={Avatar} alt="avatar" />
+                      <p>
+                        Hi Marina!
+                      </p>
+                    </div>
+                    <hr />
+                  </li>
+                  <li>
+                    <NavLink to="/profile">Profile Info</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/profile/settings/password">Change password</NavLink>
+                  </li>
+                  <li>
+                    <Logout />
+                  </li>
+                </ul>
+              </div>
+            </div> : ""
         }
 
         {/* Login */}
         {
-          localStorage.getItem('user') ? 
-          <img className="rounded-circle mr-2" width={50} height={50} src={user && user.avatar} alt="avatar" />
-          :
-          (<div className={styles.login}>
-            <button onClick={_clickLogin}>Login</button>
-          </div>)
+          localStorage.getItem('user') ?
+            <img className="rounded-circle mr-2" width={50} height={50} src={user && user.avatar} alt="avatar" />
+            :
+            (<div className={styles.login}>
+              <button onClick={_clickLogin}>Login</button>
+            </div>)
         }
       </div>
     </div>
