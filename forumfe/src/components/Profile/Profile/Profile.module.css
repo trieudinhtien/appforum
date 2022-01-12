@@ -1,7 +1,7 @@
 .profile{
-    max-width: 1184px;
+    max-width: 1264px;
     margin: 0 auto;
-    padding: 112px 0 100px;
+    padding: 91px 0 100px 80px;
 }
 
 .profile_inner{
@@ -69,6 +69,7 @@
 
 .des_social:hover{
     animation:  move 0.3s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes move{

@@ -1,27 +1,13 @@
 import styles from "./Profile.module.css"
-import { getUserById } from "../../../apis/users-apis"
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import Navigation from "./Navigation/Navigation"
 import { UserContext } from '../../../context/UserContext'
-import { login } from '../../../apis/users-apis'
 
 export default function Profile() {
 
-    // const [user, setUser] = useState({} as User)
     const context = useContext(UserContext)
     const user = context.user
     console.log("context", context)
-
-
-
-    // useEffect(() => {
-    //     getUserById(1)
-    //         .then(user => {
-    //             console.log(user)
-    //             setUser(user)
-    //         })
-    //         .catch(error => console.log(error))
-    // }, [])
 
     return (
         <div className={styles.profile}>

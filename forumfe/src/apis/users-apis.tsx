@@ -31,5 +31,5 @@ export function changePasswordById(id: number, token: string, password: string) 
             "password": password
         }
     }).then(res => res.data)
-        .catch(err => err.message)
+        .catch(err => console.log(err))
 }
