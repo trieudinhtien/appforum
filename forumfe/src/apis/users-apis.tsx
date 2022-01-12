@@ -11,11 +11,22 @@ export function getUserById(id: number, token: string) {
         .catch(err => console.error(err))
 }
 
-export function login() {
+export function getAllUser(token: string) {
+    return axios({
+        method: "GET",
+        url: `http://localhost:3000/users`,
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    }).then(res => res.data)
+        .catch(err => console.error(err))
+}
+
+export function login(data: any) {
     return axios({
         method: "POST",
         url: `http://localhost:3000/login`,
-        data: { "email": "admin@gmail.com", "password": "123" }
+        data: data
     }).then(res => res.data)
         .catch(err => console.error(err))
 }
@@ -31,5 +42,6 @@ export function changePasswordById(id: number, token: string, password: string) 
             "password": password
         }
     }).then(res => res.data)
-        .catch(err => err.message)
+        .catch(err => console.log(err))
 }
+

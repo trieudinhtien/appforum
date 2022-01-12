@@ -24,6 +24,7 @@ interface CreatePostForm{
 
 
 interface User {
+    [key: string]: string | undefined | number | null | Object,
     "id": number,
     "firstName": string,
     "lastName": string,
@@ -38,7 +39,7 @@ interface User {
         "instagram": string,
         "youtube": string
     },
-    "followings": Following[],
+    "followings_id": number[],
     "introduce": string,
     "phone": string,
     "birthday": string,
@@ -50,6 +51,7 @@ interface User {
 }
 
 interface Following {
+    [key: string]: string | undefined | number | null | Object,
     "id": number,
     "firstName": string,
     "lastName": string,

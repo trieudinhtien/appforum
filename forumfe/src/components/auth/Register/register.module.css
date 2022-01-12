@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,900&amp;display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&amp;display=swap");
+.logo1{
+    display: block;
+    margin: 0 auto;
+}
+.wrapper_register1{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Rajdhani, sans-serif;
+
+}
+.wrapperForm1{
+    width:500px;
+    margin: auto;
+}
+.formInput1{
+    width: 100%;
+    border-radius: 12px; 
+    height: 57px;
+}
+.buttonForm1{
+    width: 100%;
+    background-color: #615DFA;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 14px 0;
+}
+.buttonForm1:hover{
+    background-color: #7a77d1;
+}
+.titleForm1{
+    text-align: center;
+    font-size: 20px;
+}
+
+.buttonGender:hover{
+    background: none;
+}

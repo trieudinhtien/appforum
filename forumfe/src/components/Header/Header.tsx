@@ -1,10 +1,28 @@
-import { FC } from "react";
+import { FC, useContext, useState } from "react";
 import styles from "./Header.module.css";
 import Logo from "../../images/logo.png";
 import Avatar from "../../images/avatar/01.jpg";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from "../../context/UserContext";
+import { Logout } from "../auth/Logout/Logout";
+import { Link } from "react-router-dom";
 
 const Header: FC<{}> = () => {
+  const [turnSet, setTurnSet] = useState<boolean>(false)
+  console.log(turnSet)
+  let navigate = useNavigate();
+
+  const context = useContext(UserContext)
+  const user = context.user
+
+  const _clickLogin = () => {
+    navigate('/login');
+  }
+
+  const turnSetting = () => {
+    setTurnSet(!turnSet)
+  }
   return (
     <div className={styles.header}>
       <div className={styles.header_actions}>
@@ -36,9 +54,9 @@ const Header: FC<{}> = () => {
               </a>
             </li>
             <li className="menu-main-item">
-              <a className={styles.menu_main_item_link} href="#">
-                ...
-              </a>
+              <Link className={styles.menu_main_item_link} to='/register'>
+                Register
+              </Link>
             </li>
           </ul>
         </nav>
@@ -65,9 +83,11 @@ const Header: FC<{}> = () => {
         </div>
 
         {/* Setting */}
+        {
+        localStorage.getItem('user') ?
         <div className={styles.settings}>
-          <i className="fas fa-cog"></i>
-          <div>
+          <i onClick={turnSetting} className="fas fa-cog"></i>
+          <div className={turnSet ? styles.turn_On_setting : styles.turn_Off_setting}>
             <ul>
               <li>
                 <div className={styles.settings_header}>
@@ -79,22 +99,28 @@ const Header: FC<{}> = () => {
                 <hr />
               </li>
               <li>
-                <NavLink to="/1">Profile Info</NavLink>
+                <NavLink to="/profile">Profile Info</NavLink>
               </li>
               <li>
-                <NavLink to="/1">Change password</NavLink>
+                <NavLink to="/profile/settings/password">Change password</NavLink>
               </li>
               <li>
-                <button>Logout</button>
+                <Logout />
               </li>
             </ul>
           </div>
-        </div>
+        </div> : ""
+        }
 
         {/* Login */}
-        <div className={styles.login}>
-          <button>Login</button>
-        </div>
+        {
+          localStorage.getItem('user') ? 
+          <img className="rounded-circle mr-2" width={50} height={50} src={user && user.avatar} alt="avatar" />
+          :
+          (<div className={styles.login}>
+            <button onClick={_clickLogin}>Login</button>
+          </div>)
+        }
       </div>
     </div>
   );

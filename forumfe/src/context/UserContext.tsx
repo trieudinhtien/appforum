@@ -16,7 +16,7 @@ const UserContext = createContext<Context>({
         "cover": "",
         "avatar": "",
         "gender": "",
-        "followings": [] as Following [],
+        "followings_id": [] as number [],
         "socialMedia": {
             "facebook": "",
             "instagram": "",
@@ -45,7 +45,7 @@ function UserContextProvider({ children }: { children: ReactElement }) {
         "cover": "",
         "avatar": "",
         "gender": "",
-        "followings": [] as Following [],
+        "followings_id": [] as number [],
         "socialMedia": {
             "facebook": "",
             "instagram": "",

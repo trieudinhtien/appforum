@@ -1,4 +1,8 @@
-import { useContext, useEffect } from 'react';
+
+import Login from './components/auth/Login/Login';
+import { Register } from './components/auth/Register/Register';
+
+import { useContext, useEffect, useState } from 'react';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
@@ -14,25 +18,29 @@ import { PostContext } from './context/PostContext';
 function App() {
 
   const context = useContext(UserContext)
-  useEffect(() => {
-    login()
-      .then((user: User) => context.setUser(user))
-      .catch(err => console.error(err))
-  }, [])
+
+  // useEffect(() => {
+  //   login(data)
+  //     .then((user: User) => context.setUser(user))
+  //     .catch(err => console.error(err))
+  // }, [])
   return (
     <BrowserRouter>
-      <Header/>
-      <Navigation/>
+      <Header />
+      <Navigation />
       <Routes>
-         <Route path="/" element={<Navigate to="/home" />}> </Route>
-          <Route path="/home" element={<Home />} />
-        <Route path="/createpost" element={<CreatePost/>}/>
-        <Route path="/myposts" element={<MyPosts/>}/>
+        <Route path="/" element={<Navigate to="/home" />}> </Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/myposts" element={<MyPosts />} />
+        <Route path="/profile" element={<Navigate to="/profile/about" />} />
         <Route path="/profile/*" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer/>
-      </BrowserRouter>
-
-  )}
+      <Footer />
+    </BrowserRouter>
+  )
+}
 
 export default App;

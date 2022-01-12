@@ -238,3 +238,10 @@
 .login > button:hover {
   background-color: #1bc5d4;
 }
+
+.turn_Off_setting{
+  display: none;
+}
+.turn_On_setting{
+  display: block;
+}

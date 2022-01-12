@@ -48,10 +48,12 @@
     left: 20px;
 }
 
-.input:focus + .input_label {
+.input:focus + .input_label, .input:valid + .input_label {
     animation: focus 0.4s;
     animation-fill-mode: forwards;
 }
+
+
 
 @keyframes focus {
     0% {

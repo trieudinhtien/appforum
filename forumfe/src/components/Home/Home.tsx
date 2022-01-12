@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap';
 import { getPost } from '../../apis/home-apies';
+import { AuthGuard } from '../auth/guard/AuthGuard';
 import styles from "./Home.module.css"
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
     }, [])
 
     return (
+        // <AuthGuard moveTo='/login'>
         <div className={"container " + styles.module}>
             <div>
                 <div className={styles.banner}>
@@ -64,5 +66,7 @@ export default function Home() {
                 }
             </div>
         </div>
+        // </AuthGuard>
+
     )
 }
