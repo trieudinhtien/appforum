@@ -170,6 +170,31 @@
       "status": true,
       "createdAt": 1609483221000,
       "modifiedAt": 1641897299041
+    },
+    {
+      "id": 0,
+      "firstName": "",
+      "lastName": "",
+      "username": "test123",
+      "email": "test123@gmail.com",
+      "password": "123",
+      "cover": "",
+      "avatar": "",
+      "gender": "",
+      "followings": [],
+      "socialMedia": {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      },
+      "introduce": "",
+      "phone": "",
+      "birthday": "",
+      "address": "",
+      "status": false,
+      "createdAt": 1641959218092,
+      "modifiedAt": 1641959218092,
+      "token": ""
     }
   ],
   "posts": [
@@ -225,7 +250,5 @@
       "modifiedAt": 1641887131009,
       "id": 685
     }
-    
   ]
-  
 }
