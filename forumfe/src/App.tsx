@@ -21,18 +21,19 @@ function App() {
   }, [])
   return (
     <BrowserRouter>
-      <Header/>
-      <Navigation/>
+      <Header />
+      <Navigation />
       <Routes>
-         <Route path="/" element={<Navigate to="/home" />}> </Route>
-          <Route path="/home" element={<Home />} />
-        <Route path="/createpost" element={<CreatePost/>}/>
-        <Route path="/myposts" element={<MyPosts/>}/>
+        <Route path="/" element={<Navigate to="/home" />}> </Route>
+        <Route path="/home" element={<Home />} />
+        <Route path="/createpost" element={<CreatePost />} />
+        <Route path="/myposts" element={<MyPosts />} />
+        <Route path="/profile" element={<Navigate to="/profile/about" />} />
         <Route path="/profile/*" element={<Profile />} />
       </Routes>
-      <Footer/>
-      </BrowserRouter>
-
-  )}
+      <Footer />
+    </BrowserRouter>
+  )
+}
 
 export default App;
