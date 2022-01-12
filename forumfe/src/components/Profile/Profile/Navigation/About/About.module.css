@@ -1,0 +1,31 @@
+.outer{
+    margin: 16px 0 0;
+
+}
+
+.main_left, .main_right, .main_center{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px 28px;
+}
+
+.main_left > h3, .main_right > h3, .main_center > h3 {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    margin-bottom: 36px;
+}
+
+.main_left, .main_right {
+    width: 284px;
+}
+
+.main_center{
+    width: 584px;
+}
+
+.main_right > div > p {
+    padding: 0;
+    line-height: 14px;
+    margin-bottom: 14px;
+}

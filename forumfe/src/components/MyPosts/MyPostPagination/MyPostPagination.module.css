@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,900&amp;display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&amp;display=swap");
+
+.myposts_pagination {
+  width: max-content;
+  margin: 32px auto 0;
+  border-radius: 12px !important;
+  background-color: #fff;
+  box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
+  position: relative;
+  overflow: hidden;
+  padding: 7px 5px;
+}
+
+.myposts_pagination > li {
+  background-color: #fff;
+  padding: 0 5px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+.myposts_pagination > li > a {
+  color: #000;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  transition: color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.myposts_pagination > li > a:hover {
+  background-color: #fff;
+  color: #00c7d9;
+  box-shadow: 3px 5px 20px 0 rgb(94 92 154 / 12%);
+}
+
+.active{
+  background-color: #fff;
+  color: #00c7d9 !important;
+  box-shadow: 3px 5px 20px 0 rgb(94 92 154 / 12%);
+}

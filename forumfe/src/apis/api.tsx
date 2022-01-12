@@ -18,17 +18,5 @@ export function callApiRegister(data: User): Promise<any> {
       data: data,
     }).then((response: AxiosResponse<any>) => response.data)
 }
-// export function callApiLogout(): Promise<any> {
-//   return axios({
-//     method: 'post',
-//     url: "http://localhost:3000/logout"
 
-//   }).then((response: AxiosResponse<any>) => response.data)
-// }
-export function callApilogin(data: Userlogin): Promise<any> {
-  return axios({
-    method: 'post',
-    url: "http://localhost:3000/login",
-    data: data,
-  }).then((response: AxiosResponse<any>) => response.data)
-}
+
