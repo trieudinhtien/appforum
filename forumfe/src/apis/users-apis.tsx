@@ -22,11 +22,11 @@ export function getAllUser(token: string) {
         .catch(err => console.error(err))
 }
 
-export function login() {
+export function login(data: any) {
     return axios({
         method: "POST",
         url: `http://localhost:3000/login`,
-        data: { "email": "admin@gmail.com", "password": "123" }
+        data: data
     }).then(res => res.data)
         .catch(err => console.error(err))
 }
