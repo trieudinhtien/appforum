@@ -5,17 +5,17 @@ interface Context {
     setUser: React.Dispatch<React.SetStateAction<User>>
 }
 
-const UserContext = createContext<Context>({
-    user: {
-        "id": 0,
+
+const defaultData = {
+    "id":  0,
         "firstName": "",
         "lastName": "",
-        "username": "",
+        "username":  "",
         "email": "",
         "password": "",
-        "cover": "",
+        "cover":  "",
         "avatar": "",
-        "gender": "",
+        "gender":  "",
         "followings_id": [] as number [],
         "socialMedia": {
             "facebook": "",
@@ -30,36 +30,25 @@ const UserContext = createContext<Context>({
         "createdAt": 0,
         "modifiedAt": 0,
         "token": ""
-    }, setUser: () => { }
+}
+
+function getUserFromStorge():User {
+    const userFromlocal = JSON.parse(localStorage.getItem('user')!)
+    if(userFromlocal){
+        return userFromlocal
+    }else{
+        return defaultData
+    }
+}
+
+const UserContext = createContext<Context>({
+    user: getUserFromStorge(),
+     setUser: () => { }
 })
 
 function UserContextProvider({ children }: { children: ReactElement }) {
 
-    const [user, setUser] = useState({
-        "id": 0,
-        "firstName": "",
-        "lastName": "",
-        "username": "",
-        "email": "",
-        "password": "",
-        "cover": "",
-        "avatar": "",
-        "gender": "",
-        "followings_id": [] as number [],
-        "socialMedia": {
-            "facebook": "",
-            "instagram": "",
-            "youtube": ""
-        },
-        "introduce": "",
-        "phone": "",
-        "birthday": "",
-        "address": "",
-        "status": false,
-        "createdAt": 0,
-        "modifiedAt": 0,
-        "token": ""
-    })
+    const [user, setUser] = useState(getUserFromStorge())
 
     const value = {
         user: user,

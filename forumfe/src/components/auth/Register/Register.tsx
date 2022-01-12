@@ -1,15 +1,15 @@
 import React, { FormEvent, useState } from 'react'
-import { Button, Dropdown, Form } from 'react-bootstrap'
+import { Button,  Form } from 'react-bootstrap'
 import { callApiRegister } from '../../../apis/api'
 import styled from './register.module.css'
 import { useNavigate } from 'react-router-dom';
-
+import {v4} from 'uuid'
 
 
 
 export const Register = () => {
     let navigate = useNavigate();
-
+    const uuidv4 = v4();
     const [formData, setDataForm] = useState<User>({
         "id": 0,
         "firstName": "",
@@ -46,19 +46,21 @@ export const Register = () => {
     const handlerSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("formData:", formData)
-        callApiRegister(formData).then((data) => {
+        const dataLogin={
+            ...formData,
+            id: (new Date()).getTime()
+        }
+        callApiRegister(dataLogin).then((data) => {
             console.log(data)
             alert('Register Successfully')
             navigate('/login');
-        })
-            .catch(err => alert("The username already exists. Please use a different username!"))
+        }).catch(err => alert("The username already exists. Please use a different username!"))
     }
-
     return (
         <div className={styled.wrapper_register1}>
             <Form className={styled.wrapperForm1} onSubmit={(e) => handlerSubmit(e)}>
                 <div className={styled.titleForm1}>Wellcome to Vikinger4</div>
-                <div className={styled.titleForm1}>Connect to with frends and the wourld around you</div>
+                <div className={styled.subTitleForm1}>Connect to with frends and the wourld around you</div>
 
                 <Form.Group className='d-flex mb-2' controlId="formBasicEmail">
                     <Form.Control
@@ -73,7 +75,6 @@ export const Register = () => {
                         type="number"
                         placeholder="Phone Number"
                         value={formData.phone}
-                        maxLength={10}
                         onChange={(e) => { handleFormChange('phone', e.target.value) }}
                     />
                 </Form.Group>
@@ -96,17 +97,7 @@ export const Register = () => {
                         onChange={(e) => { handleFormChange('password', e.target.value) }}
                     />
                 </Form.Group>
-                <Form.Group className='d-flex mb-2'>
-                    <Dropdown className={styled.buttonGender}>
-                        <Dropdown.Toggle variant="light" id="dropdown-basic">
-                            Gender
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1" value="male">Male</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Female</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Other</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                <Form.Group className='mb-2'>
                     <Form.Control
                         className={styled.formInput1}
                         type="text"
