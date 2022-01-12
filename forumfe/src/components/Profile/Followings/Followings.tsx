@@ -73,17 +73,17 @@ export default function Followings() {
 
     const _onChangeOrder = (value: string) => {
         if (value === 'new') {
-            setUserFollowings(orderNewestFollowings(userFollowings))
+            setUserFollowings(orderNewestFollowings(user.followings))
             setOrderBy('new')
         }
 
         if (value === 'old') {
-            setUserFollowings(userFollowings)
+            setUserFollowings(user.followings)
             setOrderBy('old')
         }
 
         if (value === 'alphabet') {
-            setUserFollowings(orderAlphabeticalFollowings(userFollowings))
+            setUserFollowings(orderAlphabeticalFollowings(user.followings))
             setOrderBy('alphabet')
         }
     }
