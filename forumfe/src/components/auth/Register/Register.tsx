@@ -4,9 +4,6 @@ import { callApiRegister } from '../../../apis/api'
 import styled from './register.module.css'
 import { useNavigate } from 'react-router-dom';
 
-
-
-
 export const Register = () => {
     let navigate = useNavigate();
 

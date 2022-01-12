@@ -1,18 +1,50 @@
 import React, { useEffect, useState } from 'react'
-import { Card } from 'react-bootstrap';
 import { getPost } from '../../apis/home-apies';
-import { AuthGuard } from '../auth/guard/AuthGuard';
 import styles from "./Home.module.css"
 
 export default function Home() {
 
     const [post, setpost] = useState<Post[]>([]);
+    const [result, setresult] = useState<Post[]>([]);
+    const [page, setPage] = useState(1)
     useEffect(() => {
-        getPost().then(data => setpost(data))
+        getPost().then(data => {
+            setpost(data);
+            setresult(data.slice(0, 6));
+        })
             .catch(err => console.error(err))
-        console.log(post);
-    }, [])
 
+    }, [])
+    useEffect(() => {
+        setresult(post.slice(page * 6 - 6, page * 6))
+        console.log(page);
+        
+    }, [page])
+
+    const _onClickPrevious = () => {
+        if (page > 1) {
+            setPage(page - 1)
+        }
+    }
+    const _onClickNext = () => {
+        if (page < Math.ceil(post.length / 6)) {
+            setPage(page + 1)
+        }
+    }
+
+    const _onChangeSearch = (value: string) => {
+
+        setresult(post.filter(item => {
+            return item.title.toLowerCase().includes(value)
+
+        }).slice(page * 6 - 6, page * 6))
+        setPage(1);
+
+
+    }
+    // useEffect(() => {
+    //     post && setpost(post)
+    // }, [post])
     return (
         // <AuthGuard moveTo='/login'>
         <div className={"container " + styles.module}>
@@ -30,14 +62,12 @@ export default function Home() {
                 </div>
                 <div className={styles.search}>
                     <div>
-                        <form action="">
-                            <div className={styles.blank}>
-                                <label htmlFor="search" className={styles.labeltop}>Search Post</label>
-                                <input type="text" placeholder='Search...' id='search' name='search' value="" />
-                                <button className={styles.button_search}><i className="fas fa-search"></i></button>
+                        <div className={styles.blank}>
+                            <label htmlFor="search" className={styles.labeltop}>Search Post</label>
+                            <input type="text" onChange={e => _onChangeSearch(e.target.value)} placeholder='Search...' id='search' required />
+                            <button className={styles.button_search}><i className={"fas fa-search " + styles.search_icon}></i></button>
 
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,20 +80,31 @@ export default function Home() {
                     <div>TAGS</div>
                 </div>
                 {
-                    post?.map(item => (
-                        <div className={styles.post_item}>
+                    result?.map(item => (
+                        <div className={styles.post_item} onClick={()=>alert(item.id)} key={item.id}>
                             <div>
                                 <div className={styles.post_item_title}>{item.title}</div>
                                 <div className={styles.post_item_user}>Created 5 hours ago</div>
                             </div>
                             <div>{item.likes}</div>
                             <div>{item.comments?.length}</div>
-                            <div>{item.tags?.map(tag =>(
-                                tag +" "
+                            <div>{item.tags?.map(tag => (
+                                tag + " "
                             ))}</div>
                         </div>
                     ))
                 }
+                <div className={styles.pagination}>
+                    <ul className="pagination m-0">
+                        <li className="page-item"><button className="page-link" onClick={_onClickPrevious}><i className="fas fa-arrow-left"></i></button></li>
+                        <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
+                    </ul>
+                    <p>
+                    Showing <span>{result.length === 0 ? "" : `${(page - 1) * 6 + 1} -`}</span>
+                    <span> {page * 6 < result.length ? page * 6 : post.length} </span>
+                    out of {post.length} results
+                    </p>
+                </div>
             </div>
         </div>
         // </AuthGuard>

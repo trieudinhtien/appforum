@@ -10,7 +10,7 @@
 }
 .module {
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 h1,
 h2,
@@ -69,10 +69,14 @@ h6 {
   font-weight: 700;
   text-align: center;
   cursor: pointer;
-  padding: 0.5rem 0.7rem;
-  padding-top: 0.7rem;
+  padding: 0.65rem 0.8rem;
+  padding-top: 0.73rem;
   margin-left: 1rem;
   border: none;
+  /* margin-top: 0.5rem; */
+}
+.search_icon{
+  color: #fff;
 }
 .labeltop {
   display: block;
@@ -81,6 +85,10 @@ h6 {
 
 input {
   width: 90%;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: solid 1px rgb(124, 124, 124);
+  padding-left: 1rem;
 }
 .blank {
   padding-left: 5.5rem;
@@ -127,7 +135,9 @@ input {
   height: 70px;
   align-items: center;
 }
-
+.post_item:hover{
+  cursor: pointer;
+}
 .post_item > div:nth-child(1) {
   width: 60%;
   line-height: 1em;
@@ -170,4 +180,21 @@ input {
   padding: 2rem;
   border-radius: 10px;
 
+}
+
+.pagination{
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination > p{
+  color: rgb(143, 145, 172);
+  font-weight: 600;
+  margin: 0;
+}
+
+.pagination span{
+  color: #00c7d9
 }

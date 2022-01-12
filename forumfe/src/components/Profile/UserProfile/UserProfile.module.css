@@ -4,13 +4,6 @@
     padding: 112px 0 100px 80px;
 }
 
-p, a, h2, h3, h4, h5, div, span {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #3e3f5e;
-}
-
 .profile_inner{
     border-radius: 12px;
     background-color:#fff;
