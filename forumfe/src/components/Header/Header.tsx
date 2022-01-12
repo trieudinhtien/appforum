@@ -1,10 +1,21 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import styles from "./Header.module.css";
 import Logo from "../../images/logo.png";
 import Avatar from "../../images/avatar/01.jpg";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from "../../context/UserContext";
+import { Logout } from "../auth/Logout/Logout";
 
 const Header: FC<{}> = () => {
+  let navigate = useNavigate();
+
+  const context = useContext(UserContext)
+  const user = context.user
+
+  const _clickLogin = () => {
+    navigate('/login');
+  }
   return (
     <div className={styles.header}>
       <div className={styles.header_actions}>
@@ -79,22 +90,27 @@ const Header: FC<{}> = () => {
                 <hr />
               </li>
               <li>
-                <NavLink to="/1">Profile Info</NavLink>
+                <NavLink to="/profile">Profile Info</NavLink>
               </li>
               <li>
-                <NavLink to="/1">Change password</NavLink>
+                <NavLink to="/profile/settings/password">Change password</NavLink>
               </li>
               <li>
-                <button>Logout</button>
+                <Logout />
               </li>
             </ul>
           </div>
         </div>
 
         {/* Login */}
-        <div className={styles.login}>
-          <button>Login</button>
-        </div>
+        {
+          localStorage.getItem('user') ? 
+          <img className="rounded-circle mr-2" width={50} height={50} src={user && user.avatar} alt="avatar" />
+          : 
+          (<div className={styles.login}>
+            <button onClick={_clickLogin}>Login</button>
+          </div>)
+        }
       </div>
     </div>
   );

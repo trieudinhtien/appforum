@@ -8,6 +8,7 @@ const {
   uploadFilesHandler,
   uploadImageHandler,
   registerHandler,
+  logoutHandler,
 } = require("./additional_routes");
 const { defaultPort, databaseFile, jwtSecret } = require("./config.json");
 
@@ -45,6 +46,10 @@ server.use((req, res, next) => {
 server.post("/register", (req, res) => {
   registerHandler(db, req, res);
 });
+
+server.post("/logout", (req, res) => {
+  logoutHandler(db, req, res)
+})
 
 // Login in request
 server.post("/login", (req, res) => {

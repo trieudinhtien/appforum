@@ -1,7 +1,6 @@
 const formidable = require('formidable');
 const { copyFile, unlink } = require('fs/promises');
 const { generateJwtToken } = require('./jwt-authenticate');
-
 const handleUploadFile = async (req, file) => {
   const uploadFolder = 'uploads';
 
@@ -46,6 +45,8 @@ module.exports = {
       res.status(400).jsonp({ message: 'Username or password is incorrect!' });
     }
   },
+
+
 
   registerHandler: (db, req, res) => {
     const { username, email, password } = req.body;
