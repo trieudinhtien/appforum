@@ -20,7 +20,7 @@ export const Logout = () => {
             "cover": "",
             "avatar": "",
             "gender": "",
-            "followings": [] as Following [],
+            "followings_id": [] as number[],
             "socialMedia": {
                 "facebook": "",
                 "instagram": "",

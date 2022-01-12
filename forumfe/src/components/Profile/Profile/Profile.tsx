@@ -22,7 +22,7 @@ export default function Profile() {
                         </div>
                         <div className={styles.divide}></div>
                         <div className={"text-center " + styles.des_left}>
-                            <p className={"m-0"}>{user.followings.length}</p>
+                            <p className={"m-0"}>{user.followings_id.length}</p>
                             <p className={"text-muted"}>FOLLOWINGS</p>
                         </div>
                         <div className={styles.divide}></div>

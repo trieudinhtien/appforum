@@ -11,6 +11,17 @@ export function getUserById(id: number, token: string) {
         .catch(err => console.error(err))
 }
 
+export function getAllUser(token: string) {
+    return axios({
+        method: "GET",
+        url: `http://localhost:3000/users`,
+        headers: {
+            authorization: `Bearer ${token}`
+        }
+    }).then(res => res.data)
+        .catch(err => console.error(err))
+}
+
 export function login(data: any) {
     return axios({
         method: "POST",
@@ -33,3 +44,4 @@ export function changePasswordById(id: number, token: string, password: string) 
     }).then(res => res.data)
         .catch(err => console.log(err))
 }
+
