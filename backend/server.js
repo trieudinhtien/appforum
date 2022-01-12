@@ -32,7 +32,7 @@ server.use((req, res, next) => {
   const currentTime = Date.now();
 
   if (req.method === "POST") {
-    req.body.createdAt = currentTime;
+    // req.body.createdAt = currentTime;
     req.body.modifiedAt = currentTime;
   } else if (["PUT", "PATCH"].includes(req.method)) {
     req.body.modifiedAt = currentTime;

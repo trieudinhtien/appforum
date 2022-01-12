@@ -6,17 +6,19 @@
   font-family: Rajdhani, sans-serif;
   height: 70px;
   align-items: center;
+  /* transform: translate(30%, 0px); */
 }
 
 .mypost_item > div:nth-child(1) {
-  width: 60%;
+  width: 50%;
   line-height: 1em;
   color: #3e3f5e;
+  cursor: pointer;
 }
 
 .mypost_item_title {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 .mypost_item_user {
@@ -40,8 +42,53 @@
 }
 
 .mypost_item > div:nth-child(4) {
+  width: 10%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.mypost_item > div:nth-child(5) {
   width: 20%;
   text-align: center;
   font-size: 0.875rem;
   font-weight: 700;
 }
+
+.actions > button:nth-child(2) {
+  border: none;
+  width: 80px;
+  background-color: #615dfa;
+  box-shadow: 4px 7px 12px 0 rgb(97 93 250 / 20%);
+  height: 40px;
+  font-size: 0.75rem;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.actions > button:nth-child(2):hover {
+  background-color: #6610f2;
+}
+
+.actions > button:nth-child(1) {
+  border: none;
+  width: 80px;
+  background-color: #23d2e2;
+  box-shadow: 4px 7px 12px 0 rgb(97 93 250 / 20%);
+  height: 40px;
+  font-size: 0.75rem;
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.actions > button:nth-child(1):hover {
+  background-color: #1bc5d4;
+}
+

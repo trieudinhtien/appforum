@@ -1,12 +1,17 @@
-import { FC, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import styles from "./CreatePost.module.css";
 import Banner from "../../images/banners/banner.png";
 import NewPost from "../../images/banners/newpost.png";
-// import { CreatePostForm } from "../../react-app-env";
 import { useNavigate } from "react-router-dom";
+import { createPost, getPosts } from "../../apis/posts-apis";
+import moment from "moment";
+import { UserContext } from "../../context/UserContext";
+import { PostContext } from "../../context/PostContext";
 
 const CreatePost: FC<{}> = () => {
   const navigate = useNavigate();
+  const userContext = useContext(UserContext);
+  const postContext = useContext(PostContext);
   const [form, setForm] = useState<CreatePostForm>({
     title: "",
     content: "",
@@ -19,20 +24,53 @@ const CreatePost: FC<{}> = () => {
     tags: "",
   });
 
-  const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
+  const [posts, setPosts] = useState<Post[]>();
+
+  const checkTitle = (title: string): boolean => {
+    let check: boolean = false;
+    posts?.forEach((item: Post) => {
+      if (title === item.title) check = true;
+    });
+    return check;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const obj = {
       title: "",
       content: "",
       tags: "",
     };
-    if (!form.title) obj.title = "Title required!";
-    if (!form.content) obj.content = "Your post required!";
-    if (!form.tags) obj.tags = "Tags required!";
+    if (form.title === "") obj.title = "Title required!";
+    if (form.content === "") obj.content = "Your post required!";
+    if (form.tags === "") obj.tags = "Tags required!";
     setError(obj);
 
-    if (error.title && error.content && error.tags) {
-      console.log("success");
+    if (obj.title === "" && obj.content === "" && obj.tags === "") {
+      if (checkTitle(form.title)) {
+        alert("Title has existed! Try again!");
+      } else if (userContext.user.token && !checkTitle(form.title))
+        createPost(userContext.user.token, {
+          id: Date.now(),
+          user_id: Date.now(),
+          title: form.title,
+          createdAt: moment().format(),
+          likes: 7,
+          comments: [],
+          tags: form.tags.split(" "),
+          img: "",
+          content: form.content,
+        })
+          .then((data) => {
+            postContext.setPosts([...postContext.posts, data]);
+            setForm({
+              title: "",
+              content: "",
+              tags: "",
+            });
+            navigate("/myposts");
+          })
+          .catch((error: Error) => console.log(error));
     }
   };
 
@@ -44,6 +82,12 @@ const CreatePost: FC<{}> = () => {
     });
     navigate(-1);
   };
+
+  useEffect(() => {
+    getPosts()
+      .then((data) => setPosts(data))
+      .catch((error: Error) => console.log(error));
+  }, []);
 
   return (
     <div className={styles.create_post}>
@@ -81,7 +125,7 @@ const CreatePost: FC<{}> = () => {
           <label>Tags</label>
           <input
             type="text"
-            placeholder="Enter your tags"
+            placeholder={`Enter your tags (Split by " ")`}
             name=""
             value={form.tags}
             onChange={(e) => setForm({ ...form, tags: e.target.value })}

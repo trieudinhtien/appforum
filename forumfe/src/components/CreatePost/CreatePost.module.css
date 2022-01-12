@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700&amp;display=swap");
 
 .create_post {
-  transform: translate(380px, 0px);
+  transform: translate(30%, 0px);
   margin: 0px;
   transition: transform 0.4s ease-in-out 0s;
   max-width: 1184px;

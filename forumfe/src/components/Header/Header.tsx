@@ -3,8 +3,11 @@ import styles from "./Header.module.css";
 import Logo from "../../images/logo.png";
 import Avatar from "../../images/avatar/01.jpg";
 import { NavLink } from "react-router-dom";
+import moment from "moment";
 
 const Header: FC<{}> = () => {
+  // console.log(moment("2022-01-11T01:59:16+07:00").fromNow());
+  // console.log(typeof moment().format());
   return (
     <div className={styles.header}>
       <div className={styles.header_actions}>

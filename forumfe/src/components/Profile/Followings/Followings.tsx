@@ -31,7 +31,7 @@ export default function Followings() {
         }
     }
 
-    console.log(followings)
+    // console.log(followings)
 
     const _onClickNext = () => {
         if (page < Math.ceil(user.followings.length / 6)) {

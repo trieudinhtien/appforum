@@ -10,7 +10,7 @@ export default function Profile() {
     // const [user, setUser] = useState({} as User)
     const context = useContext(UserContext)
     const user = context.user
-    console.log("context", context)
+    // console.log("context", context)
 
 
 
