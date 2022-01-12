@@ -26,144 +26,219 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
-      "followings": [
-        {
-          "id": 2,
-          "firstName": "Bearded",
-          "lastName": "Wonder",
-          "gender": "male",
-          "email": "brdwonder@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/6/5f6d2f1e67572-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/6/cover-image/5f6d2f48ef65e-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "I will post really cool images of all street art from around the country!"
-        },
-        {
-          "id": 3,
-          "firstName": "Neko",
-          "lastName": "Bebop",
-          "gender": "female",
-          "email": "nekobebop@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/2/5f6d2ea82117b-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/2/cover-image/5f6d2ea856514-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "Hello to everyone! Hope we have a great time!"
-        },
-        {
-          "id": 4,
-          "firstName": "Nicholas",
-          "lastName": "Grissom",
-          "gender": "male",
-          "email": "nickgrissom@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/4/5f6d2f1fd4af8-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/4/cover-image/5f6d2f203fecb-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "My name is Destroy and I stream video games everyday!"
-        },
-        {
-          "id": 5,
-          "firstName": "Sarah",
-          "lastName": "Diamond",
-          "gender": "male",
-          "email": "diamond@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/5/5f6d2f582b140-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/5/cover-image/5f6d2f589c282-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "My name is Destroy and I stream video games everyday!"
-        },
-        {
-          "id": 6,
-          "firstName": "Destroy",
-          "lastName": "Dex",
-          "gender": "male",
-          "email": "destroydx@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "My name is Destroy and I stream video games everyday!"
-        },
-        {
-          "id": 7,
-          "firstName": "Destroy",
-          "lastName": "Dex",
-          "gender": "male",
-          "email": "destroydx@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "My name is Destroy and I stream video games everyday!"
-        },
-        {
-          "id": 8,
-          "firstName": "Destroy",
-          "lastName": "Dex",
-          "gender": "male",
-          "email": "destroydx@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "My name is Destroy and I stream video games everyday!"
-        },
-        {
-          "id": 9,
-          "firstName": "Destroy",
-          "lastName": "Dex",
-          "gender": "male",
-          "email": "destroydx@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "My name is Destroy and I stream video games everyday!"
-        },
-        {
-          "id": 10,
-          "firstName": "Destroy",
-          "lastName": "Dex",
-          "gender": "male",
-          "email": "destroydx@gmail.com",
-          "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
-          "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
-          "socialMedia": {
-            "facebook": "https://facebook.com.vn/minhdat.dongoc",
-            "instagram": "https://instagram.com/fanta.2hand",
-            "youtube": ""
-          },
-          "introduce": "My name is Destroy and I stream video games everyday!"
-        }
+      "followings_id": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
       ],
       "introduce": "Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1641897299041
+    },
+    {
+      "id": 2,
+      "firstName": "Bearded",
+      "lastName": "Wonder",
+      "username": "user2",
+      "email": "brdwonder@gmail.com",
+      "password": "123",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/6/cover-image/5f6d2f48ef65e-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/6/5f6d2f1e67572-bpfull.jpg",
+      "gender": "female",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": ""
+      },
+      "followings_id": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "introduce": "I will post really cool images of all street art from around the country!",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1641897299041
+    },
+    {
+      "id": 3,
+      "firstName": "Neko",
+      "lastName": "Bebop",
+      "username": "user3",
+      "email": "nekobebop@gmail.com",
+      "password": "123",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/2/cover-image/5f6d2ea856514-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/2/5f6d2ea82117b-bpfull.jpg",
+      "gender": "female",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": ""
+      },
+      "followings_id": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "introduce": "I will post really cool images of all street art from around the country!",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1641897299041
+    },
+    {
+      "id": 4,
+      "firstName": "Nicholas",
+      "lastName": "Grissom",
+      "username": "user4",
+      "email": "nickgrissom@gmail.com",
+      "password": "123",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/4/cover-image/5f6d2f203fecb-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/4/5f6d2f1fd4af8-bpfull.jpg",
+      "gender": "male",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": ""
+      },
+      "followings_id": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "introduce": "I will post really cool images of all street art from around the country!",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1641897299041
+    },
+    {
+      "id": 5,
+      "firstName": "Sarah",
+      "lastName": "Diamond",
+      "username": "user5",
+      "email": "diamond@gmail.com",
+      "password": "123",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/5/cover-image/5f6d2f589c282-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/5/5f6d2f582b140-bpfull.jpg",
+      "gender": "male",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": ""
+      },
+      "followings": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "introduce": "My name is Destroy and I stream video games everyday!",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1641897299041
+    },
+    {
+      "id": 6,
+      "firstName": "Destroy",
+      "lastName": "Dex",
+      "username": "user6",
+      "email": "destroydx@gmail.com",
+      "password": "123",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+      "gender": "male",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": ""
+      },
+      "followings": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "introduce": "My name is Destroy and I stream video games everyday!",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1641897299041
+    },
+    {
+      "id": 7,
+      "firstName": "Destroy2",
+      "lastName": "Dex2",
+      "username": "user7",
+      "email": "destroydx2@gmail.com",
+      "password": "123",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+      "gender": "male",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": ""
+      },
+      "followings": [
+        1,
+        2,
+        3
+      ],
+      "introduce": "My name is Destroy and I stream video games everyday!",
+      "phone": "933-658-1213",
+      "birthday": "1994-03-23",
+      "address": "Long Island, New York United States",
+      "status": true,
+      "createdAt": 1609483221000,
+      "modifiedAt": 1641897299041
+    },
+    {
+      "id": 8,
+      "firstName": "Destroy3",
+      "lastName": "Dex3",
+      "username": "user8",
+      "email": "destroydx3@gmail.com",
+      "password": "123",
+      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/3/cover-image/5f6d3f1840e24-bp-cover-image.jpg",
+      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/3/5f6d2f1e6e92c-bpfull.jpg",
+      "gender": "male",
+      "socialMedia": {
+        "facebook": "https://facebook.com.vn/minhdat.dongoc",
+        "instagram": "https://instagram.com/fanta.2hand",
+        "youtube": ""
+      },
+      "followings": [
+        1,
+        2,
+        3
+      ],
+      "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
       "address": "Long Island, New York United States",
@@ -225,7 +300,5 @@
       "modifiedAt": 1641887131009,
       "id": 685
     }
-    
   ]
-  
 }
