@@ -1,6 +1,6 @@
 import styles from './Followings.module.css'
 import { UserContext } from '../../../context/UserContext'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Followings() {
@@ -11,6 +11,7 @@ export default function Followings() {
     const [page, setPage] = useState(1)
     const [followings, setFollowings] = useState(userFollowings.slice(0, 6))
     const [orderBy, setOrderBy] = useState('old')
+    const inputRef = useRef<HTMLInputElement>(null)
 
     useEffect(() => {
         setFollowings(userFollowings.slice(page * 6 - 6, page * 6))
@@ -20,6 +21,12 @@ export default function Followings() {
         setFollowings(userFollowings.slice(0, 6))
         setPage(1)
     }, [userFollowings])
+
+    useEffect(() => {
+        if(inputRef.current){
+            inputRef.current.value = ''
+        }
+    }, [orderBy])
 
     const _onClickPrevious = () => {
         if (page > 1) {
@@ -94,7 +101,7 @@ export default function Followings() {
             <h2>Followings <span>{user.followings.length}</span></h2>
             <div className={styles.search_bar + " d-flex"}>
                 <div className="col d-flex align-items-center position-relative">
-                    <input id="search" className={"form-control " + styles.input} onChange={e => _onChangeSearch(e.target.value)} required />
+                    <input id="search" className={"form-control " + styles.input} onChange={e => _onChangeSearch(e.target.value)} ref={inputRef} required />
                     <label htmlFor="search" className={styles.input_label} >&emsp;Search by name&emsp;</label>
                     <i className="fas fa-search"></i>
                 </div>
