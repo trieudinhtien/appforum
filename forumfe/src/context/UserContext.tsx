@@ -5,61 +5,50 @@ interface Context {
     setUser: React.Dispatch<React.SetStateAction<User>>
 }
 
+
+const defaultData = {
+    "id": 0,
+    "firstName": "",
+    "lastName": "",
+    "username": "",
+    "email": "",
+    "password": "",
+    "cover": "",
+    "avatar": "",
+    "gender": "",
+    "followings_id": [] as number[],
+    "socialMedia": {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "introduce": "",
+    "phone": "",
+    "birthday": "",
+    "address": "",
+    "status": false,
+    "createdAt": 0,
+    "modifiedAt": 0,
+    "token": ""
+}
+
+function getUserFromStorge(): User {
+    const userFromlocal = JSON.parse(localStorage.getItem('user')!)
+    if (userFromlocal) {
+        return userFromlocal
+    } else {
+        return defaultData
+    }
+}
+
 const UserContext = createContext<Context>({
-    user: {
-        "id": 0,
-        "firstName": "",
-        "lastName": "",
-        "username": "",
-        "email": "",
-        "password": "",
-        "cover": "",
-        "avatar": "",
-        "gender": "",
-        "followings_id": [] as number [],
-        "socialMedia": {
-            "facebook": "",
-            "instagram": "",
-            "youtube": ""
-        },
-        "introduce": "",
-        "phone": "",
-        "birthday": "",
-        "address": "",
-        "status": false,
-        "createdAt": 0,
-        "modifiedAt": 0,
-        "token": ""
-    }, setUser: () => { }
+    user: getUserFromStorge(),
+    setUser: () => { }
 })
 
 function UserContextProvider({ children }: { children: ReactElement }) {
 
-    const [user, setUser] = useState({
-        "id": 0,
-        "firstName": "",
-        "lastName": "",
-        "username": "",
-        "email": "",
-        "password": "",
-        "cover": "",
-        "avatar": "",
-        "gender": "",
-        "followings_id": [] as number [],
-        "socialMedia": {
-            "facebook": "",
-            "instagram": "",
-            "youtube": ""
-        },
-        "introduce": "",
-        "phone": "",
-        "birthday": "",
-        "address": "",
-        "status": false,
-        "createdAt": 0,
-        "modifiedAt": 0,
-        "token": ""
-    })
+    const [user, setUser] = useState(getUserFromStorge())
 
     const value = {
         user: user,
