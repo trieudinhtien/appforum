@@ -1,12 +1,28 @@
 import styles from "./Profile.module.css"
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import Navigation from "./Navigation/Navigation"
 import { UserContext } from '../../../context/UserContext'
+import { getAllUser } from '../../../apis/users-apis'
 
 export default function Profile() {
 
     const context = useContext(UserContext)
     const user = context.user
+    const [followers, setFollowers] = useState(0)
+
+    useEffect(() => {
+        let count = 0
+        getAllUser(user.token)
+            .then((res: User[]) => {
+                res.forEach((eachUser: User) => {
+                    if(eachUser.followings_id.includes(user.id)){
+                        count++
+                    }
+                })
+                setFollowers(count)
+            })
+    }, [])
+
 
     return (
         <div className={styles.profile}>
@@ -26,7 +42,7 @@ export default function Profile() {
                         </div>
                         <div className={styles.divide}></div>
                         <div className={"text-center " + styles.des_left}>
-                            <p className={"m-0"}>10</p>
+                            <p className={"m-0"}>{followers}</p>
                             <p className={"text-muted"}>FOLLOWERS</p>
                         </div>
                     </div>

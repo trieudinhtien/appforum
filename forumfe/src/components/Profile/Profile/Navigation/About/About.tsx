@@ -12,7 +12,7 @@ export default function About() {
         <div className={styles.outer + " d-flex justify-content-between"}>
             <div className={styles.main_left}>
                 <h3>About Me</h3>
-                <p>{user.introduce}</p>
+                <p className={styles.introduce}>{user.introduce}</p>
             </div>
             <div className={styles.main_center}>
                 <h3>Interests</h3>

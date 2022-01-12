@@ -27,7 +27,8 @@
     left: 50%;
     border: 12px solid #fff;
     border-radius: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    background-color: #fff;
 }
 
 .profile_inner_description{
@@ -86,4 +87,52 @@
     height: 20px;
     width: 2px;
     background-color: #e1e1e1;
+}
+
+.outer{
+    margin: 16px 0 0;
+
+}
+
+.main_left, .main_right, .main_center{
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px 28px;
+}
+
+.main_left > h3, .main_right > h3, .main_center > h3 {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+    margin-bottom: 36px;
+}
+
+.main_left, .main_right {
+    width: 284px;
+}
+
+.main_center{
+    width: 584px;
+}
+
+.main_right > div > p {
+    padding: 0;
+    line-height: 14px;
+    margin-bottom: 14px;
+}
+
+.introduce{
+    line-height: 22px
+}
+
+.btn_follow{
+    position: absolute;
+    right: 20px ;
+    top: 240px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: #00c7d9;
+    color: #fff;
+    padding: 4px 20px;
+    box-shadow: 0px 0px 5px 1px #000;
 }

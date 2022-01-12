@@ -45,3 +45,17 @@ export function changePasswordById(id: number, token: string, password: string) 
         .catch(err => console.log(err))
 }
 
+export function changeFollowings(id: number, token: string, followingsID: number[]) {
+    return axios({
+        method: "PATCH",
+        url: `http://localhost:3000/users/${id}`,
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        data: {
+            "followings_id": followingsID
+        }
+    }).then(res => res.data)
+        .catch(err => console.log(err))
+}
+
