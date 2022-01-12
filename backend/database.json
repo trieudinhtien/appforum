@@ -27,9 +27,13 @@
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
       "followings_id": [
-        1,
+        7,
         2,
-        7
+        8,
+        3,
+        4,
+        6,
+        5
       ],
       "introduce": "Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213",
@@ -37,7 +41,7 @@
       "address": "Long Island, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1641996116787
+      "modifiedAt": 1642014943642
     },
     {
       "id": 2,

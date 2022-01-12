@@ -10,6 +10,8 @@ export default function Profile() {
     const context = useContext(UserContext)
     const user = context.user
     const [followers, setFollowers] = useState(0)
+    console.log(user);
+    
 
     useEffect(() => {
         let count = 0
@@ -44,7 +46,7 @@ export default function Profile() {
                             </div>
                             <div className={styles.divide}></div>
                             <div className={"text-center " + styles.des_left}>
-                                <p className={"m-0"}>10</p>
+                                <p className={"m-0"}>{followers}</p>
                                 <p className={"text-muted"}>FOLLOWERS</p>
                             </div>
                         </div>

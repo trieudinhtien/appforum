@@ -10,13 +10,12 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/Home/Home';
 import UserProfile from './components/Profile/UserProfile/UserProfile'
 import { useContext, useEffect } from "react";
-import { UserContext } from "./context/UserContext";
 import { PostContext } from "./context/PostContext";
 import { getPosts } from "./apis/posts-apis";
 import MyPostDetail from "./components/MyPosts/MyPostDetail/MyPostDetail";
 
 function App() {
-  const context = useContext(UserContext);
+
   const postContext = useContext(PostContext);
 
   useEffect(() => {
