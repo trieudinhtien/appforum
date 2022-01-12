@@ -7,43 +7,43 @@ interface Context {
 
 
 const defaultData = {
-    "id":  0,
-        "firstName": "",
-        "lastName": "",
-        "username":  "",
-        "email": "",
-        "password": "",
-        "cover":  "",
-        "avatar": "",
-        "gender":  "",
-        "followings_id": [] as number [],
-        "socialMedia": {
-            "facebook": "",
-            "instagram": "",
-            "youtube": ""
-        },
-        "introduce": "",
-        "phone": "",
-        "birthday": "",
-        "address": "",
-        "status": false,
-        "createdAt": 0,
-        "modifiedAt": 0,
-        "token": ""
+    "id": 0,
+    "firstName": "",
+    "lastName": "",
+    "username": "",
+    "email": "",
+    "password": "",
+    "cover": "",
+    "avatar": "",
+    "gender": "",
+    "followings_id": [] as number[],
+    "socialMedia": {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+    },
+    "introduce": "",
+    "phone": "",
+    "birthday": "",
+    "address": "",
+    "status": false,
+    "createdAt": 0,
+    "modifiedAt": 0,
+    "token": ""
 }
 
-function getUserFromStorge():User {
+function getUserFromStorge(): User {
     const userFromlocal = JSON.parse(localStorage.getItem('user')!)
-    if(userFromlocal){
+    if (userFromlocal) {
         return userFromlocal
-    }else{
+    } else {
         return defaultData
     }
 }
 
 const UserContext = createContext<Context>({
     user: getUserFromStorge(),
-     setUser: () => { }
+    setUser: () => { }
 })
 
 function UserContextProvider({ children }: { children: ReactElement }) {
