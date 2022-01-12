@@ -1,12 +1,14 @@
-import styles from "./Profile.module.css"
-import { useContext } from "react"
-import Navigation from "./Navigation/Navigation"
-import { UserContext } from '../../../context/UserContext'
+import styles from './UserProfile.module.css'
+import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
-export default function Profile() {
 
-    const context = useContext(UserContext)
-    const user = context.user
+
+export default function UserProfile() {
+
+    const [user, setUser] = useState({} as User)
+    const { id } = useParams()
+    console.log(id)
 
     return (
         <div className={styles.profile}>
@@ -21,7 +23,7 @@ export default function Profile() {
                         </div>
                         <div className={styles.divide}></div>
                         <div className={"text-center " + styles.des_left}>
-                            <p className={"m-0"}>{user.followings_id.length}</p>
+                            <p className={"m-0"}>{user?.followings_id?.length}</p>
                             <p className={"text-muted"}>FOLLOWINGS</p>
                         </div>
                         <div className={styles.divide}></div>
@@ -52,7 +54,6 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-            <Navigation />
         </div>
     )
 }
