@@ -17,6 +17,7 @@ export default function ChangePassword() {
     const context = useContext(UserContext)
     const navigate = useNavigate()
     const user = context.user
+
     const [notification, setNotification] = useState('')
 
     const _onSubmit = (value: FormValues) => {
@@ -26,9 +27,10 @@ export default function ChangePassword() {
                 if (value.password === userInfo.password) {
                     changePasswordById(user.id, user.token, value.newPassword)
                         .then((res) => {
-                            console.log('hello')
                             alert('password is changed successfully')
-                            navigate('/about')
+                            localStorage.setItem('user',JSON.stringify({...user, password: value.newPassword}))
+                            context.setUser({...user, password: value.newPassword})
+                            navigate('/profile/about')
                         })
                         .catch((err) => console.log(err))
                 } else {

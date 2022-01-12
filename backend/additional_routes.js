@@ -35,10 +35,10 @@ module.exports = {
 
     if (user && user.password === pwd) {
       const token = generateJwtToken(user.id);
-      const { password, ...userWithoutPassword } = user;
+      // const { password, ...userWithoutPassword } = user;
 
       res.jsonp({
-        ...userWithoutPassword,
+        ...user,
         token,
       });
     } else {

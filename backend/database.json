@@ -243,12 +243,12 @@
       "modifiedAt": 1641897299041
     },
     {
-      "id": null,
+      "id": 1642000945490,
       "firstName": "",
       "lastName": "",
-      "username": "test456",
-      "email": "test456@gmail.com",
-      "password": "123",
+      "username": "minhdat",
+      "email": "minhdat.dongoc@gmail.com",
+      "password": "12345",
       "cover": "",
       "avatar": "",
       "gender": "",
@@ -259,12 +259,12 @@
         "youtube": ""
       },
       "introduce": "",
-      "phone": "0914799597",
+      "phone": "0964646631",
       "birthday": "",
-      "address": "125 nguyen trai",
+      "address": "15D ngách 17 ngõ 55 Chinh Kinh",
       "status": false,
-      "createdAt": 1641974701042,
-      "modifiedAt": 1641974701042,
+      "createdAt": 0,
+      "modifiedAt": 1642002870400,
       "token": ""
     }
   ],
@@ -410,7 +410,8 @@
       ],
       "img": "",
       "content": "Loremmmmmmmmmmmmmmmmm  2"
-    },  {
+    },
+    {
       "id": 3,
       "user_id": 234,
       "title": "Post 5",
@@ -429,7 +430,8 @@
       ],
       "img": "",
       "content": "Loremmmmmmmmmmmmmmmmm  2"
-    },  {
+    },
+    {
       "id": 4,
       "user_id": 234,
       "title": "Post 6",
@@ -448,7 +450,8 @@
       ],
       "img": "",
       "content": "Loremmmmmmmmmmmmmmmmm  2"
-    },  {
+    },
+    {
       "id": 5,
       "user_id": 234,
       "title": "Post 7",
@@ -467,7 +470,8 @@
       ],
       "img": "",
       "content": "Loremmmmmmmmmmmmmmmmm  2"
-    },  {
+    },
+    {
       "id": 6,
       "user_id": 234,
       "title": "Post 8",
