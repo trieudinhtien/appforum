@@ -12,7 +12,6 @@ export default function UserProfile() {
     const { id } = useParams()
     const [followers, setFollowers] = useState(0)
     const [followed, setFollowed] = useState(false)
-    const btnRef = useRef<HTMLButtonElement>(null)
 
     useEffect(() => {
         if (id) {
@@ -46,24 +45,39 @@ export default function UserProfile() {
                 })
                 .catch(err => console.error(err))
         }
-    }, [id])
+    }, [id, context.user.followings_id.length])
+
+    useEffect(() => {
+        if (id) {
+            if (context.user.followings_id?.includes(parseInt(id))) {
+                setFollowed(true)
+            }
+        }
+    }, [followed])
+
 
     const _onClickFollow = () => {
         if (followed) {
             if (id) {
-                const userIDs = user.followings_id
+                const userIDs = context.user.followings_id
                 userIDs.splice(userIDs.indexOf(parseInt(id)), 1)
                 changeFollowings(context.user.id, context.user.token, userIDs)
-                    .then(res => console.log(res))
+                    .then((res: User) => {
+                        context.setUser({ ...context.user, "followings_id": [...res.followings_id] })
+                        localStorage.setItem('user', JSON.stringify({ ...context.user, "followings_id": [...res.followings_id] }))
+                    })
                     .catch(err => console.log(err))
                 setFollowed(false)
             }
         } else {
             if (id) {
-                const userIDs = user.followings_id
+                const userIDs = context.user.followings_id
                 userIDs.push(parseInt(id))
                 changeFollowings(context.user.id, context.user.token, userIDs)
-                    .then(res => console.log(res))
+                    .then((res: User) => {
+                        context.setUser({ ...context.user, "followings_id": [...res.followings_id] })
+                        localStorage.setItem('user', JSON.stringify({ ...context.user, "followings_id": [...res.followings_id] }))
+                    })
                     .catch(err => console.log(err))
                 setFollowed(true)
             }
@@ -75,7 +89,9 @@ export default function UserProfile() {
             <div className={styles.profile_inner}>
                 <img className={styles.profile_inner_img} src={user && user.cover} alt="cover" />
                 <img className={styles.profile_inner_avatar} src={user && user.avatar} alt="avatar" />
-                <button className={styles.btn_follow + " btn"} ref={btnRef} onClick={_onClickFollow}>Follow</button>
+                <button className={followed ? styles.btn_followed : styles.btn_follow} id='btn' onClick={_onClickFollow}>
+                    {followed ? "Followed" : "Follow"}
+                </button>
                 <div className={"d-flex align-items-center " + styles.profile_inner_description}>
                     <div className={"d-flex col align-items-center " + styles.description_inner}>
                         <div className={"text-center " + styles.des_left}>
@@ -137,7 +153,6 @@ export default function UserProfile() {
                     </div>
                 </div>
             </div>
-            )
         </div>
     )
 }

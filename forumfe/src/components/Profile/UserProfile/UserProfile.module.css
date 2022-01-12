@@ -128,11 +128,27 @@
 .btn_follow{
     position: absolute;
     right: 20px ;
-    top: 240px;
+    top: 245px;
     font-weight: 600;
     font-size: 18px;
     background-color: #00c7d9;
     color: #fff;
     padding: 4px 20px;
     box-shadow: 0px 0px 5px 1px #000;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn_followed{
+    position: absolute;
+    right: 20px ;
+    top: 245px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: rgba(13, 139, 61, 0.726);
+    color: #fff;
+    padding: 4px 20px;
+    box-shadow: 0px 0px 5px 1px #000;
+    border: none;
+    border-radius: 4px;
 }
