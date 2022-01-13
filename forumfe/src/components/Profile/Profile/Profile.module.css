@@ -26,15 +26,16 @@ p, a, h2, h3, h4, h5, div, span {
 }
 
 .profile_inner_avatar{
-    width: 124px;
-    height: 124px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     position: absolute;
     top: 220px;
     left: 50%;
     border: 12px solid #fff;
     border-radius: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+    background-color: #fff;
 }
 
 .profile_inner_description{
@@ -93,4 +94,38 @@ p, a, h2, h3, h4, h5, div, span {
     height: 20px;
     width: 2px;
     background-color: #e1e1e1;
+}
+
+label[for='avatar']{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(15, 166, 180);
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(25px, 8px)
+}
+
+label[for='avatar'] > i{
+    color: #fff;
+}
+
+label[for='cover']{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 30px;
+    background-color: rgb(15, 166, 180);
+    border-radius: 4px;
+    transform: translate(25px, 8px);
+    top: 55%;
+}
+
+label[for='cover'] > i{
+    color: #fff;
 }

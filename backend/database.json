@@ -13,13 +13,13 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Administrator",
-      "lastName": "is me",
+      "firstName": "Tsunade",
+      "lastName": "綱手",
       "username": "admin",
       "email": "admin@gmail.com",
       "password": "123",
-      "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/1/cover-image/5f6d2c93c75db-bp-cover-image.jpg",
-      "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg",
+      "cover": "http://localhost:3000/uploads/cover1642093423476.jpg",
+      "avatar": "http://localhost:3000/uploads/avatar1642093284017.jpg",
       "gender": "female",
       "socialMedia": {
         "facebook": "https://facebook.com.vn/minhdat.dongoc",
@@ -28,9 +28,9 @@
       },
       "followings_id": [
         7,
-        6,
         8,
-        5
+        5,
+        6
       ],
       "introduce": "Hello ! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213-1",
@@ -38,7 +38,7 @@
       "address": "Long Islands, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1642063349498
+      "modifiedAt": 1642093423517
     },
     {
       "id": 2,

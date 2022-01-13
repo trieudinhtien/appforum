@@ -19,12 +19,14 @@ export default function Settings() {
                     </div>
                 </div>
             </div>
+
             <div className={styles.main_right + " col mr-0"}>
                 <Routes>
                     <Route path="password" element={<ChangePassword />} />
                     <Route path="profile" element={<ChangeProfile />} />
                 </Routes>
             </div>
+
         </div>
     )
 }

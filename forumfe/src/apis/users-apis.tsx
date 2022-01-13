@@ -79,3 +79,43 @@ export function changeFollowings(id: number, token: string, followingsID: number
         .catch(err => console.log(err))
 }
 
+export function saveImg(data: FormData) {
+    return axios({
+        method: "POST",
+        url: "http://localhost:3000/upload-file",
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+        data: data
+    }).then(res => res.data)
+        .catch(err => err.data)
+}
+
+export function changeAvatar(id: number, token: string, avatar: string) {
+    return axios({
+        method: "PATCH",
+        url: `http://localhost:3000/users/${id}`,
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        data: {
+            avatar: avatar
+        }
+    }).then(res => res.data)
+        .catch(err => err.data)
+}
+
+export function changeCover(id: number, token: string, cover: string) {
+    return axios({
+        method: "PATCH",
+        url: `http://localhost:3000/users/${id}`,
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        data: {
+            cover: cover
+        }
+    }).then(res => res.data)
+        .catch(err => err.data)
+}
+
