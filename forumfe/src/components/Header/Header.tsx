@@ -39,9 +39,9 @@ const Header: FC<{}> = () => {
         <nav className={styles.navigation}>
           <ul className={styles.menu_main}>
             <li className="menu-main-item">
-              <a className={styles.menu_main_item_link} href="#">
+              <Link className={styles.menu_main_item_link} to="/home">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="menu-main-item">
               <a className={styles.menu_main_item_link} href="#">

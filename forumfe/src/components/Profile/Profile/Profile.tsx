@@ -8,7 +8,6 @@ export default function Profile() {
 
     const context = useContext(UserContext)
     const user = context.user
-    console.log("context", context)
 
     return (
         <AuthGuard moveTo='/login'>

@@ -3,13 +3,13 @@ import { Button,  Form } from 'react-bootstrap'
 import { callApiRegister } from '../../../apis/api'
 import styled from './register.module.css'
 import { useNavigate } from 'react-router-dom';
-import {v4} from 'uuid'
+// import {v4} from 'uuid'
 
 
 
 export const Register = () => {
     let navigate = useNavigate();
-    const uuidv4 = v4();
+    // const uuidv4 = v4();
     const [formData, setDataForm] = useState<User>({
         "id": 0,
         "firstName": "",
