@@ -40,7 +40,7 @@ const MyPostItem: FC<{ post: Post }> = ({ post }) => {
       </div>
       <div>{post.likes}</div>
       <div>{post.comments.length}</div>
-      <div>{post.tags.join(", ")}</div>
+      <div>{post.tags.join(" ")}</div>
       <div className={styles.actions}>
         <button>Edit</button>
         <button onClick={handleDelete}>Delete</button>

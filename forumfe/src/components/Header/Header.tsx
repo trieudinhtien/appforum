@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Header: FC<{}> = () => {
 
   const [turnSet, setTurnSet] = useState<boolean>(false)
-  console.log(turnSet)
+  // console.log(turnSet)
   let navigate = useNavigate();
 
   const context = useContext(UserContext)

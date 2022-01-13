@@ -5,10 +5,10 @@ import { UserContext } from '../../../context/UserContext'
 export const Logout = () => {
 
     const context = useContext(UserContext)
-    console.log(context)
+    // console.log(context)
     
     const onLogout = () => {
-        console.log("logout")
+        // console.log("logout")
         localStorage.removeItem('user');
         context.setUser({
             "id": 0,
