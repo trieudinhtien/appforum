@@ -27,6 +27,21 @@ export const getPostById = (id: number): Promise<Post> =>{
   }).then((res: AxiosResponse<Post>) => res.data);
 }
 
+export const editPost = (token: string, id: number, post: {title: string, content: string, tags: string[]}): Promise<Post> => {
+  return axios({
+    method: "PATCH",
+    url: `http://localhost:3000/posts/${id}`,
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+    data: {
+      title: post.title,
+      content: post.content,
+      tags: post.tags,
+    }
+  }).then((res: AxiosResponse<Post>) => res.data);
+};
+
 export const deletePost = (token: string, id: number): Promise<Post> => {
   return axios({
     method: "DELETE",

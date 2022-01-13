@@ -42,7 +42,7 @@ const MyPostItem: FC<{ post: Post }> = ({ post }) => {
       <div>{post.comments.length}</div>
       <div>{post.tags.join(" ")}</div>
       <div className={styles.actions}>
-        <button>Edit</button>
+        <button onClick={() => navigate(`/myposts/edit/${post.id}`)}>Edit</button>
         <button onClick={handleDelete}>Delete</button>
       </div>
     </div>

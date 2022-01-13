@@ -4,21 +4,21 @@ import Navigation from "./Navigation/Navigation"
 import { UserContext } from '../../../context/UserContext'
 import { getAllUser } from '../../../apis/users-apis'
 import { AuthGuard } from "../../auth/guard/AuthGuard"
+import { getPosts } from '../../../apis/posts-apis'
 
 export default function Profile() {
 
     const context = useContext(UserContext)
     const user = context.user
     const [followers, setFollowers] = useState(0)
-    console.log(user);
-    
+    const [posts, setPosts] = useState(0)
 
     useEffect(() => {
         let count = 0
         getAllUser(user.token)
             .then((res: User[]) => {
                 res.forEach((eachUser: User) => {
-                    if(eachUser.followings_id.includes(user.id)){
+                    if (eachUser.followings_id.includes(user.id)) {
                         count++
                     }
                 })
@@ -26,6 +26,18 @@ export default function Profile() {
             })
     }, [])
 
+    useEffect(() => {
+        getPosts()
+            .then((posts: Post[]) => {
+                let count  = 0
+                posts.forEach((post: Post) => {
+                    if(post.user_id === user.id) {
+                        count++
+                    }
+                })
+                setPosts(count)
+            })
+    }, [])
 
     return (
         <AuthGuard moveTo='/login'>
@@ -36,7 +48,7 @@ export default function Profile() {
                     <div className={"d-flex align-items-center " + styles.profile_inner_description}>
                         <div className={"d-flex col align-items-center " + styles.description_inner}>
                             <div className={"text-center " + styles.des_left}>
-                                <p className={"m-0"}>10</p>
+                                <p className={"m-0"}>{posts}</p>
                                 <p className={"text-muted"}>POSTS</p>
                             </div>
                             <div className={styles.divide}></div>
@@ -59,10 +71,6 @@ export default function Profile() {
                                 {user.email}
                             </div>
                         </div>
-                        {/* <div className={styles.divide}></div>
-                        <div className={"text-center " + styles.des_left}>
-                            <p className={"m-0"}>{followers}</p>
-                            <p className={"text-muted"}>FOLLOWERS</p> */}
                         <div className={"text-center col d-flex justify-content-center " + styles.description_inner}>
                             <a className={styles.des_social} href={user.socialMedia?.facebook ? user.socialMedia.facebook : "#"} style={{ backgroundColor: '#3763d2' }}>
                                 <i className="fab fa-facebook-square"></i>
