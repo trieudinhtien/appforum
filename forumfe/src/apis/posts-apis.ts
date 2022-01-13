@@ -17,7 +17,15 @@ export const getPosts = (): Promise<Post[]> => {
     .then((res: AxiosResponse<Post[]>) => res.data);
 };
 
-// export const getPostByUserId = (): =>
+export const getPostById = (id: number): Promise<Post> =>{
+  return axios({
+    method: "GET",
+    url: `http://localhost:3000/posts/${id}`,
+    // headers: {
+    //   authorization: `Bearer ${token}`,
+    // },
+  }).then((res: AxiosResponse<Post>) => res.data);
+}
 
 export const deletePost = (token: string, id: number): Promise<Post> => {
   return axios({

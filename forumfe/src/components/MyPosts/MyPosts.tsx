@@ -16,6 +16,7 @@ const MyPosts: FC<{}> = () => {
   const [choice, setChoice] = useState<number>(-1);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [currentPosts, setCurrentPosts] = useState<Post[]>([]);
+  const amount = 5;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,8 +48,9 @@ const MyPosts: FC<{}> = () => {
   }, []);
 
   useEffect(() => {
-    const amount = 5;
-    const postList = [...posts].reverse().filter((item: Post, index: number) => {
+    console.log('change');
+
+    const postList = [...postContext.posts].reverse().filter((item: Post, index: number) => {
       if (
         index >= amount * (currentPage - 1) &&
         index <= amount * currentPage - 1
@@ -154,7 +156,9 @@ const MyPosts: FC<{}> = () => {
         </div>
         <MyPostPagination
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
+          setCurrentPage={setCurrentPage} 
+          maxPage={postContext.posts.length}
+          amount={amount}
         />
       </div>
     </AuthGuard>

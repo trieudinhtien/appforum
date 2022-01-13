@@ -4,8 +4,10 @@
 .footer {
   background-color: #fff;
   /* margin-top: 200px; */
-  padding: 82px 380px 94px 380px;
+  padding: 82px 25% 94px 25%;
   cursor: pointer;
+  /* width: 1184px;
+  margin: 0 auto; */
 }
 
 .content_grid {
