@@ -34,16 +34,6 @@ const CreatePost: FC<{}> = () => {
     editor: "",
   });
 
-  const [posts, setPosts] = useState<Post[]>();
-
-  const checkTitle = (title: string): boolean => {
-    let check: boolean = false;
-    posts?.forEach((item: Post) => {
-      if (title === item.title) check = true;
-    });
-    return check;
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const obj = {
@@ -96,7 +86,7 @@ const CreatePost: FC<{}> = () => {
             user_id: userContext.user.id,
             title: form.title,
             createdAt: moment().format(),
-            likes: 7,
+            likes: [],
             comments: [],
             tags: form.tags.trim().split(" "),
             img: "",
@@ -126,11 +116,17 @@ const CreatePost: FC<{}> = () => {
     navigate(-1);
   };
 
-  useEffect(() => {
-    getPosts()
-      .then((data) => setPosts(data))
-      .catch((error: Error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   getPosts()
+  //     .then((data) => {
+  //       const newData = data.filter((item: Post) => {
+  //         if (item.user_id === userContext.user.id) return item;
+  //         return 0;
+  //       });
+  //       postContext.setPosts(newData);
+  //     })
+  //     .catch((err: Error) => console.log(err));
+  // }, []);
 
   useEffect(() => {
     if (params.id) {

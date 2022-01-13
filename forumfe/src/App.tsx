@@ -12,6 +12,7 @@ import UserProfile from './components/Profile/UserProfile/UserProfile'
 import MyPostDetail from "./components/MyPosts/MyPostDetail/MyPostDetail";
 
 function App() {
+  
   return (
     <BrowserRouter>
       <Header />
