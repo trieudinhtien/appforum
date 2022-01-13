@@ -57,9 +57,7 @@ const CreatePost: FC<{}> = () => {
     setError(obj);
 
     if (obj.title === "" && obj.editor === "" && obj.tags === "") {
-      if (checkTitle(form.title)) {
-        alert("Title has existed! Try again!");
-      } else if (userContext.user.token && !checkTitle(form.title)) {
+      if (userContext.user.token) {
         if (params.id) {
           editPost(userContext.user.token, Number(params.id), {
             title: form.title,
