@@ -119,7 +119,6 @@ const Header: FC<{}> = () => {
               </div>
             </div> : ""
         }
-
         {/* Login */}
         {
           localStorage.getItem('user') ?

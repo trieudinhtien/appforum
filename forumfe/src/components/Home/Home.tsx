@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { getPost } from '../../apis/home-apies';
 import styles from "./Home.module.css"
+import { Tags } from './tags/Tags';
 
 export default function Home() {
-
     const [post, setpost] = useState<Post[]>([]);
     const [result, setresult] = useState<Post[]>([]);
     const [page, setPage] = useState(1)
+    const [filterTags, setTags] = useState<Post[]>([]);
+
+
     useEffect(() => {
         getPost().then(data => {
             setpost(data);
             setresult(data.slice(0, 6));
         })
             .catch(err => console.error(err))
-
     }, [])
     useEffect(() => {
         setresult(post.slice(page * 6 - 6, page * 6))
         console.log(page);
-        
     }, [page])
 
     const _onClickPrevious = () => {
@@ -33,14 +34,24 @@ export default function Home() {
     }
 
     const _onChangeSearch = (value: string) => {
-
+        setTags(filterTags.filter(item => {
+            return item.title.toLowerCase().includes(value)
+        }))
         setresult(post.filter(item => {
             return item.title.toLowerCase().includes(value)
 
         }).slice(page * 6 - 6, page * 6))
         setPage(1);
+    }
 
-
+    const onClickTags = (item: string): void => {
+        console.log(item)
+        let clonePost = [...post]
+        const a = clonePost.filter((element) => {
+            return element.tags.includes(item)
+        })
+        setTags(a)
+        setPage(1);
     }
     // useEffect(() => {
     //     post && setpost(post)
@@ -66,13 +77,12 @@ export default function Home() {
                             <label htmlFor="search" className={styles.labeltop}>Search Post</label>
                             <input type="text" onChange={e => _onChangeSearch(e.target.value)} placeholder='Search...' id='search' required />
                             <button className={styles.button_search}><i className={"fas fa-search " + styles.search_icon}></i></button>
-
                         </div>
                     </div>
                 </div>
             </div>
             <div className={styles.post}>
-
+                <Tags post={post} onClickTags={onClickTags} />
                 <div className={styles.post_title}>
                     <div>POSTS</div>
                     <div>LIKES</div>
@@ -80,19 +90,20 @@ export default function Home() {
                     <div>TAGS</div>
                 </div>
                 {
-                    result?.map(item => (
-                        <div className={styles.post_item} onClick={()=>alert(item.id)} key={item.id}>
-                            <div>
-                                <div className={styles.post_item_title}>{item.title}</div>
-                                <div className={styles.post_item_user}>Created 5 hours ago</div>
+                    (filterTags.length !== 0 ? filterTags :
+                        result)?.map(item => (
+                            <div className={styles.post_item} onClick={() => alert(item.id)} key={item.id}>
+                                <div>
+                                    <div className={styles.post_item_title}>{item.title}</div>
+                                    <div className={styles.post_item_user}>Created 5 hours ago</div>
+                                </div>
+                                <div>{item.likes}</div>
+                                <div>{item.comments?.length}</div>
+                                <div>{item.tags?.map(tag => (
+                                    tag + " "
+                                ))}</div>
                             </div>
-                            <div>{item.likes}</div>
-                            <div>{item.comments?.length}</div>
-                            <div>{item.tags?.map(tag => (
-                                tag + " "
-                            ))}</div>
-                        </div>
-                    ))
+                        ))
                 }
                 <div className={styles.pagination}>
                     <ul className="pagination m-0">
@@ -100,12 +111,14 @@ export default function Home() {
                         <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
                     </ul>
                     <p>
-                    Showing <span>{result.length === 0 ? "" : `${(page - 1) * 6 + 1} -`}</span>
-                    <span> {page * 6 < result.length ? page * 6 : post.length} </span>
-                    out of {post.length} results
+                        Showing <span>{result.length === 0 ? "" : `${(page - 1) * 6 + 1} -`}</span>
+                        <span> {page * 6 < result.length ? page * 6 : post.length} </span>
+                        out of {post.length} results
                     </p>
                 </div>
             </div>
+
+
         </div>
         // </AuthGuard>
 
