@@ -1,21 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { UserContextProvider } from './context/UserContext';
+import { UserContextProvider } from "./context/UserContext";
+import { PostContextProvider } from "./context/PostContext";
 import AuthContextProvider from './context/AuthContext';
-import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <UserContextProvider>
       <AuthContextProvider>
-        <App />
+        <PostContextProvider>
+          <App />
+        </PostContextProvider>
       </AuthContextProvider>
     </UserContextProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

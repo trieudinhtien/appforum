@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap'
 import { UserContext } from '../../../context/UserContext'
-
+import { useNavigate } from 'react-router-dom';
 export const Logout = () => {
-
+    let navigate = useNavigate();
     const context = useContext(UserContext)
     console.log(context)
     
@@ -35,6 +35,7 @@ export const Logout = () => {
             "modifiedAt": 0,
             "token": ""
         })
+        navigate('/home')
     }
     return (
         <div>

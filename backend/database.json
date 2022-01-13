@@ -27,13 +27,13 @@
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
       "followings_id": [
+        7,
         2,
+        8,
         3,
         4,
-        5,
         6,
-        7,
-        8
+        5
       ],
       "introduce": "Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213",
@@ -41,7 +41,7 @@
       "address": "Long Island, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1641897299041
+      "modifiedAt": 1642014943642
     },
     {
       "id": 2,
@@ -147,7 +147,7 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings": [
+      "followings_id": [
         1,
         2,
         4,
@@ -176,7 +176,7 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings": [
+      "followings_id": [
         1,
         2,
         3,
@@ -205,7 +205,7 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings": [
+      "followings_id": [
         1,
         2,
         3
@@ -233,7 +233,7 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings": [
+      "followings_id": [
         1,
         2,
         3
@@ -247,12 +247,12 @@
       "modifiedAt": 1641897299041
     },
     {
-      "id": null,
+      "id": 1642000945490,
       "firstName": "",
       "lastName": "",
-      "username": "test456",
-      "email": "test456@gmail.com",
-      "password": "123",
+      "username": "minhdat",
+      "email": "minhdat.dongoc@gmail.com",
+      "password": "12345",
       "cover": "",
       "avatar": "",
       "gender": "",
@@ -263,47 +263,122 @@
         "youtube": ""
       },
       "introduce": "",
-      "phone": "0914799597",
+      "phone": "0964646631",
       "birthday": "",
-      "address": "125 nguyen trai",
+      "address": "15D ngách 17 ngõ 55 Chinh Kinh",
       "status": false,
-      "createdAt": 1641974701042,
-      "modifiedAt": 1641974701042,
+      "createdAt": 0,
+      "modifiedAt": 1642002870400,
       "token": ""
     }
   ],
   "posts": [
     {
-      "id": 123,
-      "user_id": 123,
-      "title": "Post 1",
-      "createdAt": "",
-      "likes": 3,
-      "comments": [
-        {
-          "id": 1,
-          "user_id": 123,
-          "comment": "ok",
-          "createdAt": ""
-        },
-        {
-          "id": 2,
-          "user_id": 124,
-          "comment": "ok nice",
-          "createdAt": ""
-        }
-      ],
+      "id": 1641973143162,
+      "user_id": 1641973143162,
+      "title": "new3",
+      "createdAt": "2022-01-01T14:39:03+07:00",
+      "likes": 7,
+      "comments": [],
       "tags": [
-        "nice",
-        "amazing"
+        "123",
+        "adas"
       ],
       "img": "",
-      "content": "Loremmmmmmmmmmmmmmmmm"
+      "content": "adasdad",
+      "modifiedAt": 1641973143179
     },
     {
-      "id": 684,
+      "id": 1641973496313,
+      "user_id": 1641973496313,
+      "title": "gcnew4",
+      "createdAt": "2022-01-12T14:44:56+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "good",
+        "nice"
+      ],
+      "img": "",
+      "content": "1234",
+      "modifiedAt": 1641973496317
+    },
+    {
+      "id": 1641974645136,
+      "user_id": 1641974645136,
+      "title": "gnew 5",
+      "createdAt": "2022-01-10T15:04:05+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "a",
+        "nh",
+        "g"
+      ],
+      "img": "",
+      "content": "124",
+      "modifiedAt": 1641974645142
+    },
+    {
+      "id": 1641974781414,
+      "user_id": 1641974781414,
+      "title": "1new6",
+      "createdAt": "2022-01-12T15:06:21+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "6"
+      ],
+      "img": "",
+      "content": "6",
+      "modifiedAt": 1641974781431
+    },
+    {
+      "id": 1641974822008,
+      "user_id": 1641974822008,
+      "title": "anew7",
+      "createdAt": "2022-01-07T15:07:02+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "7"
+      ],
+      "img": "",
+      "content": "7",
+      "modifiedAt": 1641974822016
+    },
+    {
+      "id": 1641974874680,
+      "user_id": 1641974874680,
+      "title": "new8",
+      "createdAt": "2022-01-12T15:07:54+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "8"
+      ],
+      "img": "",
+      "content": "8",
+      "modifiedAt": 1641974874702
+    },
+    {
+      "id": 1641974881088,
+      "user_id": 1641974881088,
+      "title": "bnew9",
+      "createdAt": "2022-01-09T15:08:01+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "9"
+      ],
+      "img": "",
+      "content": "9",
+      "modifiedAt": 1641974881103
+    },
+    {
+      "id": 1,
       "user_id": 234,
-      "title": "Post 2",
+      "title": "Post 3",
       "createdAt": "",
       "likes": 2,
       "comments": [
@@ -321,9 +396,149 @@
       "content": "Loremmmmmmmmmmmmmmmmm  2"
     },
     {
-      "createdAt": 1641887131009,
-      "modifiedAt": 1641887131009,
-      "id": 685
+      "id": 2,
+      "user_id": 234,
+      "title": "Post 4",
+      "createdAt": "",
+      "likes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "user_id": 123,
+          "comment": "ok",
+          "createdAt": ""
+        }
+      ],
+      "tags": [
+        "nice"
+      ],
+      "img": "",
+      "content": "Loremmmmmmmmmmmmmmmmm  2"
+    },
+    {
+      "id": 3,
+      "user_id": 234,
+      "title": "Post 5",
+      "createdAt": "",
+      "likes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "user_id": 123,
+          "comment": "ok",
+          "createdAt": ""
+        }
+      ],
+      "tags": [
+        "nice"
+      ],
+      "img": "",
+      "content": "Loremmmmmmmmmmmmmmmmm  2"
+    },
+    {
+      "id": 4,
+      "user_id": 234,
+      "title": "Post 6",
+      "createdAt": "",
+      "likes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "user_id": 123,
+          "comment": "ok",
+          "createdAt": ""
+        }
+      ],
+      "tags": [
+        "nice"
+      ],
+      "img": "",
+      "content": "Loremmmmmmmmmmmmmmmmm  2"
+    },
+    {
+      "id": 5,
+      "user_id": 234,
+      "title": "Post 7",
+      "createdAt": "",
+      "likes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "user_id": 123,
+          "comment": "ok",
+          "createdAt": ""
+        }
+      ],
+      "tags": [
+        "nice"
+      ],
+      "img": "",
+      "content": "Loremmmmmmmmmmmmmmmmm  2"
+    },
+    {
+      "id": 6,
+      "user_id": 234,
+      "title": "Post 8",
+      "createdAt": "",
+      "likes": 2,
+      "comments": [
+        {
+          "id": 1,
+          "user_id": 123,
+          "comment": "ok",
+          "createdAt": ""
+        }
+      ],
+      "tags": [
+        "nice"
+      ],
+      "img": "",
+      "content": "Loremmmmmmmmmmmmmmmmm  2"
+    },
+    {
+      "id": 1641995152176,
+      "user_id": 1641995152176,
+      "title": "new10",
+      "createdAt": "2022-01-12T20:45:52+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "123",
+        "456"
+      ],
+      "img": "",
+      "content": "123",
+      "modifiedAt": 1641995152180
+    },
+    {
+      "id": 1641996386432,
+      "user_id": 1641996386432,
+      "title": "new11",
+      "createdAt": "2022-01-12T21:06:26+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "hay",
+        "tuyetzoi"
+      ],
+      "img": "",
+      "content": "111",
+      "modifiedAt": 1641996386437
+    },
+    {
+      "id": 1641996485760,
+      "user_id": 1641996485760,
+      "title": "new12",
+      "createdAt": "2022-01-12T21:08:05+07:00",
+      "likes": 7,
+      "comments": [],
+      "tags": [
+        "moitao12",
+        "@@"
+      ],
+      "img": "",
+      "content": "12",
+      "modifiedAt": 1641996485765
     }
   ]
 }

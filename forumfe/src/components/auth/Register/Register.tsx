@@ -3,7 +3,7 @@ import { Button,  Form } from 'react-bootstrap'
 import { callApiRegister } from '../../../apis/api'
 import styled from './register.module.css'
 import { useNavigate } from 'react-router-dom';
-// import {v4} from 'uuid'
+import {v4} from 'uuid'
 
 
 

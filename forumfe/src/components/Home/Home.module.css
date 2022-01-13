@@ -10,7 +10,7 @@
 }
 .module {
   margin: auto;
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 h1,
 h2,
@@ -69,20 +69,132 @@ h6 {
   font-weight: 700;
   text-align: center;
   cursor: pointer;
-  padding: 0.5rem 0.7rem;
-  padding-top: 0.7rem;
+  padding: 0.65rem 0.8rem;
+  padding-top: 0.73rem;
   margin-left: 1rem;
   border: none;
+  /* margin-top: 0.5rem; */
+}
+.search_icon{
+  color: #fff;
 }
 .labeltop {
   display: block;
+  font-size: 1.3rem;
 }
 
 input {
   width: 90%;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: solid 1px rgb(124, 124, 124);
+  padding-left: 1rem;
 }
 .blank {
   padding-left: 5.5rem;
   padding-top: 1.5rem;
   padding-bottom: 2.5rem;
+  margin-bottom: 2rem;
+
+}
+.post_title {
+  display: flex;
+  margin-top: 50px;
+  padding: 0 28px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3e3f5e;
+  line-height: 1em;
+  margin-bottom: 10px;
+}
+.post_title > div:nth-child(1) {
+  width: 60%;
+  margin-right: 2rem;
+  padding-right: 2rem;
+}
+
+.post_title > div:nth-child(2) {
+  width: 10%;
+  text-align: center;
+}
+
+.post_title > div:nth-child(3) {
+  width: 10%;
+  text-align: center;
+  padding-left: 1rem;
+}
+
+.post_title > div:nth-child(4) {
+  width: 20%;
+  text-align: center;
+  padding-left: 1.9rem;
+}
+
+.post_item {
+  display: flex;
+  height: 70px;
+  align-items: center;
+}
+.post_item:hover{
+  cursor: pointer;
+}
+.post_item > div:nth-child(1) {
+  width: 60%;
+  line-height: 1em;
+  color: #3e3f5e;
+}
+
+.post_item_title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.post_item_user {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.post_item > div:nth-child(2) {
+  width: 10%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.post_item > div:nth-child(3) {
+  width: 10%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.post_item > div:nth-child(4) {
+  width: 20%;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.post{
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  
+}
+
+.pagination{
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination > p{
+  color: rgb(143, 145, 172);
+  font-weight: 600;
+  margin: 0;
+}
+
+.pagination span{
+  color: #00c7d9
 }
