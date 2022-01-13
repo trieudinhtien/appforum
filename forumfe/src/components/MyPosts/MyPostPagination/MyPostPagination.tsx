@@ -5,14 +5,14 @@ import styles from "./MyPostPagination.module.css";
 interface MyPostPaginationProps {
   currentPage: number;
   setCurrentPage(currentPage: number): void;
-  maxPage: number;
+  max: number;
   amount: number;
 }
 
 const MyPostPagination: FC<MyPostPaginationProps> = ({
   currentPage,
   setCurrentPage,
-  maxPage,
+  max,
   amount,
 }) => {
   const [pages, setPages] = useState<number[]>([1, 2, 3, 4, 5, 6]);
@@ -30,7 +30,7 @@ const MyPostPagination: FC<MyPostPaginationProps> = ({
   };
 
   const handleNext = (): void => {
-    if (currentPage < Math.floor(maxPage / amount) + 1) {
+    if (currentPage < Math.floor(max / amount) + 1) {
       setCurrentPage(currentPage + 1);
       if (currentPage > Math.max(...pages) - 1) {
         const pageList = [...pages];
@@ -50,27 +50,9 @@ const MyPostPagination: FC<MyPostPaginationProps> = ({
       <li onClick={handleBack}>
         <a className={`page-link`}>{"<"}</a>
       </li>
-      {/* <li>
-        <a className={`page-link`}>{1}</a>
-      </li>
-      <li>
-        <a className={`page-link ${styles.active}`}>{2}</a>
-      </li>
-      <li>
-        <a className={`page-link`} onClick={e => handleSetCurrentPage(3)}>{3}</a>
-      </li>
-      <li>
-        <a className={`page-link`}>{4}</a>
-      </li>
-      <li>
-        <a className={`page-link`}>{5}</a>
-      </li>
-      <li>
-        <a className={`page-link`}>{6}</a>
-      </li> */}
       {pages.map((item: number) => {
         return (
-          <li key={item}>
+          <li key={item} className="d-none">
             <a
               className={
                 item === currentPage

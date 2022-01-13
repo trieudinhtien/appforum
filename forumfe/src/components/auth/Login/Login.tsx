@@ -19,7 +19,7 @@ const Login: FC<{}> = () => {
     const context = useContext(UserContext)
 
     // const context = useContext(AuthContext);
-    console.log("context", context.user)
+    // console.log("context", context.user)
 
     const [formData, setFormData] = useState<Ilogin>({
         email: "",

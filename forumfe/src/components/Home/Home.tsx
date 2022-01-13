@@ -86,7 +86,7 @@ export default function Home() {
                                 <div className={styles.post_item_title}>{item.title}</div>
                                 <div className={styles.post_item_user}>Created 5 hours ago</div>
                             </div>
-                            <div>{item.likes}</div>
+                            <div>{item.likes.length}</div>
                             <div>{item.comments?.length}</div>
                             <div>{item.tags?.map(tag => (
                                 tag + " "

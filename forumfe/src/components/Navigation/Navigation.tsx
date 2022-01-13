@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
 import styles from "./Navigation.module.css";
 
 const Navigation: FC<{}> = () => {
-  return (
+  const userContext = useContext(UserContext);
+  return userContext.user.token ? (
     <div className={styles.navigation}>
       <ul className={styles.navigation_list}>
         <li>
@@ -63,7 +65,7 @@ const Navigation: FC<{}> = () => {
         </li>
       </ul>
     </div>
-  );
+  ) : <></>;
 };
 
 export default Navigation;

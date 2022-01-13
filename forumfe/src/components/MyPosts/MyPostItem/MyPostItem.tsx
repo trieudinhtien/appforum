@@ -38,7 +38,7 @@ const MyPostItem: FC<{ post: Post }> = ({ post }) => {
           Created {moment(post.createdAt).fromNow()}
         </div>
       </div>
-      <div>{post.likes}</div>
+      <div>{post.likes.length}</div>
       <div>{post.comments.length}</div>
       <div>{post.tags.join(" ")}</div>
       <div className={styles.actions}>
