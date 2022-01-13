@@ -17,7 +17,7 @@
       "lastName": "is me",
       "username": "admin",
       "email": "admin@gmail.com",
-      "password": "1234",
+      "password": "123",
       "cover": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/buddypress/members/1/cover-image/5f6d2c93c75db-bp-cover-image.jpg",
       "avatar": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg",
       "gender": "female",
@@ -27,12 +27,6 @@
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
       "followings_id": [
-        2,
-        8,
-        3,
-        6,
-        7,
-        4,
         5
       ],
       "introduce": "Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
@@ -41,7 +35,7 @@
       "address": "Long Island, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1642043018482
+      "modifiedAt": 1642050136383
     },
     {
       "id": 2,

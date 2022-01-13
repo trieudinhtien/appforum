@@ -1,9 +1,10 @@
 import styles from './UserProfile.module.css'
-import { useRef, useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getUserById, getAllUser, changeFollowings } from '../../../apis/users-apis'
 import { UserContext } from '../../../context/UserContext'
 import moment from 'moment'
+import { getPosts } from '../../../apis/posts-apis'
 
 export default function UserProfile() {
 
@@ -12,6 +13,23 @@ export default function UserProfile() {
     const { id } = useParams()
     const [followers, setFollowers] = useState(0)
     const [followed, setFollowed] = useState(false)
+    const [posts, setPosts] = useState([] as Post[])
+
+    useEffect(() => {
+        getPosts()
+            .then((listOfPosts: Post[]) => {
+                const postsOfUser = [] as Post[]
+                listOfPosts.forEach((post: Post) => {
+                    if(post.id === user.id) {
+                        postsOfUser.push(post)
+                    }
+                })
+                setPosts(postsOfUser)
+            })
+            .catch(err => console.log(err))
+    }, [id])
+
+    console.log("posts", posts)
 
     useEffect(() => {
         if (id) {
@@ -55,7 +73,6 @@ export default function UserProfile() {
         }
     }, [followed])
 
-
     const _onClickFollow = () => {
         if (followed) {
             if (id) {
@@ -95,7 +112,7 @@ export default function UserProfile() {
                 <div className={"d-flex align-items-center " + styles.profile_inner_description}>
                     <div className={"d-flex col align-items-center " + styles.description_inner}>
                         <div className={"text-center " + styles.des_left}>
-                            <p className={"m-0"}>10</p>
+                            <p className={"m-0"}>{posts.length}</p>
                             <p className={"text-muted"}>POSTS</p>
                         </div>
                         <div className={styles.divide}></div>
