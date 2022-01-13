@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { getPost } from '../../apis/home-apies';
 import styles from "./Home.module.css"
 import { Tags } from './tags/Tags';
+import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
     const [post, setpost] = useState<Post[]>([]);
     const [result, setresult] = useState<Post[]>([]);
     const [page, setPage] = useState(1)
     const [filterTags, setTags] = useState<Post[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getPost().then(data => {
@@ -30,6 +33,7 @@ export default function Home() {
         if (page < Math.ceil(post.length / 6)) {
             setPage(page + 1)
         }
+
     }
 
     const _onChangeSearch = (value: string) => {
@@ -89,25 +93,24 @@ export default function Home() {
                     <div>TAGS</div>
                 </div>
                 {
-                    (filterTags.length !== 0 ? filterTags :
-                        result)?.map(item => (
-                            <div className={styles.post_item} onClick={() => alert(item.id)} key={item.id}>
+                    filterTags.length !== 0 ? filterTags :
+                        result?.map(item => (
+                            <div className={styles.post_item} onClick={() => navigate(`/post/${item.id}`)} key={item.id}>
                                 <div>
                                     <div className={styles.post_item_title}>{item.title}</div>
-                                    <div className={styles.post_item_user}>Created 5 hours ago</div>
+                                    <div className={styles.post_item_user}>Created {moment(item.createdAt).fromNow()}</div>
+                                    <div>{item.likes}</div>
+                                    <div>{item.comments?.length}</div>
+                                    <div>{item.tags?.map(tag => (
+                                        tag + " "
+                                    ))}</div>
+                                    <div>{item.likes.length}</div>
+                                    <div>{item.comments?.length}</div>
+                                    <div>{item.tags?.map(tag => (
+                                        tag + " "
+                                    ))}</div>
                                 </div>
-                                <div>{item.likes}</div>
-                                <div>{item.comments?.length}</div>
-                                <div>{item.tags?.map(tag => (
-                                    tag + " "
-                                ))}</div>
-                                <div>{item.likes.length}</div>
-                                <div>{item.comments?.length}</div>
-                                <div>{item.tags?.map(tag => (
-                                    tag + " "
-                                ))}</div>
-                            </div>
-                        ))
+                            </div>))
                 }
                 <div className={styles.pagination}>
                     <ul className="pagination m-0">
@@ -115,16 +118,12 @@ export default function Home() {
                         <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
                     </ul>
                     <p>
-                        Showing <span>{result.length === 0 ? "" : `${(page - 1) * 6 + 1} -`}</span>
-                        <span> {page * 6 < result.length ? page * 6 : post.length} </span>
-                        out of {post.length} results
+                        Page <span>{page} </span>
+                        out of {result.length < post.length}
                     </p>
                 </div>
             </div>
-
-
         </div>
         // </AuthGuard>
-
     )
 }
