@@ -1,6 +1,7 @@
 import { NavLink, Routes, Route } from 'react-router-dom'
 import styles from './Settings.module.css'
 import ChangePassword from './ChangePassword/ChangePassword'
+import ChangeProfile from './ChangeProfile/ChangeProfile'
 
 export default function Settings() {
 
@@ -21,6 +22,7 @@ export default function Settings() {
             <div className={styles.main_right + " col mr-0"}>
                 <Routes>
                     <Route path="password" element={<ChangePassword />} />
+                    <Route path="profile" element={<ChangeProfile />} />
                 </Routes>
             </div>
         </div>
