@@ -18,10 +18,12 @@ interface Post{
 
 interface CreatePostForm{
     title: string,
-    content: string,
     tags: string
 }
 
+interface ErrorCreatePostForm extends CreatePostForm{
+    editor: string,
+}
 
 interface User {
     [key: string]: string | undefined | number | null | Object,

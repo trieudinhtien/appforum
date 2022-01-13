@@ -8,8 +8,10 @@ import { PostContext } from "../../context/PostContext";
 import { getPosts } from "../../apis/posts-apis";
 import moment from "moment";
 import { AuthGuard } from "../auth/guard/AuthGuard";
+import { UserContext } from "../../context/UserContext";
 
 const MyPosts: FC<{}> = () => {
+  const userContext = useContext(UserContext);
   const postContext = useContext(PostContext);
   const [form, setForm] = useState<string>("");
   const [posts, setPosts] = useState<Post[]>([]);
@@ -35,29 +37,33 @@ const MyPosts: FC<{}> = () => {
         })
         .catch((err: Error) => console.log(err));
     }
-
   };
 
   useEffect(() => {
     getPosts()
       .then((data) => {
-        setPosts(data);
-        postContext.setPosts(data);
+        const newData = data.filter((item: Post) => {
+          if (item.user_id === userContext.user.id) return item;
+          return 0;
+        });
+
+        setPosts(newData);
+        postContext.setPosts(newData);
       })
       .catch((err: Error) => console.log(err));
   }, []);
 
   useEffect(() => {
-    console.log('change');
-
-    const postList = [...postContext.posts].reverse().filter((item: Post, index: number) => {
-      if (
-        index >= amount * (currentPage - 1) &&
-        index <= amount * currentPage - 1
-      )
-        return item;
-      return 0;
-    });
+    const postList = [...postContext.posts]
+      .reverse()
+      .filter((item: Post, index: number) => {
+        if (
+          index >= amount * (currentPage - 1) &&
+          index <= amount * currentPage - 1
+        )
+          return item;
+        return 0;
+      });
     setCurrentPosts([...postList]);
   }, [postContext.posts, currentPage]);
 
@@ -113,7 +119,7 @@ const MyPosts: FC<{}> = () => {
   }, [choice]);
 
   return (
-    <AuthGuard moveTo='/login'>
+    <AuthGuard moveTo="/login">
       <div className={styles.myposts}>
         <img src={Banner} alt="banner" />
         <img src={MyPost} alt="myposts" />
@@ -156,7 +162,7 @@ const MyPosts: FC<{}> = () => {
         </div>
         <MyPostPagination
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage} 
+          setCurrentPage={setCurrentPage}
           maxPage={postContext.posts.length}
           amount={amount}
         />

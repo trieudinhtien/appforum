@@ -1,28 +1,37 @@
-import { FC, useContext, useEffect, useState } from "react";
+import { FC, useContext, useEffect, useRef, useState } from "react";
 import styles from "./CreatePost.module.css";
 import Banner from "../../images/banners/banner.png";
 import NewPost from "../../images/banners/newpost.png";
 import { useNavigate } from "react-router-dom";
 import { AuthGuard } from "../auth/guard/AuthGuard";
-import { createPost, getPosts } from "../../apis/posts-apis";
+import {
+  createPost,
+  editPost,
+  getPostById,
+  getPosts,
+} from "../../apis/posts-apis";
 import moment from "moment";
 import { UserContext } from "../../context/UserContext";
 import { PostContext } from "../../context/PostContext";
+import JoditEditor from "jodit-react";
+import { useParams } from "react-router-dom";
 
 const CreatePost: FC<{}> = () => {
   const navigate = useNavigate();
+  const [editor, setEditor] = useState<string>("");
   const userContext = useContext(UserContext);
   const postContext = useContext(PostContext);
+  const params = useParams();
+
   const [form, setForm] = useState<CreatePostForm>({
     title: "",
-    content: "",
     tags: "",
   });
 
-  const [error, setError] = useState<CreatePostForm>({
+  const [error, setError] = useState<ErrorCreatePostForm>({
     title: "",
-    content: "",
     tags: "",
+    editor: "",
   });
 
   const [posts, setPosts] = useState<Post[]>();
@@ -39,48 +48,83 @@ const CreatePost: FC<{}> = () => {
     e.preventDefault();
     const obj = {
       title: "",
-      content: "",
       tags: "",
+      editor: "",
     };
     if (form.title === "") obj.title = "Title required!";
-    if (form.content === "") obj.content = "Your post required!";
     if (form.tags === "") obj.tags = "Tags required!";
+    if (editor === "") obj.editor = "Your post required!";
     setError(obj);
 
-    if (obj.title === "" && obj.content === "" && obj.tags === "") {
+    if (obj.title === "" && obj.editor === "" && obj.tags === "") {
       if (checkTitle(form.title)) {
         alert("Title has existed! Try again!");
-      } else if (userContext.user.token && !checkTitle(form.title))
-        createPost(userContext.user.token, {
-          id: Date.now(),
-          user_id: userContext.user.id,
-          title: form.title,
-          createdAt: moment().format(),
-          likes: 7,
-          comments: [],
-          tags: form.tags.trim().split(" "),
-          img: "",
-          content: form.content,
-        })
-          .then((data) => {
-            postContext.setPosts([...postContext.posts, data]);
-            setForm({
-              title: "",
-              content: "",
-              tags: "",
-            });
-            navigate("/myposts");
+      } else if (userContext.user.token && !checkTitle(form.title)) {
+        if (params.id) {
+          editPost(userContext.user.token, Number(params.id), {
+            title: form.title,
+            content: editor,
+            tags: form.tags.trim().split(" "),
           })
-          .catch((error: Error) => console.log(error));
+            .then((data) => {
+              const postList = postContext.posts.map((item: Post) => {
+                if (item.id === Number(params.id)) {
+                  return {
+                    id: item.id,
+                    user_id: item.user_id,
+                    title: form.title,
+                    createdAt: item.createdAt,
+                    likes: item.likes,
+                    comments: item.comments,
+                    tags: form.tags.trim().split(" "),
+                    img: item.img,
+                    content: editor,
+                  };
+                }
+                return item;
+              });
+              postContext.setPosts(postList);
+              setForm({
+                title: "",
+                tags: "",
+              });
+              setEditor("");
+              navigate("/myposts");
+            })
+            .catch((err: Error) => console.log(err));
+        } else {
+          createPost(userContext.user.token, {
+            id: Date.now(),
+            user_id: userContext.user.id,
+            title: form.title,
+            createdAt: moment().format(),
+            likes: 7,
+            comments: [],
+            tags: form.tags.trim().split(" "),
+            img: "",
+            content: editor,
+          })
+            .then((data) => {
+              postContext.setPosts([...postContext.posts, data]);
+              setForm({
+                title: "",
+                tags: "",
+              });
+              setEditor("");
+              navigate("/myposts");
+            })
+            .catch((error: Error) => console.log(error));
+        }
+      }
     }
-  }; 
+  };
 
   const handleCancel = (): void => {
     setForm({
       title: "",
-      content: "",
       tags: "",
     });
+    setEditor("");
     navigate(-1);
   };
 
@@ -90,38 +134,69 @@ const CreatePost: FC<{}> = () => {
       .catch((error: Error) => console.log(error));
   }, []);
 
+  useEffect(() => {
+    if (params.id) {
+      getPostById(Number(params.id))
+        .then((data) => {
+          setEditor(data.content);
+          setForm({
+            title: data.title,
+            tags: data.tags.join(" "),
+          });
+        })
+        .catch((err: Error) => console.log(err));
+    } else {
+      setEditor("");
+      setForm({
+        title: "",
+        tags: "",
+      });
+    }
+  }, [params.id]);
+
   return (
-    <AuthGuard moveTo='/login'>
+    <AuthGuard moveTo="/login">
       <div className={styles.create_post}>
         <img src={Banner} alt="banner" />
         <img src={NewPost} alt="newpost" />
-        <p>Create New Post</p>
+        <p>{params.id ? "Edit your post" : "Create New Post"}</p>
 
         <form className={styles.create_post_form} onSubmit={handleSubmit}>
-          <p>New Post</p>
+          <p>{params.id ? "Your post" : "New Post"}</p>
           <div className={styles.form_group}>
             <label>Post Title</label>
             <input
               type="text"
               placeholder="Enter your title"
-              name=""
+              name="title"
               value={form.title}
               maxLength={60}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
             />
-            {error.title && <label className={styles.error}>{error.title}</label>}
+            {error.title && (
+              <label className={styles.error}>{error.title}</label>
+            )}
           </div>
           <div className={styles.form_group}>
             <label>Your post</label>
-            <textarea
+            {/* <textarea
               placeholder={`Enter your post`}
-              name=""
+              name="content"
               value={form.content}
               maxLength={100}
               onChange={(e) => setForm({ ...form, content: e.target.value })}
+            /> */}
+            <JoditEditor
+              value={editor}
+              onBlur={(newContent) => {
+                setEditor(newContent);
+              }}
+              onChange={(newContent) => {
+                setEditor(newContent);
+              }}
             />
-            {error.content && (
-              <label className={styles.error}>{error.content}</label>
+            {error.editor && (
+              <label className={styles.error}>{error.editor}</label>
             )}
           </div>
           <div className={styles.form_group}>
@@ -129,7 +204,7 @@ const CreatePost: FC<{}> = () => {
             <input
               type="text"
               placeholder={`Enter your tags (Split by " ")`}
-              name=""
+              name="tags"
               value={form.tags}
               maxLength={20}
               onChange={(e) => setForm({ ...form, tags: e.target.value })}
@@ -140,7 +215,7 @@ const CreatePost: FC<{}> = () => {
             <button type="button" onClick={handleCancel}>
               Cancel
             </button>
-            <button type="submit">Create</button>
+            <button type="submit">{params.id ? "Save" : "Create"}</button>
           </div>
         </form>
       </div>
