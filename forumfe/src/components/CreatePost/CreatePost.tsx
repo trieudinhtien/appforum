@@ -53,12 +53,12 @@ const CreatePost: FC<{}> = () => {
       } else if (userContext.user.token && !checkTitle(form.title))
         createPost(userContext.user.token, {
           id: Date.now(),
-          user_id: Date.now(),
+          user_id: userContext.user.id,
           title: form.title,
           createdAt: moment().format(),
           likes: 7,
           comments: [],
-          tags: form.tags.split(" "),
+          tags: form.tags.trim().split(" "),
           img: "",
           content: form.content,
         })
@@ -73,7 +73,7 @@ const CreatePost: FC<{}> = () => {
           })
           .catch((error: Error) => console.log(error));
     }
-  };
+  }; 
 
   const handleCancel = (): void => {
     setForm({
@@ -106,17 +106,18 @@ const CreatePost: FC<{}> = () => {
               placeholder="Enter your title"
               name=""
               value={form.title}
+              maxLength={60}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
             />
             {error.title && <label className={styles.error}>{error.title}</label>}
           </div>
           <div className={styles.form_group}>
             <label>Your post</label>
-            <input
-              type="text"
-              placeholder={`Enter your tags (Split by " ")`}
+            <textarea
+              placeholder={`Enter your post`}
               name=""
               value={form.content}
+              maxLength={100}
               onChange={(e) => setForm({ ...form, content: e.target.value })}
             />
             {error.content && (
@@ -127,9 +128,10 @@ const CreatePost: FC<{}> = () => {
             <label>Tags</label>
             <input
               type="text"
-              placeholder="Enter your tags"
+              placeholder={`Enter your tags (Split by " ")`}
               name=""
               value={form.tags}
+              maxLength={20}
               onChange={(e) => setForm({ ...form, tags: e.target.value })}
             />
             {error.tags && <label className={styles.error}>{error.tags}</label>}
