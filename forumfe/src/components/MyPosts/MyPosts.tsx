@@ -43,13 +43,13 @@ const MyPosts: FC<{}> = () => {
     getPosts()
       .then((data) => {
         const newData = data.filter((item: Post) => {
-          if (item.user_id === userContext.user.id) return item;
+          if (item.author.author_id === userContext.user.id) return item;
           return 0;
         });
 
         setPosts(newData);
         postContext.setPosts(newData);
-      })
+      })                            
       .catch((err: Error) => console.log(err));
   }, []);
 

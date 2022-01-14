@@ -1,7 +1,11 @@
 /// <reference types="react-scripts" />
 interface Post {
   id: number;
-  user_id: number;
+  author: {
+    author_id: number;
+    author_name: string;
+    author_img: string;
+  };
   title: string;
   createdAt: string;
   likes: { id: number; user_id: number; createdAt: string }[];
@@ -10,6 +14,8 @@ interface Post {
     user_id: number;
     comment: string;
     createdAt: string;
+    user_name: string;
+    user_img: string;
   }[];
   tags: string[];
   img: string;
@@ -37,7 +43,8 @@ interface ErrorCreatePostForm extends CreatePostForm {
 interface Notificationn {
   id: number;
   type: string;
-  user_id: number;
+  user_name: string;
+  user_img: string;
   createdAt: string;
 }
 

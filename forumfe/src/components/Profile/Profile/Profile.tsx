@@ -66,7 +66,7 @@ export default function Profile() {
             .then((posts: Post[]) => {
                 let count = 0
                 posts.forEach((post: Post) => {
-                    if (post.user_id === user.id) {
+                    if(post.author.author_id === user.id) {
                         count++
                     }
                 })

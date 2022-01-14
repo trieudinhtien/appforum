@@ -59,7 +59,7 @@ const CreatePost: FC<{}> = () => {
                 if (item.id === Number(params.id)) {
                   return {
                     id: item.id,
-                    user_id: item.user_id,
+                    author: item.author,
                     title: form.title,
                     createdAt: item.createdAt,
                     likes: item.likes,
@@ -83,7 +83,11 @@ const CreatePost: FC<{}> = () => {
         } else {
           createPost(userContext.user.token, {
             id: Date.now(),
-            user_id: userContext.user.id,
+            author: {
+              author_id: userContext.user.id,
+              author_name: userContext.user.username,
+              author_img: userContext.user.avatar,
+            },
             title: form.title,
             createdAt: moment().format(),
             likes: [],
