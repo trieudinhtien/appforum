@@ -26,3 +26,8 @@ code {
 .jodit-status-bar{
   display: none !important;
 }
+
+#tagSelected{
+  color: #fff;
+  background-color: rgb(24, 194, 209)
+}

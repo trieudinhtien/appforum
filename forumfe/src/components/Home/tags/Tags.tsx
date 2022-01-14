@@ -1,5 +1,4 @@
-import React, { FC } from 'react'
-import { Card } from 'react-bootstrap'
+import { FC, useEffect, useState } from 'react'
 import styles from './Tag.module.css'
 
 interface Props {
@@ -8,6 +7,20 @@ interface Props {
 }
 
 export const Tags: FC<Props> = ({ post, onClickTags }) => {
+
+    const [selectedTag, setSelectedTag] = useState('All')
+
+    useEffect(() => {
+        let tagElement = document.getElementsByTagName("span")
+        for (let i = 0; i < tagElement.length; i++) {
+            if (selectedTag === tagElement[i].innerText) {
+                tagElement[i].id = 'tagSelected'
+            } else {
+                tagElement[i].id = ''
+            }
+        }
+    }, [selectedTag])
+
     function getAllTags(post: Post[]) {
         const a = post.map((item) => item.tags)
         let tags: string[] = []
@@ -19,30 +32,34 @@ export const Tags: FC<Props> = ({ post, onClickTags }) => {
     const tags = getAllTags(post)
 
     return (
-        <div>
-            <Card>
-                <Card.Header as="h5">Tags</Card.Header>
-                <Card.Body>
-                    <Card.Text
-                        className={styles.item_Tag}
-                        onClick={() => onClickTags("")}
-                    >
-                        All
-                    </Card.Text>
-                    {
-                        tags.map((item, index) => 
-                            <Card.Text
-                                key={index}
-                                className={styles.item_Tag}
-                                onClick={() => onClickTags(item)}
-                            >
-                                {item}
-                            </Card.Text>
-                        )
-                    }
+        <div className={styles.container}>
+            <p className="h5">Most popular Tags</p>
+            <div>
+                <span
+                    className={styles.item_Tag}
+                    onClick={() =>{
+                        onClickTags("")
+                        setSelectedTag("All")
+                    }}
+                >
+                    All
+                </span>
+                {
+                    tags[0] && tags.map((item, index) =>
+                        <span
+                            key={index}
+                            className={styles.item_Tag}
+                            onClick={() => {
+                                onClickTags(item)
+                                setSelectedTag(item)
+                            }}
+                        >
+                            {item}
+                        </span>
+                    )
+                }
 
-                </Card.Body>
-            </Card>
+            </div>
         </div>
     )
 }
