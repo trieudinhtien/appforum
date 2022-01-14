@@ -163,6 +163,8 @@
 .notifications_box > ul {
   list-style: none;
   padding: 0;
+  height: 250px;
+  overflow: auto;
 }
 
 .notifications_box > ul > li {

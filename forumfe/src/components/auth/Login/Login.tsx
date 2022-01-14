@@ -60,7 +60,7 @@ const Login: FC<{}> = () => {
 
     function hanlderSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log("fomr login", formData)
+        // console.log("fomr login", formData)
         validate(formData)
         if (!formErr.email && !formErr.password) {
             login(formData)

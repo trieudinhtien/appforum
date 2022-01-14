@@ -224,107 +224,35 @@
   ],
   "posts": [
     {
-      "id": 1642075602830,
-      "user_id": 1,
+      "id": 1642136573076,
+      "author": {
+        "author_id": 1,
+        "author_name": "admin",
+        "author_img": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg"
+      },
       "title": "1",
-      "createdAt": "2022-01-13T19:06:42+07:00",
-      "likes": [],
-      "comments": [],
-      "tags": ["1"],
-      "img": "",
-      "content": "<p>1</p>",
-      "modifiedAt": 1642075602847
-    },
-    {
-      "id": 1642075611063,
-      "user_id": 1,
-      "title": "2",
-      "createdAt": "2022-01-13T19:06:51+07:00",
-      "likes": [],
-      "comments": [],
-      "tags": ["2"],
-      "img": "",
-      "content": "<p>2</p>",
-      "modifiedAt": 1642075611086
-    },
-    {
-      "id": 1642076290399,
-      "user_id": 1,
-      "title": "3",
-      "createdAt": "2022-01-13T19:18:10+07:00",
-      "likes": [],
-      "comments": [],
-      "tags": ["3"],
-      "img": "",
-      "content": "<p>3</p>",
-      "modifiedAt": 1642076290404
-    },
-    {
-      "id": 1642076294175,
-      "user_id": 1,
-      "title": "4",
-      "createdAt": "2022-01-13T19:18:14+07:00",
-      "likes": [],
-      "comments": [],
-      "tags": ["4"],
-      "img": "",
-      "content": "<p>4</p>",
-      "modifiedAt": 1642076294192
-    },
-    {
-      "id": 1642076297911,
-      "user_id": 1,
-      "title": "5",
-      "createdAt": "2022-01-13T19:18:17+07:00",
+      "createdAt": "2022-01-14T12:02:53+07:00",
       "likes": [
         {
-          "id": 1255,
-          "user_id": 3,
-          "createdAt": "2022-01-12T19:18:43+07:00"
-        }
-      ],
-      "comments": [],
-      "tags": ["5"],
-      "img": "",
-      "content": "<p>5</p>",
-      "modifiedAt": 1642076297931
-    },
-    {
-      "id": 1642076503599,
-      "user_id": 1,
-      "title": "6",
-      "createdAt": "2022-01-13T19:21:43+07:00",
-      "likes": [
-        {
-          "id": 12345,
+          "id": 8,
           "user_id": 2,
-          "createdAt": "2022-01-13T19:18:43+07:00"
+          "createdAt": "2022-01-04T12:02:53+07:00"
         }
       ],
       "comments": [
         {
-          "id": 1234,
-          "user_id": 2,
+          "id": 3,
+          "user_id": 3,
           "comment": "hay",
-          "createdAt": "2022-01-13T19:20:43+07:00"
+          "createdAt": "2022-01-08T12:02:53+07:00",
+          "user_name": "",
+          "user_img": ""
         }
       ],
-      "tags": ["6"],
+      "tags": ["1"],
       "img": "",
-      "content": "<p>6</p>",
-      "modifiedAt": 1642076503614
-    },
-    {
-      "id": 1642076503512,
-      "user_id": 2,
-      "title": "7",
-      "createdAt": "2022-01-13T19:21:43+07:00",
-      "likes": [],
-      "comments": [],
-      "tags": ["7"],
-      "img": "",
-      "content": "<p>7</p>",
-      "modifiedAt": 1642076503614
+      "content": "<p>1</p>",
+      "modifiedAt": 1642136573081
     }
   ]
 }

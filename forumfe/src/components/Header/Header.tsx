@@ -3,13 +3,14 @@ import styles from "./Header.module.css";
 import Logo from "../../images/logo.png";
 import Avatar from "../../images/avatar/01.jpg";
 import Person from "../../images/avatar/04.jpg";
-import { NavLink } from "react-router-dom";
+import { NavLink, Router } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { Logout } from "../auth/Logout/Logout";
 import { Link } from "react-router-dom";
 import { PostContext } from "../../context/PostContext";
 import { getPosts } from "../../apis/posts-apis";
+import { getUserById } from "../../apis/users-apis";
 import moment from "moment";
 
 const Header: FC<{}> = () => {
@@ -21,8 +22,7 @@ const Header: FC<{}> = () => {
 
   let navigate = useNavigate();
 
-  const context = useContext(UserContext);
-  const user = context.user;
+  const user = userContext.user;
 
   const _clickLogin = () => {
     navigate("/login");
@@ -43,29 +43,40 @@ const Header: FC<{}> = () => {
       .then((data) => {
         const noti: Notificationn[] = [];
         const newData = data.filter((item: Post) => {
-          if (item.user_id === userContext.user.id) return item;
+          if (
+            item.author.author_id === userContext.user.id 
+          )
+            return item;
           return 0;
         });
         newData.forEach((item: Post) => {
           if (item.likes.length > 0) {
             item.likes.forEach((like) => {
-              noti.push({
-                id: like.id,
-                type: "like",
-                user_id: like.user_id,
-                createdAt: like.createdAt,
-              });
+              getUserById(like.user_id, userContext.user.token).then(
+                (data: User) =>
+                  noti.push({
+                    id: like.id,
+                    type: "like",
+                    user_name: data.username,
+                    user_img: data.avatar,
+                    createdAt: like.createdAt,
+                  })
+              );
             });
           }
 
           if (item.comments.length > 0) {
             item.comments.forEach((comment) => {
-              noti.push({
-                id: comment.id,
-                type: "comment",
-                user_id: comment.user_id,
-                createdAt: comment.createdAt,
-              });
+              getUserById(comment.user_id, userContext.user.token).then(
+                (data: User) =>
+                  noti.push({
+                    id: comment.id,
+                    type: "comment",
+                    user_name: data.username,
+                    user_img: data.avatar,
+                    createdAt: comment.createdAt,
+                  })
+              );
             });
           }
         });
@@ -139,7 +150,7 @@ const Header: FC<{}> = () => {
         {localStorage.getItem("user") ? (
           <div className={styles.notifications}>
             <i className="far fa-bell" onClick={turnNotification}></i>
-            <span>.</span>
+            <span>{notification.length > 0 && "."}</span>
 
             {turnNoti && (
               <div className={styles.notifications_box}>
@@ -153,12 +164,34 @@ const Header: FC<{}> = () => {
                             <div>
                               <img
                                 className={styles.notifications_img}
-                                src={Person}
-                                alt="img"
+                                src={item.user_img}
+                                alt="avatar"
                               />
                             </div>
                             <div className={styles.notifications_text}>
-                              <p>{item.type}</p>
+                              <p>
+                                <span>{item.user_name}</span> left a like on
+                                your post
+                              </p>
+                              <p>{moment(item.createdAt).fromNow()}</p>
+                            </div>
+                          </li>
+                        );
+                      } else {
+                        return (
+                          <li key={item.id}>
+                            <div>
+                              <img
+                                className={styles.notifications_img}
+                                src={item.user_img}
+                                alt="avatar"
+                              />
+                            </div>
+                            <div className={styles.notifications_text}>
+                              <p>
+                                <span>{item.user_name}</span> posted a comment
+                                on your post
+                              </p>
                               <p>{moment(item.createdAt).fromNow()}</p>
                             </div>
                           </li>
