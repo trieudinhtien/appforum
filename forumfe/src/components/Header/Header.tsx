@@ -27,6 +27,10 @@ const Header: FC<{}> = () => {
   const user = userContext.user;
 
   const _clickLogin = () => {
+    setSearchResult(false);
+    setSearch("");
+    setTurnSet(false);
+    setTurnNoti(false);
     navigate("/login");
   };
 
