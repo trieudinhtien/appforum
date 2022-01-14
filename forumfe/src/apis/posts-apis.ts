@@ -51,3 +51,30 @@ export const deletePost = (token: string, id: number): Promise<Post> => {
     },
   }).then((res: AxiosResponse<Post>) => res.data);
 };
+export function sendComment(id: number, token: string, comment: Comment[]) {
+  return axios({
+      method: "PATCH",
+      url: `http://localhost:3000/posts/${id}`,
+      headers: {
+          authorization: `Bearer ${token}`
+      },
+      data: {
+          "comments": comment
+      }
+  }).then(res => res.data)
+      .catch(err => console.log(err))
+}
+
+export function sendLike(id: number, token: string, likes: Like) {
+  return axios({
+      method: "PATCH",
+      url: `http://localhost:3000/posts/${id}`,
+      headers: {
+          authorization: `Bearer ${token}`
+      },
+      data: {
+          "likes": likes
+      }
+  }).then(res => res.data)
+      .catch(err => console.log(err))
+}
