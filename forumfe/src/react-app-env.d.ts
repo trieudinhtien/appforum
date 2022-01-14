@@ -23,10 +23,12 @@ interface Post {
 }
 
 interface Like{
-  id: number; user_id: number; createdAt: string
+  id: number; 
+  user_id: number; 
+  createdAt: string
 }
 
-interface Comment {
+interface Commentt {
   id: number;
   user_id: number;
   comment: string;

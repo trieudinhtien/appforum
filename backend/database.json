@@ -281,9 +281,49 @@
       "createdAt": "2022-01-14T12:02:53+07:00",
       "likes": [
         {
-          "id": 8,
-          "user_id": 2,
-          "createdAt": "2022-01-04T12:02:53+07:00"
+          "id": 1642158274542,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:04:34+07:00"
+        },
+        {
+          "id": 0,
+          "user_id": 0,
+          "createdAt": ""
+        },
+        {
+          "id": 1642159347592,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:22:27+07:00"
+        },
+        {
+          "id": 1642159351205,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:22:31+07:00"
+        },
+        {
+          "id": 1642159352653,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:22:32+07:00"
+        },
+        {
+          "id": 1642159352881,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:22:32+07:00"
+        },
+        {
+          "id": 1642159358772,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:22:38+07:00"
+        },
+        {
+          "id": 1642159358941,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:22:38+07:00"
+        },
+        {
+          "id": 1642159359121,
+          "user_id": 1,
+          "createdAt": "2022-01-14T18:22:39+07:00"
         }
       ],
       "comments": [
@@ -294,12 +334,222 @@
           "createdAt": "2022-01-08T12:02:53+07:00",
           "user_name": "",
           "user_img": ""
+        },
+        {
+          "id": 1642155841040,
+          "user_id": 1,
+          "comment": "minhmeo",
+          "createdAt": "2022-01-14T17:24:01+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642155997726,
+          "user_id": 1,
+          "comment": "dep trai wa troi oi",
+          "createdAt": "2022-01-14T17:26:37+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642155997726,
+          "user_id": 1,
+          "comment": "dep trai wa troi oi",
+          "createdAt": "2022-01-14T17:26:37+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156016928,
+          "user_id": 1,
+          "comment": "vcl sao lai k reload nhi",
+          "createdAt": "2022-01-14T17:26:56+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156234323,
+          "user_id": 1,
+          "comment": "hi",
+          "createdAt": "2022-01-14T17:30:34+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156359245,
+          "user_id": 1,
+          "comment": "chao em anh dung day tu chieu",
+          "createdAt": "2022-01-14T17:32:39+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156390275,
+          "user_id": 1,
+          "comment": "Hi",
+          "createdAt": "2022-01-14T17:33:10+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156390275,
+          "user_id": 1,
+          "comment": "Hay",
+          "createdAt": "2022-01-14T17:33:10+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156390275,
+          "user_id": 1,
+          "comment": "anh minh dep trai",
+          "createdAt": "2022-01-14T17:33:10+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156390275,
+          "user_id": 1,
+          "comment": "Xoi",
+          "createdAt": "2022-01-14T17:33:10+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156390275,
+          "user_id": 1,
+          "comment": "ez",
+          "createdAt": "2022-01-14T17:33:10+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156766799,
+          "user_id": 1,
+          "comment": "ez lan 2",
+          "createdAt": "2022-01-14T17:39:26+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156766799,
+          "user_id": 1,
+          "comment": "",
+          "createdAt": "2022-01-14T17:39:26+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156766799,
+          "user_id": 1,
+          "comment": "",
+          "createdAt": "2022-01-14T17:39:26+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156766799,
+          "user_id": 1,
+          "comment": "",
+          "createdAt": "2022-01-14T17:39:26+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156922461,
+          "user_id": 1,
+          "comment": "a",
+          "createdAt": "2022-01-14T17:42:02+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642156922461,
+          "user_id": 1,
+          "comment": "a",
+          "createdAt": "2022-01-14T17:42:02+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642158001896,
+          "user_id": 1,
+          "comment": "minh meo",
+          "createdAt": "2022-01-14T18:00:01+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642158001896,
+          "user_id": 1,
+          "comment": "aaaa",
+          "createdAt": "2022-01-14T18:00:01+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642159344584,
+          "user_id": 1,
+          "comment": "l",
+          "createdAt": "2022-01-14T18:22:24+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642159399327,
+          "user_id": 1,
+          "comment": "a",
+          "createdAt": "2022-01-14T18:23:19+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642159399327,
+          "user_id": 1,
+          "comment": "a",
+          "createdAt": "2022-01-14T18:23:19+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642159399327,
+          "user_id": 1,
+          "comment": "a",
+          "createdAt": "2022-01-14T18:23:19+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642159399327,
+          "user_id": 1,
+          "comment": "a",
+          "createdAt": "2022-01-14T18:23:19+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642159399327,
+          "user_id": 1,
+          "comment": "ads",
+          "createdAt": "2022-01-14T18:23:19+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642159399327,
+          "user_id": 1,
+          "comment": "minhmeo",
+          "createdAt": "2022-01-14T18:23:19+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
         }
       ],
-      "tags": ["1"],
+      "tags": [
+        "1"
+      ],
       "img": "",
       "content": "<p>1</p>",
-      "modifiedAt": 1642136573081
+      "modifiedAt": 1642159412637
     }
   ]
 }
