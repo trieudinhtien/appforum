@@ -1,27 +1,26 @@
 /// <reference types="react-scripts" />
-interface Post{
-    id: number,
-    user_id: number,
-    title: string,
-    createdAt: string,
-    likes: number,
-    comments: {
-        id: number,
-        user_id: number,
-        comment: string,
-        createdAt: string,
-    }[],
-    tags: string[],
-    img: string,
-    content: string,
+interface Post {
+    id: number;
+    author: {
+        author_id: number,
+        author_name: string,
+        author_img: string,
+    }
+    title: string;
+    createdAt: string;
+    likes: Like[];
+    comments: Comment[];
+    tags: string[];
+    img: string;
+    content: string;
 }
 
-interface CreatePostForm{
+interface CreatePostForm {
     title: string,
     tags: string
 }
 
-interface ErrorCreatePostForm extends CreatePostForm{
+interface ErrorCreatePostForm extends CreatePostForm {
     editor: string,
 }
 
@@ -69,3 +68,18 @@ interface Following {
     "introduce": string
 }
 
+interface Comment {
+
+    id: number;
+    user_id: number;
+    comment: string;
+    createdAt: string;
+    user_name: string,
+    user_img: string,
+
+}
+interface Like {
+    id: number; 
+    user_id: number; 
+    createdAt: string;
+}

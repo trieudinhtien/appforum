@@ -12,8 +12,7 @@ import { Card } from 'react-bootstrap';
 export default function Post() {
     const params = useParams();
     const [postDetail, setpostDetail] = useState<Post>();
-    const context = useContext(UserContext)
-    const [user, setUser] = useState({} as User)
+    
 
 
     useEffect(() => {
@@ -23,13 +22,6 @@ export default function Post() {
                 .catch((err: Error) => console.log(err));
         }
     }, []);
-    useEffect(() => {
-        if (postDetail?.user_id) {
-            getUserById(postDetail?.user_id, context.user.token)
-                .then((res: User) => setUser(res))
-                .catch(err => console.error(err))
-        }
-    }, [postDetail?.user_id])
 
     return (
         <div className={styles.app + " container"}>
@@ -53,9 +45,8 @@ export default function Post() {
                 </div>
                 <div className='d-flex justify-content-between'>
                     <div className={styles.author}>
-                        <img src={user.avatar} alt="avatar" />
-                        <div>{user.firstName}  {user.lastName}</div>
-                        <div>{user.username}</div>
+                        <img src={postDetail?.author.author_img} alt="avatar" />
+                        <div>{postDetail?.author.author_name}</div>
                     </div>
                     <div>
                   <button>Like</button> 
