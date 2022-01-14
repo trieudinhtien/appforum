@@ -330,7 +330,14 @@ const Header: FC<{}> = () => {
                     Change password
                   </NavLink>
                 </li>
-                <li>
+                <li
+                  onClick={() => {
+                    setSearchResult(false);
+                    setSearch("");
+                    setTurnSet(false);
+                    setTurnNoti(false);
+                  }}
+                >
                   <Logout />
                 </li>
               </ul>
