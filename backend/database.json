@@ -27,10 +27,10 @@
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
       "followings_id": [
-        5,
         8,
         6,
-        7
+        7,
+        5
       ],
       "introduce": "Hello ! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213-1",
@@ -38,7 +38,7 @@
       "address": "Long Islands, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1642174335422
+      "modifiedAt": 1642176727270
     },
     {
       "id": 2,
@@ -366,106 +366,6 @@
           "id": 0,
           "user_id": 0,
           "createdAt": ""
-        },
-        {
-          "id": 1642174301890,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:41+07:00"
-        },
-        {
-          "id": 1642174302718,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:42+07:00"
-        },
-        {
-          "id": 1642174303302,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:43+07:00"
-        },
-        {
-          "id": 1642174303686,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:43+07:00"
-        },
-        {
-          "id": 1642174303874,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:43+07:00"
-        },
-        {
-          "id": 1642174304550,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:44+07:00"
-        },
-        {
-          "id": 1642174304774,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:44+07:00"
-        },
-        {
-          "id": 1642174305494,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:45+07:00"
-        },
-        {
-          "id": 1642174305726,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:45+07:00"
-        },
-        {
-          "id": 1642174305926,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:45+07:00"
-        },
-        {
-          "id": 1642174306094,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306306,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306478,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306654,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306830,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306990,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174307166,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:47+07:00"
-        },
-        {
-          "id": 1642174307322,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:47+07:00"
-        },
-        {
-          "id": 1642174307686,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:47+07:00"
-        },
-        {
-          "id": 1642174308206,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:48+07:00"
         }
       ],
       "comments": [
