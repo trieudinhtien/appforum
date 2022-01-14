@@ -15,6 +15,8 @@ import { UserContext } from "../../context/UserContext";
 import { PostContext } from "../../context/PostContext";
 import JoditEditor from "jodit-react";
 import { useParams } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Navigation from "../Navigation/Navigation";
 
 const CreatePost: FC<{}> = () => {
   const navigate = useNavigate();
@@ -153,7 +155,8 @@ const CreatePost: FC<{}> = () => {
   }, [params.id]);
 
   return (
-    <AuthGuard moveTo="/login">
+    <AuthGuard moveTo='/login'>
+      <Navigation />
       <div className={styles.create_post}>
         <img src={Banner} alt="banner" />
         <img src={NewPost} alt="newpost" />
@@ -217,6 +220,7 @@ const CreatePost: FC<{}> = () => {
           </div>
         </form>
       </div>
+      <Footer />
     </AuthGuard>
   );
 };

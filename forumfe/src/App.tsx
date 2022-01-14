@@ -11,13 +11,22 @@ import Home from './components/Home/Home';
 import UserProfile from './components/Profile/UserProfile/UserProfile'
 import MyPostDetail from "./components/MyPosts/MyPostDetail/MyPostDetail";
 import Post from './components/PostComponent/Post';
+import { useContext, useEffect } from 'react'
+import { PostContext } from './context/PostContext'
+import { getPosts } from './apis/posts-apis';
 
 function App() {
-  
+  const postContext = useContext(PostContext);
+
+  useEffect(() => {
+    getPosts()
+      .then((data) => { postContext.setPosts(data) })
+      .catch((err: Error) => console.log(err));
+  }, []);
   return (
     <BrowserRouter>
       <Header />
-      <Navigation />
+      {/* {window.location.pathname !== '/login' && window.location.pathname !== '/register' && <Navigation />} */}
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
@@ -32,9 +41,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/post/:id" element={<Post />} />
 
-        
       </Routes>
-      <Footer />
+      
+      {/* {window.location.pathname !== '/login' && window.location.pathname !== '/register' && <Footer />} */}
+
     </BrowserRouter>
   )
 }

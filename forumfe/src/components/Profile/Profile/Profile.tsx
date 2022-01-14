@@ -6,6 +6,7 @@ import { getAllUser, saveImg, changeAvatar, changeCover } from '../../../apis/us
 import { AuthGuard } from "../../auth/guard/AuthGuard"
 import { getPosts } from '../../../apis/posts-apis'
 
+import Footer from "../../Footer/Footer"
 
 export default function Profile() {
 
@@ -129,6 +130,7 @@ export default function Profile() {
                 </div>
                 <Navigation />
             </div>
+            <Footer />
         </AuthGuard>
     )
 }

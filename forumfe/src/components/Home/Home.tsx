@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getPost } from '../../apis/home-apies';
+import Footer from '../Footer/Footer';
+import Navigation from '../Navigation/Navigation';
 import styles from "./Home.module.css"
 import { Tags } from './tags/Tags';
 import moment from "moment";

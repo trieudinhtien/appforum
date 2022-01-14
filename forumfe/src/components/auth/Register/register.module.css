@@ -31,6 +31,7 @@
     color: #ffffff;
     border-radius: 12px;
     padding: 14px 0;
+    margin-bottom: 10px;
 }
 .buttonForm1:hover{
     background-color: #5e5bb3;
@@ -45,6 +46,32 @@
     font-size: 30px;
     font-weight: 700;
     text-align: center;
+}
+.backgrounRegister{
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://odindesignthemes.com/vikinger-theme/wp-content/themes/vikinger/img/login/background.jpg');
+}
+
+.titleBGViking{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.titleBGViking h1{
+    color: #ffffff;
+    font-size: 93px;
+    font-weight: bold;
+}
+.titleBGViking p{
+    color: #ffffff;
+    font-size: 30px;
+}
+.titleBGViking p:last-child{
+    font-size: 20px;
 }
 
 
