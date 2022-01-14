@@ -75,6 +75,13 @@
   box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
 }
 
+.showing{
+  display: flex;
+  justify-content: end;
+  padding-right: 35px;
+  margin-top: 20px;
+}
+
 .management {
   display: flex;
   justify-content: end;

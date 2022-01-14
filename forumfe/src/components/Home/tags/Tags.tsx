@@ -3,14 +3,14 @@ import { Card } from 'react-bootstrap'
 import styles from './Tag.module.css'
 
 interface Props {
-    post: any[],
+    post: Post[],
     onClickTags(item: string): void
 }
 
 export const Tags: FC<Props> = ({ post, onClickTags }) => {
-    function getAllTags(post: any[]) {
+    function getAllTags(post: Post[]) {
         const a = post.map((item) => item.tags)
-        let tags: any[] = []
+        let tags: string[] = []
         for (let i = 0; i < a.length; i++) {
             tags = tags.concat(a[i]);
         }
@@ -30,7 +30,7 @@ export const Tags: FC<Props> = ({ post, onClickTags }) => {
                         All
                     </Card.Text>
                     {
-                        tags.map((item: string, index: number) => (
+                        tags.map((item, index) => 
                             <Card.Text
                                 key={index}
                                 className={styles.item_Tag}
@@ -38,7 +38,7 @@ export const Tags: FC<Props> = ({ post, onClickTags }) => {
                             >
                                 {item}
                             </Card.Text>
-                        ))
+                        )
                     }
 
                 </Card.Body>

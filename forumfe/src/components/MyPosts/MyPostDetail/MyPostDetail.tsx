@@ -2,6 +2,8 @@ import { FC, useEffect } from "react";
 import styles from "./MyPostDetail.module.css";
 import Banner from "../../../images/banners/banner.png";
 import Detail from "../../../images/banners/mypost_detail.png";
+import Footer from "../../Footer/Footer";
+import Navigation from "../../Navigation/Navigation";
 import { useParams } from "react-router-dom";
 import { getPostById } from "../../../apis/posts-apis";
 
@@ -15,14 +17,16 @@ const MyPostDetail: FC<{}> = () => {
     }
   }, []);
   return (
-    <div className={styles.detail}>
-      <img src={Banner} alt="banner" />
-      <img src={Detail} alt="newpost" />
-      <p>Details</p>
-
-      <div>asd</div>
-    </div>
-  ); 
+    <>
+    <Navigation />
+      <div className={styles.detail}>
+        <img src={Banner} alt="banner" />
+        <img src={Detail} alt="newpost" />
+        <p>Create New Post</p>
+      </div>
+      <Footer />
+    </>
+  );
 };
 
 export default MyPostDetail;

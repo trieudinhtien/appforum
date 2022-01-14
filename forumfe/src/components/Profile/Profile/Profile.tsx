@@ -6,6 +6,7 @@ import { getAllUser, saveImg, changeAvatar, changeCover } from '../../../apis/us
 import { AuthGuard } from "../../auth/guard/AuthGuard"
 import { getPosts } from '../../../apis/posts-apis'
 
+import Footer from "../../Footer/Footer"
 
 export default function Profile() {
 
@@ -17,10 +18,10 @@ export default function Profile() {
     const coverRef = useRef<HTMLInputElement>(null)
 
     const _onChangeAvatar = () => {
-        let formdata = new FormData()
+        let formData = new FormData()
         if (avatarRef?.current?.files) {
-            formdata.append("file", avatarRef.current.files[0], `avatar${Number(new Date())}.jpg`)
-            saveImg(formdata)
+            formData.append("file", avatarRef.current.files[0], `avatar${Number(new Date())}.jpg`)
+            saveImg(formData)
                 .then((res: { path: string }) => {
                     localStorage.setItem('user', JSON.stringify({...user, avatar: res.path}))
                     context.setUser({ ...user, avatar: res.path })
@@ -33,10 +34,10 @@ export default function Profile() {
     }
 
     const _onChangeCover = () => {
-        let formdata = new FormData()
+        let formData = new FormData()
         if (coverRef?.current?.files) {
-            formdata.append("file", coverRef.current.files[0], `cover${Number(new Date())}.jpg`)
-            saveImg(formdata)
+            formData.append("file", coverRef.current.files[0], `cover${Number(new Date())}.jpg`)
+            saveImg(formData)
                 .then((res: { path: string }) => {
                     localStorage.setItem('user', JSON.stringify({...user, cover: res.path}))
                     context.setUser({ ...user, cover: res.path })
@@ -129,6 +130,7 @@ export default function Profile() {
                 </div>
                 <Navigation />
             </div>
+            <Footer />
         </AuthGuard>
     )
 }
