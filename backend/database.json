@@ -27,10 +27,10 @@
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
       "followings_id": [
-        7,
         5,
         8,
-        6
+        6,
+        7
       ],
       "introduce": "Hello ! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213-1",
@@ -38,7 +38,7 @@
       "address": "Long Islands, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1642173767868
+      "modifiedAt": 1642174335422
     },
     {
       "id": 2,
@@ -361,15 +361,170 @@
       },
       "title": "How to Get What You Want at Work",
       "createdAt": "2022-01-14T19:30:04+07:00",
-      "likes": [],
-      "comments": [],
+      "likes": [
+        {
+          "id": 0,
+          "user_id": 0,
+          "createdAt": ""
+        },
+        {
+          "id": 1642174301890,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:41+07:00"
+        },
+        {
+          "id": 1642174302718,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:42+07:00"
+        },
+        {
+          "id": 1642174303302,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:43+07:00"
+        },
+        {
+          "id": 1642174303686,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:43+07:00"
+        },
+        {
+          "id": 1642174303874,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:43+07:00"
+        },
+        {
+          "id": 1642174304550,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:44+07:00"
+        },
+        {
+          "id": 1642174304774,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:44+07:00"
+        },
+        {
+          "id": 1642174305494,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:45+07:00"
+        },
+        {
+          "id": 1642174305726,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:45+07:00"
+        },
+        {
+          "id": 1642174305926,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:45+07:00"
+        },
+        {
+          "id": 1642174306094,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:46+07:00"
+        },
+        {
+          "id": 1642174306306,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:46+07:00"
+        },
+        {
+          "id": 1642174306478,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:46+07:00"
+        },
+        {
+          "id": 1642174306654,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:46+07:00"
+        },
+        {
+          "id": 1642174306830,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:46+07:00"
+        },
+        {
+          "id": 1642174306990,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:46+07:00"
+        },
+        {
+          "id": 1642174307166,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:47+07:00"
+        },
+        {
+          "id": 1642174307322,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:47+07:00"
+        },
+        {
+          "id": 1642174307686,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:47+07:00"
+        },
+        {
+          "id": 1642174308206,
+          "user_id": 1,
+          "createdAt": "2022-01-14T22:31:48+07:00"
+        }
+      ],
+      "comments": [
+        {
+          "id": 1642173818112,
+          "user_id": 1,
+          "comment": "hello",
+          "createdAt": "2022-01-14T22:23:38+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642173818112,
+          "user_id": 1,
+          "comment": "helllo",
+          "createdAt": "2022-01-14T22:23:38+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642174203519,
+          "user_id": 1,
+          "comment": "minh meo",
+          "createdAt": "2022-01-14T22:30:03+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642174203519,
+          "user_id": 1,
+          "comment": "minh meo",
+          "createdAt": "2022-01-14T22:30:03+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642174203519,
+          "user_id": 1,
+          "comment": "minh meo",
+          "createdAt": "2022-01-14T22:30:03+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642174203519,
+          "user_id": 1,
+          "comment": "hello",
+          "createdAt": "2022-01-14T22:30:03+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        }
+      ],
       "tags": [
         "work",
         "experience"
       ],
       "img": "",
       "content": "<figure class=\"ir is fd fe paragraph-image\" style=\"box-sizing: inherit; margin: 33px auto 0px; clear: both; color: rgba(0, 0, 0, 0.8); font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><div role=\"button\" tabindex=\"0\" class=\"it iu ao iv v iw\" style=\"box-sizing: inherit; width: 679.988px; position: relative; cursor: zoom-in; z-index: auto; transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) 0s;\"><div class=\"fd fe iq\" style=\"box-sizing: inherit; margin-left: auto; margin-right: auto; max-width: 1400px;\"><img alt=\"\" class=\"v ix iy\" src=\"https://miro.medium.com/max/728/1*FdV3oOzS82hF_YglvCgDMA.jpeg\" width=\"700\" height=\"504\" role=\"presentation\" style=\"box-sizing: inherit; vertical-align: middle; width: 679.988px; max-width: 100%; height: auto;\"></div></div><figcaption class=\"iz ja ff fd fe jb jc ba b bb bc dq\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-family: sohne, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: rgb(117, 117, 117); margin-left: auto; margin-right: auto; max-width: 728px; margin-top: 10px; text-align: center;\">Photo: Unsplash/Bruce Mars</figcaption></figure><p id=\"ae93\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv jz\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; clear: left; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><span class=\"s ka kb kc dr kd ke kf kg kh ao\" style=\"box-sizing: inherit; display: block; position: relative; margin-right: 12px; float: left; font-size: 66px; line-height: 0.83; padding-top: 7px;\">W</span>hatever lip service the typical American company pays to caring for its people, each employee is viewed, to some degree, as a commodity, one of several if not countless individuals who could handle the job reasonably well, given time and training.</p><p id=\"72c2\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">That does not mean you are powerless to earn the pay, promotions, time off, and other perks you want. Far from it.</p><p id=\"3d11\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Especially in today’s tight labor mar<span id=\"rmm\" style=\"box-sizing: inherit;\">k</span>et, amid the<span>&nbsp;</span><a class=\"dt nz\" href=\"https://www.cbsnews.com/news/great-resignation-60-minutes-2022-01-10/\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">Big Quit</a>, where businesses struggle to fill job openings, the best employees have more power than they might realize. Good companies and smart bosses always want talented, engaged, self-motivated,<span>&nbsp;</span><em class=\"lt\" style=\"box-sizing: inherit; font-style: italic;\">empowered</em><span>&nbsp;</span>employees who like their jobs and will stick around for the long haul, helping the company avoid the considerable costs and uncertainties of hiring and training replacements. Now, with more people choosing not to work or being more selective about their job choices, all while inflation is cutting into the real value of paychecks, U.S. analysts expect a period of outsized wage and salary hikes. This year could see the<span>&nbsp;</span><a class=\"dt nz\" href=\"https://www.yahoo.com/now/pay-raises-coming-2022-latest-200025310.html\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">largest overall pay increases</a><span>&nbsp;</span>since 2008.</p><p id=\"bb89\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Some workers will get bigger pieces of that larger pay pie. So how can you position yourself to benefit from this opportunity?</p><p id=\"8eef\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">From my 30-plus years of experience as a manager and executive in private, non-union companies, I’ve gained considerable insight into the minds of the muckety mucks who determine your fate and how to get what you want out of them.</p><p id=\"e837\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">But it’s not easy.</p><p id=\"bd1a\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Women, in particular, face unique challenges when negotiating for a raise, promotion or other compensation, says Kathryn Valentine, founder of Worthmore Strategies, which helps women navigate their negotiations. Whereas men may negotiate aggressively on their own behalf, a similar approach by women can generate a backlash rooted in the discomfort and fear felt by their male boss, Valentine says in an<span>&nbsp;</span><a class=\"dt nz\" href=\"https://www.protocol.com/workplace/negotiation-advice-women-kathryn-valentine\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">insightful interview published on Protocol</a>. She suggests women take a negotiation training course, noting that<span>&nbsp;</span><a class=\"dt nz\" href=\"http://leanin.org/\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">LeanIn.org</a><span>&nbsp;</span>offers free options.</p><p id=\"82a8\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">I agree. And that in mind, what follows aims to acknowledge the many challenges of advocating for yourself while recognizing that there are good bosses and awful bosses, and you’ll need to consider your individual situation when managing your boss.</p><h1 id=\"d0c1\" class=\"ob oc fy ba lo od oe jh of og oh jk oi oj ok ol om on oo op oq or os ot ou ov gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 1.95em 0px -0.28em; font-family: sohne, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-style: normal; color: rgb(41, 41, 41); font-weight: 500; line-height: 36px; letter-spacing: normal; font-size: 30px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Be indispensable</h1><p id=\"0ecb\" class=\"jd je fy jf b gx ow jh ji ha ox jk jl jm oy jo jp jq oz js jt ju pa jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 0.86em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">It all starts with this. In hiring hundreds of people over the years and working hard to retain them, the №1 trait I valued was not mere skill or hard work but a broad mix of qualities that makes one person indispensable, another replaceable. There’s no recipe for this, but here are the ingredients:</p><ul class=\"\" style=\"box-sizing: inherit; margin: 0px; padding: 0px; list-style: none none; color: rgba(0, 0, 0, 0.8); font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><li id=\"a389\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy pb pc pd gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; margin-bottom: -0.46em; list-style-type: disc; margin-left: 30px; padding-left: 0px; font-size: 21px; margin-top: 2em;\">Work hard and enjoy what you do.</li><li id=\"512c\" class=\"jd je fy jf b gx pe jh ji ha pf jk jl jm pg jo jp jq ph js jt ju pi jw jx jy pb pc pd gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; margin-bottom: -0.46em; list-style-type: disc; margin-left: 30px; padding-left: 0px; font-size: 21px; margin-top: 1.05em;\">Relish responsibility and jump in to help whenever needed.</li><li id=\"a418\" class=\"jd je fy jf b gx pe jh ji ha pf jk jl jm pg jo jp jq ph js jt ju pi jw jx jy pb pc pd gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; margin-bottom: -0.46em; list-style-type: disc; margin-left: 30px; padding-left: 0px; font-size: 21px; margin-top: 1.05em;\">Know your job and stay educated about changes in the field.</li><li id=\"a9ca\" class=\"jd je fy jf b gx pe jh ji ha pf jk jl jm pg jo jp jq ph js jt ju pi jw jx jy pb pc pd gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; margin-bottom: -0.46em; list-style-type: disc; margin-left: 30px; padding-left: 0px; font-size: 21px; margin-top: 1.05em;\">Aim to be the best you can be, of course, but be humble about it.</li><li id=\"7744\" class=\"jd je fy jf b gx pe jh ji ha pf jk jl jm pg jo jp jq ph js jt ju pi jw jx jy pb pc pd gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; margin-bottom: -0.46em; list-style-type: disc; margin-left: 30px; padding-left: 0px; font-size: 21px; margin-top: 1.05em;\">Be a positive, productive team member and help your colleagues succeed.</li><li id=\"d8ca\" class=\"jd je fy jf b gx pe jh ji ha pf jk jl jm pg jo jp jq ph js jt ju pi jw jx jy pb pc pd gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; margin-bottom: -0.46em; list-style-type: disc; margin-left: 30px; padding-left: 0px; font-size: 21px; margin-top: 1.05em;\">Communicate well up, down and across the chain.</li></ul><p id=\"7f33\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">If you’re not sure how you rank on each of these necessary traits, ask your boss. Neither of you should be afraid of an honest, constructive discussion about your strengths and weaknesses. We all have a bunch of them.</p><h1 id=\"14aa\" class=\"ob oc fy ba lo od oe jh of og oh jk oi oj ok ol om on oo op oq or os ot ou ov gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 1.95em 0px -0.28em; font-family: sohne, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-style: normal; color: rgb(41, 41, 41); font-weight: 500; line-height: 36px; letter-spacing: normal; font-size: 30px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Take on the mundane tasks</h1><p id=\"a296\" class=\"jd je fy jf b gx ow jh ji ha ox jk jl jm oy jo jp jq oz js jt ju pa jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 0.86em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">If ever an employee wanted to raise my ire, the quickest way was to groan overdoing the simple, sometimes boring tasks that are often foundational to a business — stuff they view as beneath them. I’ll take respectful dedication over ego every single time.</p><p id=\"87a5\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">When I was a newspaper graphics editor and manager back in the 1990s, we were the pride of the paper, cranking out informative, colorful infographics that only well-trained visual journalists could produce. We were proud of the value we created for the paper and our role in informing the public. None of us wanted to do the tedious and uncreative locator maps that were needed daily. So we all shared that duty on an informal rotational basis — even my boss, who headed up the entire art and design team and could have justified not getting his hands dirty, did his share.</p><p id=\"b233\" class=\"jd je fy jf b gx jg jh ji ha jj jk jl jm jn jo jp jq jr js jt ju jv jw jx jy fr gv\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Whether you’ve just been hired or you’ve been with a company for years, jump at the chance to take out the trash or clean the dishes in the break room or train a newbie. And don’t look for a blue ribbon or a gold star. Just do the work. It’ll be noticed.</p>",
-      "modifiedAt": 1642163404133
+      "modifiedAt": 1642174308755
     },
     {
       "id": 1642163530944,

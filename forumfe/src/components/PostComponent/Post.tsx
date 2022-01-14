@@ -22,7 +22,7 @@ export default function Post() {
         user_id: 0,
         createdAt: ""
     })
-    const [commentPost, setcommentPost] = useState<Commentt>({
+    const [commentPost, setCommentPost] = useState<Commentt>({
         id: Date.now(),
         user_id: context.user.id,
         comment: "",
@@ -36,11 +36,15 @@ export default function Post() {
             if (commentPost.comment) {
                 postDetail?.comments.push(commentPost);
                 if (postDetail) {
-                    sendComment(Number(params.id), context.user.token, postDetail);
+                    sendComment(Number(params.id), context.user.token, [...postDetail.comments, commentPost]);
+                    setCommentPost({
+                        ...commentPost,
+                        comment: ""
+                    })
                 }
             }
         }
-        navigate(`/post/${params.id}`)
+        // navigate(`/post/${params.id}`)
     }
 
     const handleLike = () => {
@@ -133,8 +137,9 @@ export default function Post() {
                         <input type="text"
                             placeholder='Enter your comment...'
                             name='comment'
+                            value={commentPost.comment}
                             maxLength={60}
-                            onChange={(e) => setcommentPost({ ...commentPost, comment: e.target.value })}
+                            onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value })}
                         />
                         <button type='submit'>Post</button>
                     </form>

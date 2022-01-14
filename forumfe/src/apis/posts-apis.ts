@@ -51,14 +51,16 @@ export const deletePost = (token: string, id: number): Promise<Post> => {
     },
   }).then((res: AxiosResponse<Post>) => res.data);
 };
-export function sendComment(id: number, token: string, post: Post) {
+export function sendComment(id: number, token: string, comments : Commentt[]) {
   return axios({
     method: "PATCH",
     url: `http://localhost:3000/posts/${id}`,
     headers: {
       authorization: `Bearer ${token}`
     },
-    data: post
+    data: {
+      "comments": comments
+    }
 
   }).then(res => res.data)
     .catch(err => console.log(err))

@@ -72,7 +72,9 @@ export default function Home() {
     }
 
     return (
-        <div className={"container " + styles.module}>
+        <>
+            <Navigation />
+            <div className={"container " + styles.module}>
             <div>
                 <div className={styles.banner}>
                     <img className={styles.banner_img} src={require("./images/forums-icon.png")} alt="" />
@@ -150,5 +152,7 @@ export default function Home() {
                 </div>
             </div>
         </div>
+        <Footer />
+        </>
     )
 }
