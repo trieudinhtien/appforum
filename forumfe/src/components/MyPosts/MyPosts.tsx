@@ -8,6 +8,8 @@ import { PostContext } from "../../context/PostContext";
 import { getPosts } from "../../apis/posts-apis";
 import moment from "moment";
 import { AuthGuard } from "../auth/guard/AuthGuard";
+import Footer from "../Footer/Footer";
+import Navigation from "../Navigation/Navigation";
 
 const MyPosts: FC<{}> = () => {
   const postContext = useContext(PostContext);
@@ -112,6 +114,7 @@ const MyPosts: FC<{}> = () => {
 
   return (
     <AuthGuard moveTo='/login'>
+      <Navigation />
       <div className={styles.myposts}>
         <img src={Banner} alt="banner" />
         <img src={MyPost} alt="myposts" />
@@ -157,6 +160,7 @@ const MyPosts: FC<{}> = () => {
           setCurrentPage={setCurrentPage}
         />
       </div>
+      <Footer />
     </AuthGuard>
   );
 };

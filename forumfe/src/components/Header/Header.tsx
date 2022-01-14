@@ -24,8 +24,10 @@ const Header: FC<{}> = () => {
   const turnSetting = () => {
     setTurnSet(!turnSet)
   }
-
+  console.log("header")
+  if (window.location.pathname === '/login'|| window.location.pathname === '/register') return null;
   return (
+    
     <div className={styles.header}>
       <div className={styles.header_actions}>
         <div className={styles.header_brand}>

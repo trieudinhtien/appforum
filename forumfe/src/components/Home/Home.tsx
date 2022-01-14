@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getPost } from '../../apis/home-apies';
+import Footer from '../Footer/Footer';
+import Navigation from '../Navigation/Navigation';
 import styles from "./Home.module.css"
 import { Tags } from './tags/Tags';
 
@@ -50,77 +52,77 @@ export default function Home() {
         const a = clonePost.filter((element) => {
             return element.tags.includes(item)
         })
-        setTags(a)
+        setTags(a);
         setPage(1);
     }
     // useEffect(() => {
     //     post && setpost(post)
     // }, [post])
     return (
-        // <AuthGuard moveTo='/login'>
-        <div className={"container " + styles.module}>
-            <div>
-                <div className={styles.banner}>
-                    <img className={styles.banner_img} src={require("./images/forums-icon.png")} alt="" />
-                    <div className={" mx-3"}>
-                        <p className={styles.banner_title}>Forums</p>
-                        <p className={styles.banner_text}>Talk about anything you want!</p>
+        <>
+        <Navigation />
+            <div className={"container " + styles.module}>
+                <div>
+                    <div className={styles.banner}>
+                        <img className={styles.banner_img} src={require("./images/forums-icon.png")} alt="" />
+                        <div className={" mx-3"}>
+                            <p className={styles.banner_title}>Forums</p>
+                            <p className={styles.banner_text}>Talk about anything you want!</p>
+                        </div>
                     </div>
-                </div>
-                <div className={styles.forum_heading}>
-                    <h2 className={styles.forum_pretitle}>WELCOME TO</h2>
-                    <h2 className={styles.forum_title}>Community Vikinger4</h2>
-                </div>
-                <div className={styles.search}>
-                    <div>
-                        <div className={styles.blank}>
-                            <label htmlFor="search" className={styles.labeltop}>Search Post</label>
-                            <input type="text" onChange={e => _onChangeSearch(e.target.value)} placeholder='Search...' id='search' required />
-                            <button className={styles.button_search}><i className={"fas fa-search " + styles.search_icon}></i></button>
+                    <div className={styles.forum_heading}>
+                        <h2 className={styles.forum_pretitle}>WELCOME TO</h2>
+                        <h2 className={styles.forum_title}>Community Vikinger4</h2>
+                    </div>
+                    <div className={styles.search}>
+                        <div>
+                            <div className={styles.blank}>
+                                <label htmlFor="search" className={styles.labeltop}>Search Post</label>
+                                <input type="text" onChange={e => _onChangeSearch(e.target.value)} placeholder='Search...' id='search' required />
+                                <button className={styles.button_search}><i className={"fas fa-search " + styles.search_icon}></i></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className={styles.post}>
-                <Tags post={post} onClickTags={onClickTags} />
-                <div className={styles.post_title}>
-                    <div>POSTS</div>
-                    <div>LIKES</div>
-                    <div>COMMENTS</div>
-                    <div>TAGS</div>
-                </div>
-                {
-                    (filterTags.length !== 0 ? filterTags :
-                        result)?.map(item => (
-                            <div className={styles.post_item} onClick={() => alert(item.id)} key={item.id}>
-                                <div>
-                                    <div className={styles.post_item_title}>{item.title}</div>
-                                    <div className={styles.post_item_user}>Created 5 hours ago</div>
+                <div className={styles.post}>
+                    <Tags post={post} onClickTags={onClickTags} />
+                    <div className={styles.post_title}>
+                        <div>POSTS</div>
+                        <div>LIKES</div>
+                        <div>COMMENTS</div>
+                        <div>TAGS</div>
+                    </div>
+                    {
+                        (filterTags.length !== 0 ? filterTags :
+                            result)?.map(item => (
+                                <div className={styles.post_item} onClick={() => alert(item.id)} key={item.id}>
+                                    <div>
+                                        <div className={styles.post_item_title}>{item.title}</div>
+                                        <div className={styles.post_item_user}>Created 5 hours ago</div>
+                                    </div>
+                                    <div>{item.likes}</div>
+                                    <div>{item.comments?.length}</div>
+                                    <div>{item.tags?.map(tag => (
+                                        tag + " "
+                                    ))}</div>
                                 </div>
-                                <div>{item.likes}</div>
-                                <div>{item.comments?.length}</div>
-                                <div>{item.tags?.map(tag => (
-                                    tag + " "
-                                ))}</div>
-                            </div>
-                        ))
-                }
-                <div className={styles.pagination}>
-                    <ul className="pagination m-0">
-                        <li className="page-item"><button className="page-link" onClick={_onClickPrevious}><i className="fas fa-arrow-left"></i></button></li>
-                        <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
-                    </ul>
-                    <p>
-                        Showing <span>{result.length === 0 ? "" : `${(page - 1) * 6 + 1} -`}</span>
-                        <span> {page * 6 < result.length ? page * 6 : post.length} </span>
-                        out of {post.length} results
-                    </p>
+                            ))
+                    }
+                    <div className={styles.pagination}>
+                        <ul className="pagination m-0">
+                            <li className="page-item"><button className="page-link" onClick={_onClickPrevious}><i className="fas fa-arrow-left"></i></button></li>
+                            <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
+                        </ul>
+                        <p>
+                            Showing <span>{result.length === 0 ? "" : `${(page - 1) * 6 + 1} -`}</span>
+                            <span> {page * 6 < result.length ? page * 6 : post.length} </span>
+                            out of {post.length} results
+                        </p>
+                    </div>
                 </div>
             </div>
-
-
-        </div>
-        // </AuthGuard>
+            <Footer />
+        </>
 
     )
 }

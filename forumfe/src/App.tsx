@@ -15,7 +15,6 @@ import { getPosts } from "./apis/posts-apis";
 import MyPostDetail from "./components/MyPosts/MyPostDetail/MyPostDetail";
 
 function App() {
-
   const postContext = useContext(PostContext);
 
   useEffect(() => {
@@ -25,8 +24,7 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <Header />
-      <Navigation />
+    <Header />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/createpost" element={<CreatePost />} />
@@ -39,7 +37,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/user/:id" element={<UserProfile />} />
       </Routes>
-      <Footer />
+      
+      
     </BrowserRouter>
   )
 }

@@ -4,6 +4,7 @@ import Navigation from "./Navigation/Navigation"
 import { UserContext } from '../../../context/UserContext'
 import { getAllUser } from '../../../apis/users-apis'
 import { AuthGuard } from "../../auth/guard/AuthGuard"
+import Footer from "../../Footer/Footer"
 
 export default function Profile() {
 
@@ -78,6 +79,7 @@ export default function Profile() {
                 </div>
                 <Navigation />
             </div>
+            <Footer />
         </AuthGuard>
     )
 }
