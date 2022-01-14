@@ -27,10 +27,10 @@
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
       "followings_id": [
-        5,
         8,
         6,
-        7
+        7,
+        5
       ],
       "introduce": "Hello ! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213-1",
@@ -38,7 +38,7 @@
       "address": "Long Islands, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1642174335422
+      "modifiedAt": 1642176727270
     },
     {
       "id": 2,
@@ -366,106 +366,6 @@
           "id": 0,
           "user_id": 0,
           "createdAt": ""
-        },
-        {
-          "id": 1642174301890,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:41+07:00"
-        },
-        {
-          "id": 1642174302718,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:42+07:00"
-        },
-        {
-          "id": 1642174303302,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:43+07:00"
-        },
-        {
-          "id": 1642174303686,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:43+07:00"
-        },
-        {
-          "id": 1642174303874,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:43+07:00"
-        },
-        {
-          "id": 1642174304550,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:44+07:00"
-        },
-        {
-          "id": 1642174304774,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:44+07:00"
-        },
-        {
-          "id": 1642174305494,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:45+07:00"
-        },
-        {
-          "id": 1642174305726,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:45+07:00"
-        },
-        {
-          "id": 1642174305926,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:45+07:00"
-        },
-        {
-          "id": 1642174306094,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306306,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306478,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306654,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306830,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174306990,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:46+07:00"
-        },
-        {
-          "id": 1642174307166,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:47+07:00"
-        },
-        {
-          "id": 1642174307322,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:47+07:00"
-        },
-        {
-          "id": 1642174307686,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:47+07:00"
-        },
-        {
-          "id": 1642174308206,
-          "user_id": 1,
-          "createdAt": "2022-01-14T22:31:48+07:00"
         }
       ],
       "comments": [
@@ -536,14 +436,47 @@
       "title": "Getting Covid-19 Is Different Now",
       "createdAt": "2022-01-14T19:32:10+07:00",
       "likes": [],
-      "comments": [],
+      "comments": [
+        {
+          "id": 1642175846609,
+          "user_id": 1,
+          "comment": "minh",
+          "createdAt": "2022-01-14T22:57:26+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642175846609,
+          "user_id": 1,
+          "comment": "minh",
+          "createdAt": "2022-01-14T22:57:26+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642181302329,
+          "user_id": 1,
+          "comment": "hi",
+          "createdAt": "2022-01-15T00:28:22+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642181302329,
+          "user_id": 1,
+          "comment": "hi",
+          "createdAt": "2022-01-15T00:28:22+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        }
+      ],
       "tags": [
         "covid-19",
         "health"
       ],
       "img": "",
       "content": "<figure class=\"iy iz fm fn paragraph-image\" style=\"box-sizing: inherit; margin: 33px auto 0px; clear: both; color: rgba(0, 0, 0, 0.8); font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><div role=\"button\" tabindex=\"0\" class=\"ja jb ap jc w jd\" style=\"box-sizing: inherit; width: 679.988px; position: relative; cursor: zoom-in; z-index: auto; transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) 0s;\"><div class=\"fm fn ix\" style=\"box-sizing: inherit; margin-left: auto; margin-right: auto; max-width: 1572px;\"><img alt=\"\" class=\"w je jf\" src=\"https://miro.medium.com/max/728/1*RxPrHl66z-3qtywOpdvK1A.png\" width=\"700\" height=\"429\" role=\"presentation\" style=\"box-sizing: inherit; vertical-align: middle; width: 679.988px; max-width: 100%; height: auto;\"></div></div></figure><p id=\"ada6\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">It sure seems like everyone right now either knows someone who has Covid-19, has Covid-19 themselves, or both. Seriously,<span>&nbsp;</span><a class=\"du kb\" href=\"https://www.nytimes.com/interactive/2021/us/covid-cases.html\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">look at this cases graph</a>:</p><figure class=\"ot ou ov ow ox iz fm fn paragraph-image\" style=\"box-sizing: inherit; margin: 56px auto 0px; clear: both; color: rgba(0, 0, 0, 0.8); font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><div role=\"button\" tabindex=\"0\" class=\"ja jb ap jc w jd\" style=\"box-sizing: inherit; width: 679.988px; position: relative; cursor: zoom-in; z-index: auto; transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) 0s;\"><div class=\"fm fn os\" style=\"box-sizing: inherit; margin-left: auto; margin-right: auto; max-width: 1660px;\"><div class=\"pb s ap pc\" style=\"box-sizing: inherit; display: block; position: relative; margin: auto; background-color: rgb(226, 225, 223);\"><div class=\"pd pe s\" style=\"box-sizing: inherit; display: block; padding-bottom: 342.894px; height: 0px;\"><div class=\"el oy eb eo ek et w oc oz pa\" style=\"box-sizing: inherit; width: 679.988px; position: absolute; left: 0px; opacity: 0; top: 0px; height: 342.894px; overflow: hidden; transition: opacity 100ms ease 400ms; will-change: transform; transform: translateZ(0px);\"><img alt=\"\" class=\"eb eo ek et w pf pg af yg\" src=\"https://miro.medium.com/max/31/1*ri3E259pXKYOfdr7LnOwtg.png?q=20\" width=\"700\" height=\"353\" role=\"presentation\" style=\"box-sizing: inherit; vertical-align: middle; width: 679.988px; visibility: hidden; position: absolute; left: 0px; top: 0px; height: 342.894px; filter: blur(20px); transform: scale(1.1); transition: visibility 0ms ease 400ms;\"></div><img alt=\"\" class=\"kw vo eb eo ek et w t\" width=\"700\" height=\"353\" role=\"presentation\" src=\"https://miro.medium.com/max/728/1*ri3E259pXKYOfdr7LnOwtg.png\" srcset=\"https://miro.medium.com/max/287/1*ri3E259pXKYOfdr7LnOwtg.png 276w, https://miro.medium.com/max/574/1*ri3E259pXKYOfdr7LnOwtg.png 552w, https://miro.medium.com/max/666/1*ri3E259pXKYOfdr7LnOwtg.png 640w, https://miro.medium.com/max/728/1*ri3E259pXKYOfdr7LnOwtg.png 700w\" sizes=\"700px\" style=\"box-sizing: inherit; vertical-align: middle; background-color: rgb(244, 243, 241); width: 679.988px; position: absolute; left: 0px; top: 0px; height: 342.894px; opacity: 1; transition: opacity 400ms ease 0ms;\"></div></div></div></div></figure><p id=\"4930\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Considering how much panic and fear there was about Covid-19 during, oh, eve<span id=\"rmm\" style=\"box-sizing: inherit;\">r</span>y other spot on that graph, it sure would seem like we’d all be freaking out right now. And sure, there are a fair share of people who are freaking out right now — they seem to make up a disproportionate percentage of Twitter, which makes sense; those addicted to the endorphin rush of that platform seem the most likely to feel as if their hair is constantly on fire — though one could make an argument these people never stopped freaking out in the first place.</p><p id=\"2dc6\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">But on the whole: I don’t sense much panic in the streets. Day-to-day activity is roughly what it always is this time of year. The number of masks I see on a daily basis has increased, but not dramatically. Our schools are desperately trying to stay open, but, on the whole, they seem to be succeeding. There were 70,000 screaming people at a football game on Monday night; there will be six more of them this weekend. (The NBA hasn’t had a canceled game in two weeks.)<span>&nbsp;</span><em class=\"lt\" style=\"box-sizing: inherit; font-style: italic;\">Spider-Man: No Way Home<span>&nbsp;</span></em>has been out for three weeks and is already<span>&nbsp;</span><a class=\"du kb\" href=\"https://www.boxofficemojo.com/chart/top_lifetime_gross/\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">the sixth-highest-grossing movie of all time</a>. People are out. They are doing things. The world is still rotating.</p><p id=\"bd47\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">The reason for this is obvious but really can’t be stated enough: Vaccines. Now, this does not mean that everyone is vaccinated: According to the<span>&nbsp;</span><em class=\"lt\" style=\"box-sizing: inherit; font-style: italic;\">New York Times<span>&nbsp;</span></em>vaccine tracker,<span>&nbsp;</span><a class=\"du kb\" href=\"https://www.nytimes.com/interactive/2020/us/covid-19-vaccine-doses.html\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">73 percent of American adults are fully vaccinated</a>, and 86 percent have received at least one shot. That is a higher percentage than is appreciated — to read regular coverage, you would think it was something like 50–50 — but it is not 100 percent. That’s why the United States’ hospitalization numbers are higher than they should be, with deaths surely to follow. I wish everyone was vaccinated. But they’re not. But focusing on the vaccination rate misses the point of why American life is much more normal right now, despite the stratospheric rise in cases.</p><p id=\"20b7\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">The answer is one of psychology. The vast majority of people who are vaccinated are doing the thing we’ve all been supposedly screaming at people to do without the pandemic: They’re trusting the science. They know that the vaccine protects them from severe sickness or death, and also that it makes them less likely to spread the virus. So they, after two years of madness and exhaustion, are going about their lives. The people who are not vaccinated? Well, the vast majority of them have been going about their lives like normal from the get-go. They don’t think any of this is that big of a deal; if they did, after all, they’d be vaccinated. Put those two groups together — groups that make up, again, the vast majority of Americans — and it’s no wonder life feels more normal: Most people are treating it that way.</p><p id=\"243f\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">This is true, in many cases, even if you get Covid-19. (If you’re vaccinated.) I’ve had several friends contract Covid during this surge whose only real frustration, upon learning they’ve tested positive, is that it’s going to mess up all the work they have to do, or their kids’ ability to stay in school, or a trip coming up that they had planned. That is to say: They are treating having Covid-19 like they treat having the flu — like it’s a big pain in the ass, like they’d certainly prefer<span>&nbsp;</span><em class=\"lt\" style=\"box-sizing: inherit; font-style: italic;\">not<span>&nbsp;</span></em>to have Covid, but otherwise it’s not something to be mortally terrified of. They’ll quarantine as long as they’re required to, and they are generally grateful that it’s now five days rather than 10, because five days is less disruptive to the life they’re trying to get back to than 10. They are no longer terrified of Covid-19 because if you are fully vaccinated (and especially if you’re boosted), you have very little to fear. And people are tired of being afraid.</p><p id=\"892b\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">The writer Freddie deBoer<span>&nbsp;</span><a class=\"du kb\" href=\"https://freddiedeboer.substack.com/p/covid-panic-is-a-site-of-inter-elite\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">explained the mindset of this fully vaccinated</a><span>&nbsp;</span>person well last month:</p><blockquote class=\"ph pi pj\" style=\"box-sizing: inherit; margin: 0px 0px 0px -20px; box-shadow: rgb(33, 33, 32) 3px 0px 0px 0px inset; padding-left: 23px; color: rgba(0, 0, 0, 0.8); font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><p id=\"ecea\" class=\"jg jh lt gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-style: italic; font-size: 21px;\">It’s certainly possible that the very unlikely will happen and I’ll catch a breakthrough infection, the infection will be serious, and I will die. That could happen. But I have taken the appropriate cautions through vaccination and masking and am unwilling to surrender any more of my emotional life to the disease than that. Rare and fatal events sometimes occur; that’s life. When you can you mitigate the risk. Death from a car accident is far more likely for me than death from Covid. It’s still rare, but there’s a risk, and putting on a seatbelt is a reasonable mitigation tactic. Simply never getting in a car, though, would not be reasonable. The risk reduction would not outweigh the considerable costs. So I don’t make that bargain. And thus with Covid. I’m vaccinated, I mask in most indoor settings, and if I develop symptoms I’ll immediately seek a test and quarantine myself. Those are acceptable tradeoffs, for me. As a now triple-vaxxed person who has had the virus previously I am intent on living my life as normally as possible, which includes not unduly worrying about it or demanding others do so. And I would argue that expecting otherwise from me would make you functionally an anti-vaxxer.</p><p id=\"cf22\" class=\"jg jh lt gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-style: italic; font-size: 21px;\">Your risk calculus might be different, but that’s all it is, a little back-of-the-envelope math. Dealing with Covid is just acting as your own private actuary. That’s it. Your relationship towards Covid and the steps you take to mitigate its risks are fundamentally self-interested decisions that you should try to make as unemotionally as possible. It’s not a mitzvah.</p></blockquote><p id=\"d119\" class=\"jg jh gg gh b hf ji jj jk hi jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka fz hd\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; word-break: break-word; font-style: normal; font-family: fell, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; color: rgb(60, 61, 60); line-height: 32px; letter-spacing: -0.003em; font-size: 21px; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(244, 243, 241); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">It seems increasingly clear to me that this is exactly how most (vaccinated) people are reacting to Covid-19, even during this Omicron surge —<span>&nbsp;</span><em class=\"lt\" style=\"box-sizing: inherit; font-style: italic;\">especially<span>&nbsp;</span></em>during this Omicron surge. They recognize that getting Covid-19 for them, at this point, is roughly as dangerous as driving on the freeway, or riding a bike, or any of the other of thousands of potentially dangerous (but not really) activities we do every day without thinking. So they are acting accordingly: They are visiting with friends, they are attending sporting events, they are seeing<span>&nbsp;</span><em class=\"lt\" style=\"box-sizing: inherit; font-style: italic;\">Spider-Man: No Way Home.<span>&nbsp;</span></em>They are exhibiting, I’d argue, rational behavior.</p>",
-      "modifiedAt": 1642163530960
+      "modifiedAt": 1642185577163
     }
   ]
 }

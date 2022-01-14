@@ -31,7 +31,6 @@ export default function UserProfile() {
             .catch(err => console.log(err))
     }, [id])
 
-    console.log("posts", posts)
 
     useEffect(() => {
         if (id) {
