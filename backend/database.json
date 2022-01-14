@@ -1,7 +1,14 @@
 {
   "protected_resources": {
-    "users": ["GET", "PUT", "PATCH", "DELETE"],
-    "posts": ["POST"]
+    "users": [
+      "GET",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "posts": [
+      "POST"
+    ]
   },
   "users": [
     {
@@ -19,7 +26,9 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
-      "followings_id": [5],
+      "followings_id": [
+        5
+      ],
       "introduce": "Hi! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -43,7 +52,14 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [3, 4, 5, 6, 7, 8],
+      "followings_id": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
       "introduce": "I will post really cool images of all street art from around the country!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -67,7 +83,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [4, 5, 6, 7],
+      "followings_id": [
+        4,
+        5,
+        6,
+        7
+      ],
       "introduce": "I will post really cool images of all street art from around the country!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -91,7 +112,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [5, 6, 7, 8],
+      "followings_id": [
+        5,
+        6,
+        7,
+        8
+      ],
       "introduce": "I will post really cool images of all street art from around the country!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -115,7 +141,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 4, 6],
+      "followings_id": [
+        1,
+        2,
+        4,
+        6
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -139,7 +170,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 3, 5],
+      "followings_id": [
+        1,
+        2,
+        3,
+        5
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -163,7 +199,11 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 3],
+      "followings_id": [
+        1,
+        2,
+        3
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -187,7 +227,11 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 3],
+      "followings_id": [
+        1,
+        2,
+        3
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -237,6 +281,11 @@
           "id": 8,
           "user_id": 2,
           "createdAt": "2022-01-04T12:02:53+07:00"
+        },
+        {
+          "id": 6,
+          "user_id": 1,
+          "createdAt": "2022-01-08T12:02:53+07:00"
         }
       ],
       "comments": [
@@ -249,10 +298,129 @@
           "user_img": ""
         }
       ],
-      "tags": ["1"],
+      "tags": [
+        "1"
+      ],
       "img": "",
       "content": "<p>1</p>",
       "modifiedAt": 1642136573081
+    },
+    {
+      "id": 1642148498850,
+      "author": {
+        "author_id": 1,
+        "author_name": "admin",
+        "author_img": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg"
+      },
+      "title": "2",
+      "createdAt": "2022-01-14T15:21:38+07:00",
+      "likes": [],
+      "comments": [],
+      "tags": [
+        "2"
+      ],
+      "img": "",
+      "content": "<p>2</p>",
+      "modifiedAt": 1642148498858
+    },
+    {
+      "id": 1642148498852,
+      "author": {
+        "author_id": 1,
+        "author_name": "user3",
+        "author_img": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg"
+      },
+      "title": "2",
+      "createdAt": "2022-01-09T15:21:38+07:00",
+      "likes": [],
+      "comments": [
+        {
+          "id": 3,
+          "user_id": 3,
+          "comment": "hay",
+          "createdAt": "2022-01-05T12:02:53+07:00",
+          "user_name": "",
+          "user_img": ""
+        }
+      ],
+      "tags": [
+        "3"
+      ],
+      "img": "",
+      "content": "<p>2</p>",
+      "modifiedAt": 1642148498858
+    },
+    {
+      "id": 1642161287396,
+      "author": {
+        "author_id": 1,
+        "author_name": "admin",
+        "author_img": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg"
+      },
+      "title": "2",
+      "createdAt": "2022-01-14T18:54:47+07:00",
+      "likes": [],
+      "comments": [],
+      "tags": [
+        "232"
+      ],
+      "img": "",
+      "content": "<p>123</p>",
+      "modifiedAt": 1642161287402
+    },
+    {
+      "id": 1642162608387,
+      "author": {
+        "author_id": 1,
+        "author_name": "admin",
+        "author_img": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg"
+      },
+      "title": "admin",
+      "createdAt": "2022-01-14T19:16:48+07:00",
+      "likes": [],
+      "comments": [],
+      "tags": [
+        "admin"
+      ],
+      "img": "",
+      "content": "<p>admin</p>",
+      "modifiedAt": 1642162608408
+    },
+    {
+      "id": 1642162616963,
+      "author": {
+        "author_id": 1,
+        "author_name": "admin",
+        "author_img": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg"
+      },
+      "title": "user",
+      "createdAt": "2022-01-14T19:16:56+07:00",
+      "likes": [],
+      "comments": [],
+      "tags": [
+        "user"
+      ],
+      "img": "",
+      "content": "<p>user</p>",
+      "modifiedAt": 1642162616980
+    },
+    {
+      "id": 1642162625564,
+      "author": {
+        "author_id": 1,
+        "author_name": "admin",
+        "author_img": "https://odindesignthemes.com/vikinger-theme/wp-content/uploads/avatars/1/5f6d2c93a53d1-bpfull.jpg"
+      },
+      "title": "user2",
+      "createdAt": "2022-01-14T19:17:05+07:00",
+      "likes": [],
+      "comments": [],
+      "tags": [
+        "user2"
+      ],
+      "img": "",
+      "content": "<p>user2</p>",
+      "modifiedAt": 1642162625579
     }
   ]
 }

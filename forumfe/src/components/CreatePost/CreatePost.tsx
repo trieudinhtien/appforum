@@ -1,4 +1,4 @@
-import { FC, useContext, useEffect, useRef, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import styles from "./CreatePost.module.css";
 import Banner from "../../images/banners/banner.png";
 import NewPost from "../../images/banners/newpost.png";
@@ -8,7 +8,6 @@ import {
   createPost,
   editPost,
   getPostById,
-  getPosts,
 } from "../../apis/posts-apis";
 import moment from "moment";
 import { UserContext } from "../../context/UserContext";
