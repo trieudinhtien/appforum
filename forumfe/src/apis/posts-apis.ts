@@ -17,7 +17,7 @@ export const getPosts = (): Promise<Post[]> => {
     .then((res: AxiosResponse<Post[]>) => res.data);
 };
 
-export const getPostById = (id: number): Promise<Post> =>{
+export const getPostById = (id: number): Promise<Post> => {
   return axios({
     method: "GET",
     url: `http://localhost:3000/posts/${id}`,
@@ -27,7 +27,7 @@ export const getPostById = (id: number): Promise<Post> =>{
   }).then((res: AxiosResponse<Post>) => res.data);
 }
 
-export const editPost = (token: string, id: number, post: {title: string, content: string, tags: string[]}): Promise<Post> => {
+export const editPost = (token: string, id: number, post: { title: string, content: string, tags: string[] }): Promise<Post> => {
   return axios({
     method: "PATCH",
     url: `http://localhost:3000/posts/${id}`,
@@ -51,30 +51,27 @@ export const deletePost = (token: string, id: number): Promise<Post> => {
     },
   }).then((res: AxiosResponse<Post>) => res.data);
 };
-export function sendComment(id: number, token: string, comment: Comment[]) {
+export function sendComment(id: number, token: string, post: Post) {
   return axios({
-      method: "PATCH",
-      url: `http://localhost:3000/posts/${id}`,
-      headers: {
-          authorization: `Bearer ${token}`
-      },
-      data: {
-          "comments": comment
-      }
+    method: "PATCH",
+    url: `http://localhost:3000/posts/${id}`,
+    headers: {
+      authorization: `Bearer ${token}`
+    },
+    data: post
+
   }).then(res => res.data)
-      .catch(err => console.log(err))
+    .catch(err => console.log(err))
 }
 
-export function sendLike(id: number, token: string, likes: Like) {
+export function sendLike(id: number, token: string, post: Post) {
   return axios({
-      method: "PATCH",
-      url: `http://localhost:3000/posts/${id}`,
-      headers: {
-          authorization: `Bearer ${token}`
-      },
-      data: {
-          "likes": likes
-      }
+    method: "PATCH",
+    url: `http://localhost:3000/posts/${id}`,
+    headers: {
+      authorization: `Bearer ${token}`
+    },
+    data: post
   }).then(res => res.data)
-      .catch(err => console.log(err))
+    .catch(err => console.log(err))
 }

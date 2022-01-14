@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getPostById } from '../../apis/home-apies';
 import styles from './Post.module.css'
 import Banner from "../Home/images/banner-bg.png";
@@ -8,13 +8,60 @@ import moment from 'moment';
 import { UserContext } from '../../context/UserContext';
 import { getUserById } from '../../apis/users-apis';
 import { Card } from 'react-bootstrap';
+import { AuthGuard } from '../auth/guard/AuthGuard';
+import { sendComment, sendLike } from '../../apis/posts-apis';
 
 export default function Post() {
     const params = useParams();
+    const navigate = useNavigate();
+
+    const context = useContext(UserContext)
     const [postDetail, setpostDetail] = useState<Post>();
-    
+    const [like, setlike] = useState<Like>({
+        id: 0,
+        user_id: 0,
+        createdAt: ""
+    })
+    const [commentPost, setcommentPost] = useState<Commentt>({
+        id: Date.now(),
+        user_id: context.user.id,
+        comment: "",
+        createdAt: moment().format(),
+        user_name: context.user.username,
+        user_img: context.user.avatar,
+    });
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (context.user.token) {
+            if (commentPost.comment) {
+                postDetail?.comments.push(commentPost);
+                if (postDetail) {
+                    sendComment(Number(params.id), context.user.token, postDetail);
+                }
+            }
+        }
+        navigate(`/post/${params.id}`)
+    }
+
+    const handleLike = () => {
+        if (context.user.token) {
+
+            setlike({
+                ...like,
+                id: Date.now(),
+                user_id: context.user.id,
+                createdAt: moment().format()
+            })
+            postDetail?.likes.push(like)
+            if (postDetail) {
+                sendLike(Number(params.id), context.user.token, postDetail);
+            }
+
+        }
+    }
 
 
+   
     useEffect(() => {
         if (params.id) {
             getPostById(Number(params.id))
@@ -22,6 +69,7 @@ export default function Post() {
                 .catch((err: Error) => console.log(err));
         }
     }, []);
+    console.log(postDetail?.likes.length);
 
     return (
         <div className={styles.app + " container"}>
@@ -49,32 +97,49 @@ export default function Post() {
                         <div>{postDetail?.author.author_name}</div>
                     </div>
                     <div>
-                  <button>Like</button> 
-                    <Card>
-                        <Card.Body key={postDetail?.id}>
-                            <Card.Title>Reply</Card.Title>
-                            <Card.Text>{postDetail?.comments.length}</Card.Text>
-                            
-                        </Card.Body>
-                    </Card>
-                    <Card>
-                        <Card.Body key={postDetail?.id}>
-                            <Card.Title>Likes</Card.Title>
-                            <Card.Text>{postDetail?.likes.length}</Card.Text>
-                            
-                        </Card.Body>
-                    </Card>
+                        <button onClick={handleLike}>Like</button>
+                        <Card>
+                            <Card.Body >
+                                <Card.Title>Reply</Card.Title>
+                                <Card.Text>{postDetail?.comments.length}</Card.Text>
+
+                            </Card.Body>
+                        </Card>
+                        <Card>
+                            <Card.Body >
+                                <Card.Title>Likes</Card.Title>
+                                <Card.Text>{postDetail?.likes.length}</Card.Text>
+
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: `${postDetail?.content}` }}></div>
             </div>
             <div>{postDetail?.comments.map(com => (
-                <div>
-                    <div className={styles.post_item_user}> {moment(com?.createdAt).format("MMMM DD, YYYY")}</div>
+                <div key={com.id}>
+                    <div className={styles.post_item_user}>
+                        {moment(com?.createdAt).format("MMMM DD, YYYY")}
+                    </div>
                     <br />
                     {com.user_id}   {com.comment}
                 </div>
-            ))}</div>
+            ))}
+            </div>
+            <AuthGuard moveTo="/login">
+                <div>
+                    <form className={styles.addComment} onSubmit={handleSubmit}>
+                        <label htmlFor="">Comment</label>
+                        <input type="text"
+                            placeholder='Enter your comment...'
+                            name='comment'
+                            maxLength={60}
+                            onChange={(e) => setcommentPost({ ...commentPost, comment: e.target.value })}
+                        />
+                        <button type='submit'>Post</button>
+                    </form>
+                </div>
+            </AuthGuard>
         </div>
     )
 }
