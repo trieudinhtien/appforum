@@ -37,7 +37,7 @@ export default function Post() {
                 <h2 className={styles.forum_title}>{postDetail?.title}</h2>
             </div>
             <div>
-                <p className={styles.notification}>This topic has {postDetail?.comments.length} reply, {postDetail?.likes} likes</p>
+                <p className={styles.notification}>This topic has {postDetail?.comments.length} reply, {postDetail?.likes.length} likes</p>
             </div>
             <div className={styles.content}>
                 <div className={styles.post_item_user}> {moment(postDetail?.createdAt).format("MMMM DD, YYYY")}
@@ -60,7 +60,7 @@ export default function Post() {
                     <Card>
                         <Card.Body key={postDetail?.id}>
                             <Card.Title>Likes</Card.Title>
-                            <Card.Text>{postDetail?.likes}</Card.Text>
+                            <Card.Text>{postDetail?.likes.length}</Card.Text>
                             
                         </Card.Body>
                     </Card>

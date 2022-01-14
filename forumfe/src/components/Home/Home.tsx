@@ -19,6 +19,7 @@ export default function Home() {
         })
             .catch(err => console.error(err))
     }, [])
+
     useEffect(() => {
         setresult(post.slice(page * 6 - 6, page * 6))
         console.log(page);
@@ -99,11 +100,6 @@ export default function Home() {
                                 <div>
                                     <div className={styles.post_item_title}>{item.title}</div>
                                     <div className={styles.post_item_user}>Created {moment(item.createdAt).fromNow()}</div>
-                                    <div>{item.likes}</div>
-                                    <div>{item.comments?.length}</div>
-                                    <div>{item.tags?.map(tag => (
-                                        tag + " "
-                                    ))}</div>
                                     <div>{item.likes.length}</div>
                                     <div>{item.comments?.length}</div>
                                     <div>{item.tags?.map(tag => (
