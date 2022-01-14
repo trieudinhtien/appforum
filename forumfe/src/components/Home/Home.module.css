@@ -8,8 +8,10 @@
 }
 
 .module {
+  padding-left: 80px;
   margin: auto;
-  margin-top: 6rem;
+  margin-top: 112px;
+  max-width: 1264px;
 }
 h1,
 h2,
@@ -42,19 +44,23 @@ h6 {
 }
 
 .forum_heading {
-  margin-top: 5rem;
+  margin-top: 32px;
 }
+
 .forum_pretitle {
   color: #9395af;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
 .forum_title {
   margin-top: 6px;
-  font-size: 1.625rem;
+  font-size: 26px;
   font-weight: 700;
+  margin-bottom: 32px;
+  font-weight: 700;
+  line-height: 26px;
 }
 
 .search {
@@ -199,6 +205,20 @@ input {
   background-color: #FCFCFD;
 }
 
+.post_content > div:first-of-type{
+  border-radius: 12px 12px 0 0;
+}
+
+.post_content > div:last-of-type{
+  border-radius: 0 0 12px 12px;
+}
+
+.post_content > div:hover{
+  background-color: #d1cfff;
+  color: #fff;
+  cursor: pointer;
+}
+
 .post_row{
   display: flex;
   padding: 24px 28px;
@@ -299,4 +319,21 @@ input {
 
 .pagination span{
   color: #00c7d9
+}
+
+.tags > span{
+  margin: 0 5px 8px 0;
+  font-size: 14px;
+  border-radius: 10px;
+  background-color: #ccc;
+  padding: 5px 10px;
+  color: #000;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tags > span:hover{
+  color: #fff;
+  background-color: rgb(24, 194, 209)
 }
