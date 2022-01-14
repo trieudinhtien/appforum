@@ -45,6 +45,26 @@ export function changePasswordById(id: number, token: string, password: string) 
         .catch(err => console.log(err))
 }
 
+export function changeUserById(id: number, token: string, firstName: string, lastName: string, birthday: string, gender: string, phone: string, address: string, introduce: string) {
+    return axios({
+        method: "PATCH",
+        url: `http://localhost:3000/users/${id}`,
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        data: {
+            "firstName": firstName,
+            "lastName": lastName,
+            "birthday": birthday,
+            "gender": gender,
+            "phone": phone,
+            "address": address,
+            "introduce": introduce
+        }
+    }).then(res => res.data)
+        .catch(err => console.log(err))
+}
+
 export function changeFollowings(id: number, token: string, followingsID: number[]) {
     return axios({
         method: "PATCH",
@@ -57,5 +77,45 @@ export function changeFollowings(id: number, token: string, followingsID: number
         }
     }).then(res => res.data)
         .catch(err => console.log(err))
+}
+
+export function saveImg(data: FormData) {
+    return axios({
+        method: "POST",
+        url: "http://localhost:3000/upload-file",
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+        data: data
+    }).then(res => res.data)
+        .catch(err => err.data)
+}
+
+export function changeAvatar(id: number, token: string, avatar: string) {
+    return axios({
+        method: "PATCH",
+        url: `http://localhost:3000/users/${id}`,
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        data: {
+            avatar: avatar
+        }
+    }).then(res => res.data)
+        .catch(err => err.data)
+}
+
+export function changeCover(id: number, token: string, cover: string) {
+    return axios({
+        method: "PATCH",
+        url: `http://localhost:3000/users/${id}`,
+        headers: {
+            authorization: `Bearer ${token}`
+        },
+        data: {
+            cover: cover
+        }
+    }).then(res => res.data)
+        .catch(err => err.data)
 }
 

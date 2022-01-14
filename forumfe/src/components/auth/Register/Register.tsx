@@ -9,7 +9,7 @@ import {v4} from 'uuid'
 
 export const Register = () => {
     let navigate = useNavigate();
-    const uuidv4 = v4();
+    // const uuidv4 = v4();
     const [formData, setDataForm] = useState<User>({
         "id": 0,
         "firstName": "",

@@ -141,6 +141,59 @@
   font-weight: 900;
 }
 
+.notifications_box {
+  position: absolute;
+  top: 40px;
+  right: 30%;
+  z-index: 9999;
+  background-color: #fff;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.notifications_box > p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3e3f5e;
+  line-height: 1em;
+  padding: 20px 28px;
+  margin: 0;
+}
+
+.notifications_box > ul {
+  list-style: none;
+  padding: 0;
+  height: 250px;
+  overflow: auto;
+}
+
+.notifications_box > ul > li {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  padding: 20px 28px;
+}
+
+.notifications_box > ul > li:hover{
+  background-color: #e7e7e7;
+}
+
+.notifications_img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  border: 2px solid #49cbfe;
+}
+
+.notifications_text > p {
+  color: #3e3f5e;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4285714286em;
+  margin: 0;
+}
+
 .settings {
   font-size: 20px;
   padding: 0 24px;
@@ -217,7 +270,7 @@
   margin-top: 20px;
 }
 
-.settings > div > ul > li > button:hover{
+.settings > div > ul > li > button:hover {
   background-color: #6610f2;
 }
 
@@ -240,9 +293,9 @@
   background-color: #1bc5d4;
 }
 
-.turn_Off_setting{
+.turn_Off_setting {
   display: none;
 }
-.turn_On_setting{
+.turn_On_setting {
   display: block;
 }

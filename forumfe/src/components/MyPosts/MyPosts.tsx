@@ -43,13 +43,13 @@ const MyPosts: FC<{}> = () => {
     getPosts()
       .then((data) => {
         const newData = data.filter((item: Post) => {
-          if (item.user_id === userContext.user.id) return item;
+          if (item.author.author_id === userContext.user.id) return item;
           return 0;
         });
 
         setPosts(newData);
         postContext.setPosts(newData);
-      })
+      })                            
       .catch((err: Error) => console.log(err));
   }, []);
 
@@ -78,7 +78,6 @@ const MyPosts: FC<{}> = () => {
           }
         );
         postContext.setPosts([...postList0]);
-        // setPosts([...postList0]);
         break;
       case 1:
         const postList1 = posts.sort(
@@ -89,7 +88,6 @@ const MyPosts: FC<{}> = () => {
           }
         );
         postContext.setPosts([...postList1]);
-        // setPosts([...postList1]);
         break;
       case 2:
         const postList2 = posts.sort(
@@ -100,7 +98,6 @@ const MyPosts: FC<{}> = () => {
           }
         );
         postContext.setPosts([...postList2]);
-        // setPosts([...postList2]);
         break;
       case 3:
         const postList3 = posts.sort(
@@ -111,7 +108,6 @@ const MyPosts: FC<{}> = () => {
           }
         );
         postContext.setPosts([...postList3]);
-        // setPosts([...postList3]);
         break;
       default:
         break;
@@ -160,10 +156,11 @@ const MyPosts: FC<{}> = () => {
             <></>
           )}
         </div>
+        <p>Showing {currentPage} - {Math.floor(postContext.posts.length/amount)} out of {Math.floor(postContext.posts.length/amount)} results</p>
         <MyPostPagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
-          maxPage={postContext.posts.length}
+          max={postContext.posts.length}
           amount={amount}
         />
       </div>

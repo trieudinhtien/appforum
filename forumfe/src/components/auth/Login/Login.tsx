@@ -13,13 +13,12 @@ interface Ilogin {
 }
 
 
-
 const Login: FC<{}> = () => {
 
     const context = useContext(UserContext)
 
     // const context = useContext(AuthContext);
-    console.log("context", context.user)
+    // console.log("context", context.user)
 
     const [formData, setFormData] = useState<Ilogin>({
         email: "",
@@ -60,7 +59,7 @@ const Login: FC<{}> = () => {
 
     function hanlderSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log("fomr login", formData)
+        // console.log("fomr login", formData)
         validate(formData)
         if (!formErr.email && !formErr.password) {
             login(formData)
