@@ -4,6 +4,10 @@
     padding: 112px 0 100px 80px;
 }
 
+.profile a{
+    text-decoration: none !important;
+}
+
 p, a, h2, h3, h4, h5, div, span {
     font-family: 'Rajdhani', sans-serif;
     font-size: 14px;
@@ -50,6 +54,7 @@ p, a, h2, h3, h4, h5, div, span {
     font-size: 22px;
     font-weight: bold;
     line-height: 22px;
+    color: #605cf8;
 }
 
 .des_left > p:last-of-type{

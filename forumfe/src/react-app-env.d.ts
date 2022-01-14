@@ -16,6 +16,15 @@ interface Post {
   content: string;
 }
 
+interface Comment{
+  id: number;
+  user_id: number;
+  comment: string;
+  createdAt: string;
+  user_name: string,
+  user_img: string,
+}
+
 interface CreatePostForm {
   title: string;
   tags: string;

@@ -1,7 +1,14 @@
 {
   "protected_resources": {
-    "users": ["GET", "PUT", "PATCH", "DELETE"],
-    "posts": ["POST"]
+    "users": [
+      "GET",
+      "PUT",
+      "PATCH",
+      "DELETE"
+    ],
+    "posts": [
+      "POST"
+    ]
   },
   "users": [
     {
@@ -20,10 +27,10 @@
         "youtube": "https://www.youtube.com/c/MixiGamingofficial"
       },
       "followings_id": [
-        7,
-        8,
+        6,
         5,
-        6
+        8,
+        7
       ],
       "introduce": "Hello ! My name is Marina but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "933-658-1213-1",
@@ -31,7 +38,7 @@
       "address": "Long Islands, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1642093423517
+      "modifiedAt": 1642148263567
     },
     {
       "id": 2,
@@ -48,7 +55,14 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [3, 4, 5, 6, 7, 8],
+      "followings_id": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
       "introduce": "I will post really cool images of all street art from around the country!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -72,7 +86,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [4, 5, 6, 7],
+      "followings_id": [
+        4,
+        5,
+        6,
+        7
+      ],
       "introduce": "I will post really cool images of all street art from around the country!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -96,7 +115,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [5, 6, 7, 8],
+      "followings_id": [
+        5,
+        6,
+        7,
+        8
+      ],
       "introduce": "I will post really cool images of all street art from around the country!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -120,7 +144,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 4, 6],
+      "followings_id": [
+        1,
+        2,
+        4,
+        6
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -144,7 +173,12 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 3, 5],
+      "followings_id": [
+        1,
+        2,
+        3,
+        5
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -168,7 +202,11 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 3],
+      "followings_id": [
+        1,
+        2,
+        3
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -192,7 +230,11 @@
         "instagram": "https://instagram.com/fanta.2hand",
         "youtube": ""
       },
-      "followings_id": [1, 2, 3],
+      "followings_id": [
+        1,
+        2,
+        3
+      ],
       "introduce": "My name is Destroy and I stream video games everyday!",
       "phone": "933-658-1213",
       "birthday": "1994-03-23",
@@ -236,10 +278,10 @@
       "likes": 7,
       "comments": [
         {
-          "id":1,
+          "id": 1,
           "user_id": 8,
-          "comment":"That was dope",
-          "createdAt":"2022-01-13T11:58:43+07:00"
+          "comment": "That was dope",
+          "createdAt": "2022-01-13T11:58:43+07:00"
         }
       ],
       "tags": [
@@ -258,10 +300,10 @@
       "likes": 7,
       "comments": [
         {
-          "id":2,
+          "id": 2,
           "user_id": 8,
-          "comment":"That was dope",
-          "createdAt":"2022-01-13T11:58:43+07:00"
+          "comment": "That was dope",
+          "createdAt": "2022-01-13T11:58:43+07:00"
         }
       ],
       "tags": [
@@ -293,7 +335,9 @@
       "createdAt": "2022-01-13T11:58:43+07:00",
       "likes": 7,
       "comments": [],
-      "tags": ["2"],
+      "tags": [
+        "2"
+      ],
       "img": "",
       "content": "<p>2</p>",
       "modifiedAt": 1642075611086
@@ -346,7 +390,9 @@
           "createdAt": "2022-01-13T19:20:43+07:00"
         }
       ],
-      "tags": ["6"],
+      "tags": [
+        "6"
+      ],
       "img": "",
       "content": "<p>6</p>",
       "modifiedAt": 1642076503614
@@ -358,7 +404,9 @@
       "createdAt": "2022-01-13T19:21:43+07:00",
       "likes": [],
       "comments": [],
-      "tags": ["7"],
+      "tags": [
+        "7"
+      ],
       "img": "",
       "content": "<p><img src=\"https://toplist.vn/images/800px/bi-che-la-yeu-duoi-420439.jpg\" alt=\"Top 9 Nỗi khổ của trai đẹp ít ai cảm thông - Toplist.vn\" jsname=\"HiaYvf\" jsaction=\"load:XAeZkd;\" class=\"n3VNCb\" data-noaft=\"1\" style=\"width: 479.873px; height: 757px; margin: 0px;\"> Hận đời vô đối<br></p>",
       "modifiedAt": 1642065761639
