@@ -158,8 +158,9 @@ const MyPosts: FC<{}> = () => {
           ) : (
             <></>
           )}
+          <p className={styles.showing}>Showing {currentPage} - {Math.ceil(postContext.posts.length/amount)} out of {Math.ceil(postContext.posts.length/amount)} results</p>
         </div>
-        <p>Showing {currentPage} - {Math.floor(postContext.posts.length/amount)} out of {Math.floor(postContext.posts.length/amount)} results</p>
+        
         <MyPostPagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
