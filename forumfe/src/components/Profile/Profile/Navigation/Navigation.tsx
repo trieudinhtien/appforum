@@ -5,7 +5,7 @@ import styles from './Navigation.module.css'
 import Followings from '../../Followings/Followings'
 import Followers from '../../Followers/Followers'
 
-export default function Navigation() {
+export default function NavigationProfile() {
 
     return (
         <>

@@ -1,10 +1,11 @@
 import styles from "./Profile.module.css"
 import { useContext, useState, useEffect, useRef } from "react"
-import Navigation from "./Navigation/Navigation"
+import NavigationProfile from "./Navigation/Navigation"
 import { UserContext } from '../../../context/UserContext'
 import { getAllUser, saveImg, changeAvatar, changeCover } from '../../../apis/users-apis'
 import { AuthGuard } from "../../auth/guard/AuthGuard"
-import { getPosts, changeAuthorInfoOfPost } from '../../../apis/posts-apis'
+import { getPosts, changeAuthorInfoOfPost, changeUserInfoOfComment } from '../../../apis/posts-apis'
+import Navigation from '../../Navigation/Navigation'
 
 import Footer from "../../Footer/Footer"
 
@@ -35,6 +36,15 @@ export default function Profile() {
                             posts.forEach((post) => {
                                 if (post.author.author_id === user.id) {
                                     postsPromise.push(changeAuthorInfoOfPost(post.id, user.token, { ...post.author, author_img: res.path }))
+                                }
+                                if (post.comments.length > 0) {
+                                    const commentUpdated = post.comments.map(comment => {
+                                        if(comment.user_id === user.id) {
+                                            return {...comment, user_img: res.path}
+                                        }
+                                        return comment
+                                    })
+                                    postsPromise.push(changeUserInfoOfComment(post.id, user.token, commentUpdated))
                                 }
                             })
                             if (postsPromise.length > 0) {
@@ -93,6 +103,7 @@ export default function Profile() {
 
     return (
         <AuthGuard moveTo='/login'>
+            <Navigation />
             <div className={styles.profile}>
                 <div className={styles.profile_inner}>
                     <img className={styles.profile_inner_img} src={user && user.cover} alt="cover" />
@@ -144,7 +155,7 @@ export default function Profile() {
                         </div>
                     </div>
                 </div>
-                <Navigation />
+                <NavigationProfile />
             </div>
             <Footer />
         </AuthGuard>

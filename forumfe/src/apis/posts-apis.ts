@@ -91,3 +91,17 @@ export function changeAuthorInfoOfPost(id: number, token: string, author: Author
   }).then(res => res.data)
     .catch(err => console.log(err))
 }
+
+export function changeUserInfoOfComment(id: number, token: string, comments: Commentt[]) {
+  return axios({
+    method: "PATCH",
+    url: `http://localhost:3000/posts/${id}`,
+    headers: {
+      authorization: `Bearer ${token}`
+    },
+    data: {
+      comments : comments
+    }
+  }).then(res => res.data)
+    .catch(err => console.log(err))
+}
