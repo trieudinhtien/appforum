@@ -3,7 +3,6 @@ import styles from "./Footer.module.css";
 import Logo from "../../images/logo.png";
 
 const Footer: FC<{}> = () => {
-  // console.log('footer')
   return (
     <div className={styles.footer}>
       <div className={`${styles.content_grid}`}>
