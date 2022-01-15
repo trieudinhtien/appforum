@@ -49,6 +49,8 @@ interface ErrorCreatePostForm extends CreatePostForm {
 interface Notificationn {
   id: number;
   type: string;
+  user_id: number;
+  post_id: number;
   user_name: string;
   user_img: string;
   createdAt: string;

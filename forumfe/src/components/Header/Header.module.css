@@ -308,6 +308,7 @@
   color: #3e3f5e;
   font-weight: 700;
   font-size: 0.875rem;
+  margin: 0;
 }
 
 .settings > div > ul > li > a {
@@ -358,6 +359,25 @@
 
 .login > button:hover {
   background-color: #1bc5d4;
+}
+
+.register > button {
+  border: none;
+  background-color: none;
+  background-color: #4c35af;
+  padding: 0 26px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 28px;
+}
+
+.register > button:hover {
+  background-color: #4d3c99;
 }
 
 .turn_Off_setting {

@@ -1,7 +1,6 @@
 import { FC, useContext, useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import Logo from "../../images/logo.png";
-import Avatar from "../../images/avatar/01.jpg";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
@@ -87,6 +86,8 @@ const Header: FC<{}> = () => {
                     user_name: user.username,
                     user_img: user.avatar,
                     createdAt: like.createdAt,
+                    user_id: user.id,
+                    post_id: item.id,
                   });
                 }
               });
@@ -106,6 +107,8 @@ const Header: FC<{}> = () => {
                     user_name: user.username,
                     user_img: user.avatar,
                     createdAt: comment.createdAt,
+                    user_id: user.id,
+                    post_id: item.id,
                   });
                 }
               });
@@ -126,11 +129,12 @@ const Header: FC<{}> = () => {
       .catch((err: Error) => console.log(err));
   }, [postContext.posts]);
 
-
-
-  if (window.location.pathname === '/login'|| window.location.pathname === '/register') return null;
+  if (
+    window.location.pathname === "/login" ||
+    window.location.pathname === "/register"
+  )
+    return null;
   return (
-    
     <div className={styles.header}>
       <div className={styles.header_actions}>
         <div className={styles.header_brand}>
@@ -160,11 +164,11 @@ const Header: FC<{}> = () => {
                 Faqs
               </a>
             </li>
-            <li className="menu-main-item">
+            {/* <li className="menu-main-item">
               <Link className={styles.menu_main_item_link} to="/register">
                 Register
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>
@@ -199,7 +203,16 @@ const Header: FC<{}> = () => {
                       item.id !== userContext.user.id
                     ) {
                       return (
-                        <li key={item.id}>
+                        <li
+                          key={item.id}
+                          onClick={() => {
+                            navigate(`user/${item.id}`);
+                            setSearchResult(false);
+                            setSearch("");
+                            setTurnSet(false);
+                            setTurnNoti(false);
+                          }}
+                        >
                           <div>
                             <img
                               className={styles.search_result_img}
@@ -228,7 +241,13 @@ const Header: FC<{}> = () => {
                     // && item.author.author_id !== userContext.user.id
                   ) {
                     return (
-                      <li key={index}>
+                      <li key={index} onClick={() => {
+                        navigate(`post/${item.id}`);
+                        setSearchResult(false);
+                        setSearch("");
+                        setTurnSet(false);
+                        setTurnNoti(false);
+                      }}>
                         <div>
                           <img
                             className={styles.search_result_img}
@@ -247,7 +266,7 @@ const Header: FC<{}> = () => {
                   }
                 })}
               </ul>
-            </div>
+            </div> 
           )}
         </div>
       </div>
@@ -267,7 +286,10 @@ const Header: FC<{}> = () => {
                     notification.map((item: Notificationn, index: number) => {
                       if (item.type === "like") {
                         return (
-                          <li key={index}>
+                          <li
+                            key={index}
+                            onClick={() => navigate(`user/${item.user_id}`)}
+                          >
                             <div>
                               <img
                                 className={styles.notifications_img}
@@ -286,7 +308,10 @@ const Header: FC<{}> = () => {
                         );
                       } else {
                         return (
-                          <li key={index}>
+                          <li
+                            key={index}
+                            onClick={() => navigate(`user/${item.user_id}`)}
+                          >
                             <div>
                               <img
                                 className={styles.notifications_img}
@@ -326,7 +351,7 @@ const Header: FC<{}> = () => {
                 <li>
                   <div className={styles.settings_header}>
                     <img src={user && user.avatar} alt="avatar" />
-                    <p>Hi {user && user.username!}</p>
+                    <p>Hi {user && user.username!}!</p>
                   </div>
                   <hr />
                 </li>
@@ -367,6 +392,11 @@ const Header: FC<{}> = () => {
         ) : (
           <div className={styles.login}>
             <button onClick={_clickLogin}>Login</button>
+          </div>
+        )}
+        {!localStorage.getItem("user") && (
+          <div className={styles.register}>
+            <button onClick={() => navigate("/register")}>Register</button>
           </div>
         )}
       </div>
