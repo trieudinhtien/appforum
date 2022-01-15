@@ -27,11 +27,11 @@ const Header: FC<{}> = () => {
   const user = userContext.user;
 
   const _clickLogin = () => {
+    navigate("/login");
     setSearchResult(false);
     setSearch("");
     setTurnSet(false);
     setTurnNoti(false);
-    navigate("/login");
   };
 
   const turnNotification = () => {
@@ -257,7 +257,7 @@ const Header: FC<{}> = () => {
         {localStorage.getItem("user") ? (
           <div className={styles.notifications}>
             <i className="far fa-bell" onClick={turnNotification}></i>
-            <span>{notification && "."}</span>
+            <span>{notification.length > 0 && "."}</span>
 
             {turnNoti && (
               <div className={styles.notifications_box}>
@@ -325,8 +325,8 @@ const Header: FC<{}> = () => {
               <ul>
                 <li>
                   <div className={styles.settings_header}>
-                    <img src={Avatar} alt="avatar" />
-                    <p>Hi Marina!</p>
+                    <img src={user && user.avatar} alt="avatar" />
+                    <p>Hi {user && user.username!}</p>
                   </div>
                   <hr />
                 </li>
