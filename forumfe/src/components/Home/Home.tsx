@@ -12,6 +12,7 @@ export default function Home() {
     const [result, setResult] = useState<Post[]>([]);
     const [page, setPage] = useState(1)
     const [filterTags, setTags] = useState<Post[]>([]);
+    const [Pagination, setPagination] = useState<Post[]>([])
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,6 +23,7 @@ export default function Home() {
             setResult(data.reduce((prev: Post[], next: Post) => {
                 return [next, ...prev]
             }, [] as Post[]).slice(0, 6));
+            setPagination(data)
         })
             .catch(err => console.error(err))
     }, [])
@@ -37,7 +39,7 @@ export default function Home() {
     }
 
     const _onClickNext = () => {
-        if (page < Math.ceil(post.length / 6)) {
+        if (page < Math.ceil(Pagination.length / 6)) {
             setPage(page + 1)
         }
 
@@ -50,6 +52,9 @@ export default function Home() {
         setResult(post.filter(item => {
             return item.title.toLowerCase().includes(value)
         }).slice(page * 6 - 6, page * 6))
+        setPagination(post.filter(item => {
+            return item.title.toLowerCase().includes(value)
+        }))
         setPage(1);
     }
 
@@ -155,7 +160,7 @@ export default function Home() {
                         </ul>
                         <p>
                             Page <span>{page} </span>
-                            out of {Math.ceil(post.length / 6)}
+                            out of {Math.ceil(Pagination.length / 6)}
                         </p>
                     </div>
                 </div>

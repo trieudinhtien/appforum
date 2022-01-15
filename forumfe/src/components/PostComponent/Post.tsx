@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getPostById } from '../../apis/home-apies';
 import styles from './Post.module.css'
 import Detail from "../Home/images/forums-icon.png";
@@ -11,7 +11,6 @@ import { sendComment, sendLike } from '../../apis/posts-apis';
 
 export default function Post() {
     const params = useParams();
-    const navigate = useNavigate();
 
     const context = useContext(UserContext)
     const [postDetail, setpostDetail] = useState<Post>();
@@ -25,12 +24,20 @@ export default function Post() {
         id: Date.now(),
         user_id: context.user.id,
         comment: "",
-        createdAt: moment().format(),
+        createdAt: "",
         user_name: context.user.username,
         user_img: context.user.avatar,
     });
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setCommentPost({
+            id: Date.now(),
+            user_id: context.user.id,
+            comment: "",
+            createdAt: moment().format(),
+            user_name: context.user.username,
+            user_img: context.user.avatar
+        })
         if (context.user.token) {
             if (commentPost.comment) {
                 postDetail?.comments.push(commentPost);
@@ -43,56 +50,59 @@ export default function Post() {
                 }
             }
         }
-        // navigate(`/post/${params.id}`)
     }
     useEffect(() => {
-        if(postDetail){
-            postDetail?.likes.map((item) =>{
-                if(item.user_id === context.user.id)
-                setLiked(true)
+        if (postDetail) {
+            postDetail?.likes.map((item) => {
+                if (item.user_id === context.user.id)
+                    setLiked(true)
             })
         }
     }, [liked])
     useEffect(() => {
-        if(params.id){
-            postDetail?.likes.map((item) =>{
-                if(item.user_id === context.user.id)
-                setLiked(true)
-                else setLiked(false)
-            })
-        }
-       
-    }, [])
-    
-    const handleLike = () => {
-        
-                    setlike({
-                        ...like,
-                        id: Date.now(),
-                        user_id: context.user.id,
-                        createdAt: moment().format()
+        if (params.id) {
+            getPostById(Number(params.id))
+                .then((data: Post) => {
+                    data?.likes.map((item) => {
+                        if (item.user_id === context.user.id) {
+                            setLiked(true)
+                        }
                     })
+                })
+                .catch((err: Error) => console.log(err));
+        }
+
+    }, [])
+
+    const handleLike = () => {
+
+        setlike({
+            ...like,
+            id: Date.now(),
+            user_id: context.user.id,
+            createdAt: moment().format()
+        })
         if (context.user.token && postDetail) {
             // postDetail?.likes.push(like)
             // if (postDetail) {
             //     sendLike(Number(params.id), context.user.token, postDetail);
             // }
-            if(liked){
+            if (liked) {
                 const listArr = postDetail?.likes;
                 let ind = 0;
-                listArr.map((item,index) =>{
-                    if(item.user_id === context.user.id)
-                    ind = index;
+                listArr.map((item, index) => {
+                    if (item.user_id === context.user.id)
+                        ind = index;
                 })
-                postDetail?.likes.splice(ind,1);
+                postDetail?.likes.splice(ind, 1);
                 sendLike(Number(params.id), context.user.token, postDetail);
                 setLiked(false);
             }
-            else{
-                
-            postDetail?.likes.push(like)
-            sendLike(Number(params.id), context.user.token, postDetail);
-            setLiked(true);
+            else {
+
+                postDetail?.likes.push(like)
+                sendLike(Number(params.id), context.user.token, postDetail);
+                setLiked(true);
             }
         }
     }
@@ -113,7 +123,7 @@ export default function Post() {
                 <img className={styles.banner_img} src={Detail} alt="" />
                 <div className={" mx-3"}>
                     <p className={styles.banner_title}>Topic</p>
-                    <p className={styles.banner_text}>Talk about anything you want!</p>
+                    <p className={styles.banner_text}>Post #{postDetail?.id}</p>
                 </div>
             </div>
             <div className={styles.forum_heading}>
@@ -124,43 +134,68 @@ export default function Post() {
                 <p className={styles.notification}>This topic has {postDetail?.comments.length} reply, {postDetail?.likes.length} likes</p>
             </div>
             <div className={styles.content}>
-                <div className={styles.post_item_user}> {moment(postDetail?.createdAt).format("MMMM DD, YYYY")} at {moment(postDetail?.createdAt).format("hh:mm a")}
+                <div>
+                    <div className={styles.post_item_user}>
+                        {moment(postDetail?.createdAt).format("MMMM DD, YYYY")} at {moment(postDetail?.createdAt).format("hh:mm a")}
+                    </div>
+
                 </div>
                 <div className='d-flex justify-content-between'>
                     <div className={styles.author}>
                         <img src={postDetail?.author.author_img} alt="avatar" />
-                        <div>{postDetail?.author.author_name}</div>
+                        <h3>{postDetail?.author.author_name}</h3>
+                        <p>User ID: #{postDetail?.author.author_id}</p>
                     </div>
                     <div>
-                        <button onClick={handleLike}>{liked ? "Unlike" : "Like"}</button>
-                        <Card>
-                            <Card.Body >
-                                <Card.Title>Reply <i className="fas fa-comment" style={{ color: '#1868ae' }}></i></Card.Title>
-                                <Card.Text>{postDetail?.comments.length}</Card.Text>
+                        <button className={liked ? styles.btn_followed : styles.btn_follow} onClick={handleLike}>
+                            {liked ? "Unlike" : "Like"}
+                        </button>
+                        <div className={styles.info}>
+                            <div className={styles.infoTag}>
+                                <i className="fas fa-comment" ></i>
+                                <div className={styles.infoTag_text}>
+                                    <h5>{postDetail?.comments.length}</h5>
+                                    REPLY
+                                </div>
+                            </div>
+                            <div className={styles.infoTag}>
 
-                            </Card.Body>
-                        </Card>
-                        <Card>
-                            <Card.Body >
-                                <Card.Title>Likes <i className="fas fa-heart" style={{ color: '#d72631' }}></i></Card.Title>
-                                <Card.Text>{postDetail?.likes.length}</Card.Text>
+                                <i className="fas fa-heart" ></i>
 
-                            </Card.Body>
-                        </Card>
+                                <div className={styles.infoTag_text}>
+                                    <h5>{postDetail?.likes.length}</h5>
+                                    LIKES
+                                </div>
+                            </div>
+                            <div className={styles.tags}>
+                                <p>TAGS</p>
+                                <h5>{postDetail?.tags.map(item => (
+                                    item + ";  "
+                                ))}</h5>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: `${postDetail?.content}` }}></div>
+                <div dangerouslySetInnerHTML={{ __html: `${postDetail?.content}` }} className={styles.postContent}></div>
             </div>
             <div>{postDetail?.comments.map(com => (
-                <div key={com.id}>
-                    <div className={styles.post_item_user}>
+                <div key={com.id} >
+                    <div className={styles.postComment}>
                         {moment(com?.createdAt).format("MMMM DD, YYYY")}
                         <br />
-                        {com.user_name} <br />
-                        <img src={com.user_img} style={{ maxWidth: '5rem' }} alt="" />
-                        {com.comment}
-                    </div>
+                        Replied {moment(com?.createdAt).fromNow()}
+                        <div className={styles.postComment_text}>
+                            <div className={""}>
+                                <img src={com.user_img} alt="" />
+                                <br />
+                                <h3>{com.user_name}</h3>
+                                User ID: #{com.user_id}
+                            </div>
+                            <p>{com.comment}</p>
 
+                        </div>
+                    </div>
                 </div>
             ))}
             </div>
@@ -168,14 +203,14 @@ export default function Post() {
                 <div>
                     <form className={styles.addComment} onSubmit={handleSubmit}>
                         <label htmlFor="">Comment</label>
+                        <br />
                         <input type="text"
                             placeholder='Enter your comment...'
                             name='comment'
                             value={commentPost.comment}
-                            maxLength={60}
-                            onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value })}
+                            onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value, createdAt: moment().format() })}
                         />
-                        <button type='submit'>Post</button>
+                        <button className={styles.btn_post} type='submit'>Post</button>
                     </form>
                 </div>
             </AuthGuard>

@@ -286,7 +286,24 @@
           "createdAt": "2022-01-14T16:21:54+07:00"
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "id": 1642219893199,
+          "user_id": 1,
+          "comment": "Chan the",
+          "createdAt": "2022-01-15T11:11:33+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        },
+        {
+          "id": 1642219893199,
+          "user_id": 1,
+          "comment": "Chan the",
+          "createdAt": "2022-01-15T11:11:33+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
+        }
+      ],
       "tags": [
         "game"
       ],
@@ -343,7 +360,16 @@
       "title": "The Video Game Wars are Just Beginning",
       "createdAt": "2022-01-14T19:14:04+07:00",
       "likes": [],
-      "comments": [],
+      "comments": [
+        {
+          "id": 1642251459273,
+          "user_id": 1,
+          "comment": "quao",
+          "createdAt": "2022-01-15T19:59:27+07:00",
+          "user_name": "admin",
+          "user_img": "http://localhost:3000/uploads/avatar1642220714497.jpg"
+        }
+      ],
       "tags": [
         "game",
         "video-game"
