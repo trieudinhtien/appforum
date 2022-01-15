@@ -28,7 +28,6 @@ export default function Home() {
 
     useEffect(() => {
         setResult(post.slice(page * 6 - 6, page * 6))
-        console.log(page);
     }, [page])
 
     const _onClickPrevious = () => {

@@ -22,6 +22,12 @@ interface Post {
   content: string;
 }
 
+interface Author{
+  author_id: number;
+  author_name: string;
+  author_img: string;
+}
+
 interface Like{
   id: number; 
   user_id: number; 
