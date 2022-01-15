@@ -11,7 +11,6 @@ export default function Home() {
     const [post, setpost] = useState<Post[]>([]);
     const [result, setresult] = useState<Post[]>([]);
     const [page, setPage] = useState(1)
-    const [filterTags, setTags] = useState<Post[]>([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -44,9 +43,6 @@ export default function Home() {
     }
 
     const _onChangeSearch = (value: string) => {
-        setTags(filterTags.filter(item => {
-            return item.title.toLowerCase().includes(value)
-        }))
         setresult(post.filter(item => {
             return item.title.toLowerCase().includes(value)
 
