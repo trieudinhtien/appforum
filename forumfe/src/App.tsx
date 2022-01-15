@@ -34,7 +34,6 @@ function App() {
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/myposts/edit/:id" element={<CreatePost />} />
         <Route path="/myposts" element={<MyPosts />} />
-        <Route path="/myposts/:id" element={<MyPostDetail />} />
         <Route path="/profile" element={<Navigate to="/profile/about" />} />
         <Route path="/profile/*" element={<Profile />} />
         <Route path="/user/:id" element={<UserProfile />} />

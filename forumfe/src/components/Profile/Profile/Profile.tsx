@@ -7,9 +7,15 @@ import { AuthGuard } from "../../auth/guard/AuthGuard"
 import { getPosts, changeAuthorInfoOfPost, changeUserInfoOfComment } from '../../../apis/posts-apis'
 import Navigation from '../../Navigation/Navigation'
 
-import Footer from "../../Footer/Footer"
+import Footer from "../../Footer/Footer";
 
 export default function Profile() {
+  const context = useContext(UserContext);
+  const user = context.user;
+  const [followers, setFollowers] = useState(0);
+  const [posts, setPosts] = useState(0);
+  const avatarRef = useRef<HTMLInputElement>(null);
+  const coverRef = useRef<HTMLInputElement>(null);
 
     const context = useContext(UserContext)
     const user = context.user
@@ -58,6 +64,7 @@ export default function Profile() {
                 .catch(err => console.log(err))
         }
     }
+  };
 
     const _onChangeCover = () => {
         let formData = new FormData()
@@ -74,19 +81,19 @@ export default function Profile() {
                 .catch(err => console.log(err))
         }
     }
+  };
 
-    useEffect(() => {
-        let count = 0
-        getAllUser(user.token)
-            .then((res: User[]) => {
-                res.forEach((eachUser: User) => {
-                    if (eachUser.followings_id.includes(user.id)) {
-                        count++
-                    }
-                })
-                setFollowers(count)
-            })
-    }, [])
+  useEffect(() => {
+    let count = 0;
+    getAllUser(user.token).then((res: User[]) => {
+      res.forEach((eachUser: User) => {
+        if (eachUser.followings_id.includes(user.id)) {
+          count++;
+        }
+      });
+      setFollowers(count);
+    });
+  }, []);
 
     useEffect(() => {
         getPosts()
@@ -157,7 +164,11 @@ export default function Profile() {
                 </div>
                 <NavigationProfile />
             </div>
-            <Footer />
-        </AuthGuard>
-    )
+          </div>
+        </div>
+        <Navigation />
+      </div>
+      <Footer />
+    </AuthGuard>
+  );
 }
