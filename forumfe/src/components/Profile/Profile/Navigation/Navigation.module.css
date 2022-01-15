@@ -25,6 +25,10 @@
     border-bottom: 4px solid rgb(35, 210, 226)!important;
 }
 
+.selected > a > i{
+    color: #605cf8;
+}
+
 .nav > a > i{
     font-size: 20px
 }

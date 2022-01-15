@@ -22,6 +22,21 @@ interface Post {
   content: string;
 }
 
+interface Like{
+  id: number; 
+  user_id: number; 
+  createdAt: string
+}
+
+interface Commentt {
+  id: number;
+  user_id: number;
+  comment: string;
+  createdAt: string;
+  user_name: string,
+  user_img: string,
+}
+
 interface CreatePostForm {
   title: string;
   tags: string;

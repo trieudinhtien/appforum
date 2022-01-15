@@ -9,6 +9,8 @@ import { getPosts } from "../../apis/posts-apis";
 import moment from "moment";
 import { AuthGuard } from "../auth/guard/AuthGuard";
 import { UserContext } from "../../context/UserContext";
+import Footer from "../Footer/Footer";
+import Navigation from "../Navigation/Navigation";
 
 const MyPosts: FC<{}> = () => {
   const userContext = useContext(UserContext);
@@ -115,7 +117,8 @@ const MyPosts: FC<{}> = () => {
   }, [choice]);
 
   return (
-    <AuthGuard moveTo="/login">
+    <AuthGuard moveTo='/login'>
+      <Navigation />
       <div className={styles.myposts}>
         <img src={Banner} alt="banner" />
         <img src={MyPost} alt="myposts" />
@@ -165,6 +168,7 @@ const MyPosts: FC<{}> = () => {
           amount={amount}
         />
       </div>
+      <Footer />
     </AuthGuard>
   );
 };

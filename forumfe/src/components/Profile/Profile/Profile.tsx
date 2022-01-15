@@ -1,10 +1,12 @@
 import styles from "./Profile.module.css"
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState, useEffect, useRef } from "react"
 import Navigation from "./Navigation/Navigation"
 import { UserContext } from '../../../context/UserContext'
-import { getAllUser } from '../../../apis/users-apis'
+import { getAllUser, saveImg, changeAvatar, changeCover } from '../../../apis/users-apis'
 import { AuthGuard } from "../../auth/guard/AuthGuard"
 import { getPosts } from '../../../apis/posts-apis'
+
+import Footer from "../../Footer/Footer"
 
 export default function Profile() {
 
@@ -12,6 +14,40 @@ export default function Profile() {
     const user = context.user
     const [followers, setFollowers] = useState(0)
     const [posts, setPosts] = useState(0)
+    const avatarRef = useRef<HTMLInputElement>(null)
+    const coverRef = useRef<HTMLInputElement>(null)
+
+    const _onChangeAvatar = () => {
+        let formData = new FormData()
+        if (avatarRef?.current?.files) {
+            formData.append("file", avatarRef.current.files[0], `avatar${Number(new Date())}.jpg`)
+            saveImg(formData)
+                .then((res: { path: string }) => {
+                    localStorage.setItem('user', JSON.stringify({...user, avatar: res.path}))
+                    context.setUser({ ...user, avatar: res.path })
+                    changeAvatar(user.id, user.token, res.path)
+                        .then(res => console.log(res))
+                        .catch(err => console.log(err))
+                })
+                .catch(err => console.log(err))
+        }
+    }
+
+    const _onChangeCover = () => {
+        let formData = new FormData()
+        if (coverRef?.current?.files) {
+            formData.append("file", coverRef.current.files[0], `cover${Number(new Date())}.jpg`)
+            saveImg(formData)
+                .then((res: { path: string }) => {
+                    localStorage.setItem('user', JSON.stringify({...user, cover: res.path}))
+                    context.setUser({ ...user, cover: res.path })
+                    changeCover(user.id, user.token, res.path)
+                        .then(res => console.log(res))
+                        .catch(err => console.log(err))
+                })
+                .catch(err => console.log(err))
+        }
+    }
 
     useEffect(() => {
         let count = 0
@@ -29,7 +65,7 @@ export default function Profile() {
     useEffect(() => {
         getPosts()
             .then((posts: Post[]) => {
-                let count  = 0
+                let count = 0
                 posts.forEach((post: Post) => {
                     if(post.author.author_id === user.id) {
                         count++
@@ -44,7 +80,15 @@ export default function Profile() {
             <div className={styles.profile}>
                 <div className={styles.profile_inner}>
                     <img className={styles.profile_inner_img} src={user && user.cover} alt="cover" />
+                    <div>
+                        <input type='file' id="cover" className='d-none' ref={coverRef} onChange={_onChangeCover}></input>
+                        <label htmlFor="cover"><i className="fas fa-camera fa-lg"></i></label>
+                    </div>
                     <img className={styles.profile_inner_avatar} src={user && user.avatar} alt="avatar" />
+                    <div>
+                        <input type='file' id="avatar" className='d-none' ref={avatarRef} onChange={_onChangeAvatar}></input>
+                        <label htmlFor="avatar"><i className="fas fa-camera fa-lg"></i></label>
+                    </div>
                     <div className={"d-flex align-items-center " + styles.profile_inner_description}>
                         <div className={"d-flex col align-items-center " + styles.description_inner}>
                             <div className={"text-center " + styles.des_left}>
@@ -86,6 +130,7 @@ export default function Profile() {
                 </div>
                 <Navigation />
             </div>
+            <Footer />
         </AuthGuard>
     )
 }
