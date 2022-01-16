@@ -246,8 +246,8 @@
     },
     {
       "id": 1642270854045,
-      "firstName": "Đỗ Ngọc",
-      "lastName": "Đạt",
+      "firstName": "Do Ngoc",
+      "lastName": "Minh Dat",
       "username": "",
       "email": "minhdat@gmail.com",
       "password": "123",
@@ -262,13 +262,13 @@
         "instagram": "",
         "youtube": ""
       },
-      "introduce": "Hello ! My name is Dat but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
+      "introduce": "",
       "phone": "0964646631",
       "birthday": "",
       "address": "15D ngách 17 ngõ 55 Chinh Kinh",
       "status": false,
       "createdAt": 0,
-      "modifiedAt": 1642313282539,
+      "modifiedAt": 1642317110974,
       "token": ""
     }
   ],
