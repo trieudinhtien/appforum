@@ -5,27 +5,72 @@ import styles from './About.module.css'
 import { getPosts } from '../../../../../apis/posts-apis'
 import { Link } from 'react-router-dom'
 
+interface Activity {
+    post: Post;
+    status: string;
+    date: string;
+}
+
 export default function About() {
 
     const context = useContext(UserContext)
     const user = context.user
-    const [postLiked, setPostLiked] = useState([] as Post[])
+    const [postActivity, setPostActivity] = useState([] as Activity[])
+    const [postInPage, setPostInPage] = useState(postActivity.slice(0, 5))
+    let [page, setPage] = useState(1)
 
     useEffect(() => {
         getPosts()
             .then((posts: Post[]) => {
-                const liked = [] as Post[]
+                const pLiked = [] as Activity[]
+
                 posts.forEach((post: Post) => {
                     for (const like of post.likes) {
                         if (like.user_id === user.id) {
-                            liked.push(post)
+                            pLiked.push({ post: post, date: like.createdAt, status: 'liked' })
                             break;
                         }
                     }
+                    for (const comment of post.comments) {
+                        if (comment.user_id === user.id) {
+                            pLiked.push({ post: post, date: comment.createdAt, status: 'commented' })
+                        }
+                    }
                 })
-                setPostLiked(liked)
+
+                if (pLiked.length > 0) {
+                    pLiked.sort((a, b) => {
+                        if (a.date > b.date) {
+                            return -1
+                        } else {
+                            return 1
+                        }
+                    })
+                    setPostActivity(pLiked)
+                }
             })
+            .catch(err => console.log(err))
     }, [])
+
+    useEffect(() => {
+        setPostInPage(postActivity.slice(0, 5))
+    }, [postActivity.length])
+
+    useEffect(() => {
+        setPostInPage(postActivity.slice(page * 5 - 5, page * 5))
+    }, [page])
+
+    const _onClickPrevious = () => {
+        if (page > 1) {
+            setPage(page - 1)
+        }
+    }
+
+    const _onClickNext = () => {
+        if (page < Math.ceil(postActivity.length / 5)) {
+            setPage(page + 1)
+        }
+    }
 
     return (
         <div className={styles.outer + " d-flex justify-content-between"}>
@@ -42,23 +87,35 @@ export default function About() {
                 </div>
             </div>
             <div className={styles.main_center}>
-                <h3 style={{ color: '#615dfa' }}>You liked those posts :</h3>
+                <h3 style={{ color: '#615dfa' }}>Your activities :</h3>
                 <ul>
                     {
-                        postLiked.length > 0 ?
-                            postLiked.map(post => (
-                                <li key={post.id}>
-                                    <Link to={`/post/${post.id}`}>{post.title}</Link>
+                        postActivity.length > 0 ?
+                            postInPage.map((post, index) => (
+                                <li key={index}>
+                                    <p className='mb-1'>
+                                        You <span style={{ color: 'rgb(215, 38, 49)' }}>{post.status}</span> in <Link to={`/post/${post.post.id}`} style={{ color: 'rgb(97, 93, 250)' }}>{post.post.title}</Link>
+                                    </p>
                                     <p>
                                         {
-                                            // post.
+                                            moment(post.date).fromNow()
                                         }
                                     </p>
                                 </li>
                             ))
-                            : <li>You not like any post before</li>
+                            : <li>You have no activities before</li>
                     }
                 </ul>
+                {
+                    postActivity.length > 0 &&
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <ul className="pagination m-0">
+                            <li className="page-item"><button className="page-link" onClick={_onClickPrevious}><i className="fas fa-arrow-left"></i></button></li>
+                            <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
+                        </ul>
+                        <p className="m-0"> Page <span style={{ color: 'rgb(97, 93, 250)' }}>{page}</span></p>
+                    </div>
+                }
             </div>
             <div>
                 <div className={styles.main_right}>

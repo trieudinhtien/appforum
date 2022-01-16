@@ -6,11 +6,6 @@ interface User {
   password: string,
 }
 
-interface Userlogin{
-  email: string,
-  password: string,
-}
-
 export function callApiRegister(data: User): Promise<any> {
     return axios({
       method: 'post',

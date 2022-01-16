@@ -37,6 +37,7 @@
   color: #3e3f5e;
   line-height: 1em;
   margin-bottom: 10px;
+  width: 1184px;
 }
 
 .myposts_title > div:nth-child(1) {
@@ -73,6 +74,7 @@
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 0 0 40px 0 rgba(94, 92, 154, 0.06);
+  width: 1184px;
 }
 
 .showing{
@@ -87,6 +89,7 @@
   justify-content: end;
   align-items: center;
   margin-top: 50px;
+  width: 1184px;
 }
 
 .management > select {

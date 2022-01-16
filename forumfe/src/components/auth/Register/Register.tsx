@@ -102,7 +102,7 @@ export const Register = () => {
             ...formData,
             [fieldName]: value,
         });
-        
+
     }
 
     const handlerSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -115,22 +115,10 @@ export const Register = () => {
         }
         validate(formData);
         if (formData.username && formData.email && formData.password && formData.firstName && formData.lastName && formData.phone && formData.address) {
-            console.log("hihi")
             callApiRegister(dataRegister).then((data) => {
-                console.log(data)
-                swal({
-                    title: "Are you sure?",
-                    text: "Please make sure the information is correct",
-                    icon: "warning",
-                    dangerMode: true,
-                  })
-                  .then(willDelete => {
-                    if (willDelete) {
-                      swal("Success", "Account has been created", "success");
-                    }
-                    navigate('/login');
-                  });
-            }).catch(err => console.log(err))
+                swal("Success", "Account has been created", "success");
+                navigate('/login');
+            }).catch(err => swal("The email or username already exists. Please use a different email!"))
         }
     }
 
@@ -152,10 +140,10 @@ export const Register = () => {
                             <div className={styled.subTitleForm1}>Connect to with frends and the wourld around you</div>
                             <div className='d-flex w-100'>
 
-                                <Form.Group className='w-50 mb-4'>
+                                <Form.Group className='w-50 mb-2'>
                                     <Form.Control
                                         className={styled.formInput1}
-                                        style={{ width: "95%" }}
+                                        style={{ width: "97%" }}
                                         type="text"
                                         placeholder="First Name"
                                         value={formData.firstName}
@@ -171,7 +159,7 @@ export const Register = () => {
                                             : null
                                     }
                                 </Form.Group>
-                                <Form.Group className='w-50 mb-4' controlId="formBasicEmail">
+                                <Form.Group className='w-50 mb-2' controlId="formBasicEmail">
                                     <Form.Control
                                         className={styled.formInput1}
                                         type="text"
@@ -190,7 +178,7 @@ export const Register = () => {
                                     }
                                 </Form.Group>
                             </div>
-                            <Form.Group className='mb-4'>
+                            <Form.Group className='mb-2'>
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="text"
@@ -208,7 +196,7 @@ export const Register = () => {
                                         : null
                                 }
                             </Form.Group>
-                            <Form.Group className='mb-4' controlId="formBasicEmail">
+                            <Form.Group className='mb-2' controlId="formBasicEmail">
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="email"
@@ -229,11 +217,11 @@ export const Register = () => {
                             <div className='d-flex w-100'>
 
 
-                                <Form.Group className='w-50 mb-4' controlId="formBasicPassword">
+                                <Form.Group className='w-50 mb-2' controlId="formBasicPassword">
 
                                     <Form.Control
                                         className={styled.formInput1}
-                                        style={{ width: "95%" }}
+                                        style={{ width: "97%" }}
                                         type="password"
                                         placeholder="Password"
                                         value={formData.password}
@@ -249,7 +237,7 @@ export const Register = () => {
                                             : null
                                     }
                                 </Form.Group>
-                                <Form.Group className='w-50 mb-4' controlId="formBasicPassword">
+                                <Form.Group className='w-50 mb-2' controlId="formBasicPassword">
                                     <Form.Control
                                         className={styled.formInput1}
                                         type="number"
@@ -268,7 +256,7 @@ export const Register = () => {
                                     }
                                 </Form.Group>
                             </div>
-                            <Form.Group className='mb-4'>
+                            <Form.Group className='mb-2'>
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="text"
