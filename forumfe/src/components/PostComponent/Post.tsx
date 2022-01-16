@@ -5,23 +5,22 @@ import styles from './Post.module.css'
 import Detail from "../Home/images/forums-icon.png";
 import moment from 'moment';
 import { UserContext } from '../../context/UserContext';
-import { Card } from 'react-bootstrap';
-import { AuthGuard } from '../auth/guard/AuthGuard';
 import { sendComment, sendLike } from '../../apis/posts-apis';
-import Navigation from '../Profile/Profile/Navigation/Navigation';
+import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 
 export default function Post() {
     const params = useParams();
-    const navigate = useNavigate();
     const context = useContext(UserContext)
-    const [postDetail, setpostDetail] = useState<Post>();
+    const [postDetail, setPostDetail] = useState<Post>();
     const [liked, setLiked] = useState(false)
-    const [like, setlike] = useState<Like>({
+
+    const [like, setLike] = useState<Like>({
         id: Date.now(),
         user_id: context.user.id,
         createdAt: moment().format()
     })
+
     const [commentPost, setCommentPost] = useState<Commentt>({
         id: Date.now(),
         user_id: context.user.id,
@@ -30,8 +29,10 @@ export default function Post() {
         user_name: context.user.username,
         user_img: context.user.avatar,
     });
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         setCommentPost({
             id: Date.now(),
             user_id: context.user.id,
@@ -40,11 +41,12 @@ export default function Post() {
             user_name: context.user.username,
             user_img: context.user.avatar
         })
+
         if (context.user.token) {
             if (commentPost.comment) {
                 if (postDetail) {
                     sendComment(Number(params.id), context.user.token, [...postDetail.comments, commentPost]);
-                    setpostDetail({ ...postDetail, comments: [...postDetail.comments, commentPost] });
+                    setPostDetail({ ...postDetail, comments: [...postDetail.comments, commentPost] });
                     setCommentPost({
                         ...commentPost,
                         comment: ""
@@ -92,23 +94,19 @@ export default function Post() {
         if (check && postDetail) {
             let arr = postDetail.comments
             arr.splice(i, 1);
-            setpostDetail({ ...postDetail, comments: arr })
+            setPostDetail({ ...postDetail, comments: arr })
             sendComment(Number(params.id), context.user.token, postDetail.comments);
         }
     }
     const handleLike = () => {
 
-        setlike({
+        setLike({
             ...like,
             id: Date.now(),
             user_id: context.user.id,
             createdAt: moment().format()
         })
         if (context.user.token && postDetail) {
-            // postDetail?.likes.push(like)
-            // if (postDetail) {
-            //     sendLike(Number(params.id), context.user.token, postDetail);
-            // }
             if (liked) {
                 const listArr = postDetail?.likes;
                 let ind = 0;
@@ -129,12 +127,10 @@ export default function Post() {
         }
     }
 
-
-
     useEffect(() => {
         if (params.id) {
             getPostById(Number(params.id))
-                .then(data => setpostDetail(data))
+                .then(data => setPostDetail(data))
                 .catch((err: Error) => console.log(err));
         }
     }, []);
@@ -216,7 +212,7 @@ export default function Post() {
                             <div className={styles.commentHeader}>
                                 Replied {moment(com?.createdAt).fromNow()}
                                 {
-                                    postDetail.author.author_id === context.user.id ?
+                                    postDetail.author.author_id === com.user_id ?
                                         <button onClick={() => handleDeleteComment(com.id)} className={styles.btn_delete}><i className="fas fa-trash"></i></button> : " "
                                 }
                             </div>
@@ -225,7 +221,6 @@ export default function Post() {
                                     <img src={com.user_img} alt="" />
                                     <br />
                                     <h3>{com.user_name}</h3>
-                                    {/* User ID: #{com.user_id} */}
                                 </div>
                                 <p>{com.comment}</p>
                             </div>

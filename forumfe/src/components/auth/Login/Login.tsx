@@ -7,8 +7,7 @@ import { UserContext } from '../../../context/UserContext';
 import { UnauthGuard } from '../guard/UnauthGuard';
 import Logo from "../../../images/logo.png"
 import styles from './Login.module.css'
-import swal from 'sweetalert';
-import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -19,13 +18,9 @@ interface Ilogin {
 
 
 const Login: FC<{}> = () => {
-    let navigate = useNavigate();
 
     const context = useContext(UserContext)
     const [showPassword, setShowpassword] = useState<boolean>(false)
-
-    // const context = useContext(AuthContext);
-    // console.log("context", context.user)
 
     const [formData, setFormData] = useState<Ilogin>({
         email: "",
@@ -73,12 +68,8 @@ const Login: FC<{}> = () => {
         if(formData.email && formData.password){
             login(formData)
                 .then((user: User) => {
-                    if(user){
-                        localStorage.setItem("user", JSON.stringify(user))
-                        context.setUser(user)
-                    }else{
-                        swal("Email or Password is incorrect");
-                    }
+                    localStorage.setItem("user", JSON.stringify(user))
+                    context.setUser(user)
                 })
         }
         
@@ -113,7 +104,7 @@ const Login: FC<{}> = () => {
                                     <img src={Logo} alt="logo" />
                                 </div>
                                 <div className={styles.titleForm}>Wellcome!</div>
-                                <Form.Group className='mb-4' controlId="formBasicEmail">
+                                <Form.Group controlId="formBasicEmail" className='mb-2'>
                                     <Form.Control
                                         className={styles.formInput}
                                         type="email"
@@ -124,14 +115,14 @@ const Login: FC<{}> = () => {
                                     {
                                         formErr.email
                                             ? (
-                                                <Form.Text className={"text-danger "+ styles.textErr}>
+                                                <Form.Text className='text-danger'>
                                                     {formErr.email}
                                                 </Form.Text>
                                             )
                                             : null
                                     }
                                 </Form.Group>
-                                <Form.Group className={styles.showPass + " mb-4"}>
+                                <Form.Group className={styles.showPass + ' mb-2'} >
                                     <Form.Control
                                         id="pass"
                                         className={styles.formInput}
@@ -151,7 +142,7 @@ const Login: FC<{}> = () => {
                                     {
                                         formErr.password
                                             ? (
-                                                <Form.Text className={"text-danger "+ styles.textErr}>
+                                                <Form.Text className='text-danger'>
                                                     {formErr.password}
                                                 </Form.Text>
                                             )

@@ -91,8 +91,8 @@ export default function About() {
                 <ul>
                     {
                         postActivity.length > 0 ?
-                            postInPage.map(post => (
-                                <li key={post.post.id}>
+                            postInPage.map((post, index) => (
+                                <li key={index}>
                                     <p className='mb-1'>
                                         You <span style={{ color: 'rgb(215, 38, 49)' }}>{post.status}</span> in <Link to={`/post/${post.post.id}`} style={{ color: 'rgb(97, 93, 250)' }}>{post.post.title}</Link>
                                     </p>

@@ -39,7 +39,7 @@ function App() {
         <Route path="/user/:id" element={<UserProfile />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/post/:id" element={<Post />} />
+        <Route path="/post/:id/*" element={<Post />} />
       </Routes>
 
     </BrowserRouter>
