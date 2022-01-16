@@ -73,5 +73,8 @@
 .titleBGViking p:last-child{
     font-size: 20px;
 }
-
+.textErr{
+    position: absolute;
+    font-weight: bold;
+}
 

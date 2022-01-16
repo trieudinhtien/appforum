@@ -89,3 +89,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+.textErr{
+    position: absolute;
+    font-weight: bold;
+}
