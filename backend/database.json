@@ -488,14 +488,6 @@
           "createdAt": "2022-01-16T15:32:54+07:00",
           "user_name": "admin",
           "user_img": "http://localhost:3000/uploads/avatar1642220714497.jpg"
-        },
-        {
-          "id": 1642322288871,
-          "user_id": 1,
-          "comment": "hi",
-          "createdAt": "2022-01-16T15:47:13+07:00",
-          "user_name": "admin",
-          "user_img": "http://localhost:3000/uploads/avatar1642220714497.jpg"
         }
       ],
       "tags": [
@@ -503,7 +495,7 @@
       ],
       "img": "",
       "content": "<p>Handsome is only way<br></p>",
-      "modifiedAt": 1642322833653
+      "modifiedAt": 1642339665815
     }
   ]
 }
