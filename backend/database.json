@@ -546,7 +546,7 @@
         "comment": "minh meo",
         "createdAt": "2022-01-15T01:28:21+07:00",
         "user_name": "admin",
-        "user_img": "http://localhost:3000/uploads/avatar1642240328769.jpg"
+        "user_img": "http://localhost:3000/uploads/avatar1642240328769.jpg" 
       }
     }
   ]
