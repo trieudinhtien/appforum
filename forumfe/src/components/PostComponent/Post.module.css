@@ -269,3 +269,16 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
+
+.checkbox:checked + div{
+  display: block!important;
+}
+
+.notification2{
+  margin-top: 2rem;
+  border-radius: 10px;
+  border: 1px solid #23d2e2;
+  background-color: #e0f9fb;
+  padding: 1.2rem;
+  width: 80%;
+}

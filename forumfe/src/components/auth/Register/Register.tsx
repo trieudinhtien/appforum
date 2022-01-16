@@ -115,14 +115,10 @@ export const Register = () => {
         }
         validate(formData);
         if (formData.username && formData.email && formData.password && formData.firstName && formData.lastName && formData.phone && formData.address) {
-
             callApiRegister(dataRegister).then((data) => {
-                console.log("data", data.status)
-                if(data?.response?.status){
-                    swal("Success", "Account has been created", "success");
-                    navigate('/login');
-                  }
-            }).catch(err => swal("The email already exists. Please use a different email!"))
+                swal("Success", "Account has been created", "success");
+                navigate('/login');
+            }).catch(err => swal("The email or username already exists. Please use a different email!"))
         }
     }
 

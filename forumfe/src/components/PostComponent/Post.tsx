@@ -203,50 +203,54 @@ export default function Post() {
                     <button className={liked ? styles.btn_followed : styles.btn_follow} onClick={handleLike}>
                         {liked ? "Unlike" : "Like"}
                     </button>
-                    <button className={styles.btn_comment}>Comment</button>
+                    {/* <button className={styles.btn_comment}>Comment</button> */}
+                    <label htmlFor='comment' className={styles.btn_comment + ' m-0 text-center'}>Comment</label>
                 </div>
-                <div>{postDetail?.comments.map(com => (
-                    <div key={com.id} >
-                        <div className={styles.postComment}>
+                <input type="checkbox" className={styles.checkbox + ' d-none'} id='comment'></input>
+                <div className="d-none">
+                    {
+                        postDetail?.comments.map(com => (
+                            <div key={com.id} >
+                                <div className={styles.postComment}>
 
-                            <div className={styles.commentHeader}>
-                                Replied {moment(com?.createdAt).fromNow()}
-                                {
-                                    postDetail.author.author_id === context.user.id || com.user_id === context.user.id ?
-                                        <button onClick={() => handleDeleteComment(com.id)} className={styles.btn_delete}><i className="fas fa-trash"></i></button> : " "
-                                }
-                            </div>
-                            <div className={styles.postComment_text}>
-                                <div className={""}>
-                                    <img src={com.user_img} alt="" />
-                                    <br />
-                                    <h3>{com.user_name}</h3>
+                                    <div className={styles.commentHeader}>
+                                        Replied {moment(com?.createdAt).fromNow()}
+                                        {
+                                            postDetail.author.author_id === context.user.id || com.user_id === context.user.id ?
+                                                <button onClick={() => handleDeleteComment(com.id)} className={styles.btn_delete}><i className="fas fa-trash"></i></button> : " "
+                                        }
+                                    </div>
+                                    <div className={styles.postComment_text}>
+                                        <div className={""}>
+                                            <img src={com.user_img} alt="" />
+                                            <br />
+                                            <h3>{com.user_name}</h3>
+                                        </div>
+                                        <p>{com.comment}</p>
+                                    </div>
                                 </div>
-                                <p>{com.comment}</p>
                             </div>
-                        </div>
-                    </div>
-                ))}
+                        ))}
+                    {
+                        context.user.token ?
+                            <div>
+                                <form className={styles.addComment} onSubmit={handleSubmit}>
+                                    <label htmlFor="">Comment</label>
+                                    <br />
+                                    <input type="text"
+                                        placeholder='Enter your comment...'
+                                        name='comment'
+                                        value={commentPost.comment}
+                                        onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value, createdAt: moment().format() })}
+                                    />
+                                    <button className={styles.btn_post} type='submit'>Post</button>
+                                </form>
+
+                            </div>
+                            : <p className={styles.notification2}> You have to login to comment on this post! </p>
+                    }
                 </div>
 
-                {
-                    context.user.token ?
-                        <div>
-                            <form className={styles.addComment} onSubmit={handleSubmit}>
-                                <label htmlFor="">Comment</label>
-                                <br />
-                                <input type="text"
-                                    placeholder='Enter your comment...'
-                                    name='comment'
-                                    value={commentPost.comment}
-                                    onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value, createdAt: moment().format() })}
-                                />
-                                <button className={styles.btn_post} type='submit'>Post</button>
-                            </form>
-              
-                        </div>
-                            : <p className={styles.notification}> You have to login to comment on this post! </p>
-                   }
             </div>
             <Footer />
 
