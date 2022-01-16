@@ -77,7 +77,7 @@ export default function ChangePassword() {
 
     return (
         <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ex provident aut hic a tenetur animi? Sunt odio repellat asperiores corrupti quidem distinctio vel reiciendis, adipisci molestiae neque sed eveniet!
+            <h3 className="mx-4" style={{ fontSize: '20px'}}>Change your password here: </h3>
             <Formik
                 initialValues={{
                     password: '',
@@ -134,7 +134,7 @@ export default function ChangePassword() {
                             <p className="text-danger text-left col-9">{notification}</p>
                         </div>
                     }
-                    <button className="btn btn-primary" type='submit'>Submit</button>
+                    <button className="btn text-white" type='submit' style={{backgroundColor: '#615dfa'}}>Submit</button>
                 </FormikForm>
             </Formik>
         </div >

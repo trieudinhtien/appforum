@@ -6,7 +6,7 @@
   margin: 0px auto;
   transition: transform 0.4s ease-in-out 0s;
   max-width: 1184px;
-  padding: 112px 0 100px;
+  padding: 112px 0 100px 40px;
   position: relative;
   font-family: Rajdhani, sans-serif;
 }
@@ -14,7 +14,7 @@
 .myposts > img:nth-child(2) {
   position: absolute;
   top: 100px;
-  left: 0;
+  left: 3%;
   z-index: 9999;
 }
 
@@ -147,4 +147,15 @@
 .management > form > button:hover {
   box-shadow: 4px 7px 12px 0 rgb(35 210 226 / 20%);
   background-color: #1bc5d4;
+}
+
+.create{
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  font-weight: 700;
+}
+
+.create:hover{
+  text-decoration: underline;
 }

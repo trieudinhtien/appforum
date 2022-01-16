@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getPostById } from '../../apis/home-apies';
 import styles from './Post.module.css'
 import Detail from "../Home/images/forums-icon.png";
@@ -8,10 +8,12 @@ import { UserContext } from '../../context/UserContext';
 import { Card } from 'react-bootstrap';
 import { AuthGuard } from '../auth/guard/AuthGuard';
 import { sendComment, sendLike } from '../../apis/posts-apis';
+import Navigation from '../Profile/Profile/Navigation/Navigation';
+import Footer from '../Footer/Footer';
 
 export default function Post() {
     const params = useParams();
-
+    const navigate = useNavigate();
     const context = useContext(UserContext)
     const [postDetail, setpostDetail] = useState<Post>();
     const [liked, setLiked] = useState(false)
@@ -40,9 +42,9 @@ export default function Post() {
         })
         if (context.user.token) {
             if (commentPost.comment) {
-                postDetail?.comments.push(commentPost);
                 if (postDetail) {
                     sendComment(Number(params.id), context.user.token, [...postDetail.comments, commentPost]);
+                    setpostDetail({ ...postDetail, comments: [...postDetail.comments, commentPost] });
                     setCommentPost({
                         ...commentPost,
                         comment: ""
@@ -51,6 +53,11 @@ export default function Post() {
             }
         }
     }
+    useEffect(() => {
+
+
+    }, [commentPost])
+
     useEffect(() => {
         if (postDetail) {
             postDetail?.likes.map((item) => {
@@ -73,7 +80,22 @@ export default function Post() {
         }
 
     }, [])
-
+    const handleDeleteComment = (id: number) => {
+        let check = false;
+        let i = 0;
+        postDetail?.comments.map((item, index) => {
+            if (item.id === id && item.user_id === context.user.id) {
+                check = true;
+                i = index;
+            }
+        })
+        if (check && postDetail) {
+            let arr = postDetail.comments
+            arr.splice(i, 1);
+            setpostDetail({ ...postDetail, comments: arr })
+            sendComment(Number(params.id), context.user.token, postDetail.comments);
+        }
+    }
     const handleLike = () => {
 
         setlike({
@@ -118,102 +140,121 @@ export default function Post() {
     }, []);
 
     return (
-        <div className={styles.app + " container"}>
-            <div className={styles.banner}>
-                <img className={styles.banner_img} src={Detail} alt="" />
-                <div className={" mx-3"}>
-                    <p className={styles.banner_title}>Topic</p>
-                    <p className={styles.banner_text}>Post #{postDetail?.id}</p>
+        <>
+            <Navigation />
+            <div className={styles.app + " container"}>
+                <div className={styles.banner}>
+                    <img className={styles.banner_img} src={Detail} alt="" />
+                    <div className={" mx-3"}>
+                        <p className={styles.banner_title}>Topic</p>
+                        <p className={styles.banner_text}>Post #{postDetail?.id}</p>
+                    </div>
                 </div>
-            </div>
-            <div className={styles.forum_heading}>
-                <h2 className={styles.forum_pretitle}>WELCOME TO</h2>
-                <h2 className={styles.forum_title}>{postDetail?.title}</h2>
-            </div>
-            <div>
-                <p className={styles.notification}>This topic has {postDetail?.comments.length} reply, {postDetail?.likes.length} likes</p>
-            </div>
-            <div className={styles.content}>
+                <div className={styles.forum_heading}>
+                    <h2 className={styles.forum_pretitle}>WELCOME TO</h2>
+                    <h2 className={styles.forum_title}>{postDetail?.title}</h2>
+                </div>
                 <div>
-                    <div className={styles.post_item_user}>
-                        {moment(postDetail?.createdAt).format("MMMM DD, YYYY")} at {moment(postDetail?.createdAt).format("hh:mm a")}
-                    </div>
-
+                    <p className={styles.notification}>This topic has {postDetail?.comments.length} reply, {postDetail?.likes.length} likes</p>
                 </div>
-                <div className='d-flex justify-content-between'>
-                    <div className={styles.author}>
-                        <img src={postDetail?.author.author_img} alt="avatar" />
-                        <h3>{postDetail?.author.author_name}</h3>
-                        <p>User ID: #{postDetail?.author.author_id}</p>
+                <div className={styles.bodyPost}>
+
+                    <div className={styles.content}>
+                        <div>
+                            <div className={styles.post_item_user}>
+                                {moment(postDetail?.createdAt).format("MMMM DD, YYYY")} at {moment(postDetail?.createdAt).format("hh:mm a")}
+                            </div>
+
+                        </div>
+
+                        <div dangerouslySetInnerHTML={{ __html: `${postDetail?.content}` }} className={styles.postContent}></div>
                     </div>
-                    <div>
-                        <button className={liked ? styles.btn_followed : styles.btn_follow} onClick={handleLike}>
-                            {liked ? "Unlike" : "Like"}
-                        </button>
-                        <div className={styles.info}>
-                            <div className={styles.infoTag}>
-                                <i className="fas fa-comment" ></i>
-                                <div className={styles.infoTag_text}>
-                                    <h5>{postDetail?.comments.length}</h5>
-                                    REPLY
-                                </div>
-                            </div>
-                            <div className={styles.infoTag}>
 
-                                <i className="fas fa-heart" ></i>
-
-                                <div className={styles.infoTag_text}>
-                                    <h5>{postDetail?.likes.length}</h5>
-                                    LIKES
-                                </div>
+                    <div className={styles.info}>
+                        <div className={styles.authorContent + ' d-flex justify-content-center'}>
+                            <div className={styles.author}>
+                                <img src={postDetail?.author.author_img} alt="avatar" />
+                                <h3>{postDetail?.author.author_name}</h3>
+                                <p>User ID: #{postDetail?.author.author_id}</p>
                             </div>
-                            <div className={styles.tags}>
-                                <p>TAGS</p>
-                                <h5>{postDetail?.tags.map(item => (
-                                    item + ";  "
-                                ))}</h5>
-
+                        </div>
+                        <div className={styles.infoTag}>
+                            <i className="fas fa-comment" ></i>
+                            <div className={styles.infoTag_text}>
+                                <h5>{postDetail?.comments.length}</h5>
+                                REPLY
                             </div>
+                        </div>
+                        <div className={styles.infoTag}>
+
+                            <i className="fas fa-heart" ></i>
+
+                            <div className={styles.infoTag_text}>
+                                <h5>{postDetail?.likes.length}</h5>
+                                LIKES
+                            </div>
+                        </div>
+                        <div className={styles.tags}>
+                            <p>TAGS</p>
+                            <h5>{postDetail?.tags.map(item => (
+                                item + ";  "
+                            ))}</h5>
+
                         </div>
                     </div>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: `${postDetail?.content}` }} className={styles.postContent}></div>
-            </div>
-            <div>{postDetail?.comments.map(com => (
-                <div key={com.id} >
-                    <div className={styles.postComment}>
-                        {moment(com?.createdAt).format("MMMM DD, YYYY")}
-                        <br />
-                        Replied {moment(com?.createdAt).fromNow()}
-                        <div className={styles.postComment_text}>
-                            <div className={""}>
-                                <img src={com.user_img} alt="" />
+                <div className={styles.function}>
+                    <button className={liked ? styles.btn_followed : styles.btn_follow} onClick={handleLike}>
+                        {liked ? "Unlike" : "Like"}
+                    </button>
+                    <button className={styles.btn_comment}>Comment</button>
+                </div>
+                <div>{postDetail?.comments.map(com => (
+                    <div key={com.id} >
+                        <div className={styles.postComment}>
+
+                            <div className={styles.commentHeader}>
+                                Replied {moment(com?.createdAt).fromNow()}
+                                {
+                                    postDetail.author.author_id === context.user.id ?
+                                        <button onClick={() => handleDeleteComment(com.id)} className={styles.btn_delete}><i className="fas fa-trash"></i></button> : " "
+                                }
+                            </div>
+                            <div className={styles.postComment_text}>
+                                <div className={""}>
+                                    <img src={com.user_img} alt="" />
+                                    <br />
+                                    <h3>{com.user_name}</h3>
+                                    {/* User ID: #{com.user_id} */}
+                                </div>
+                                <p>{com.comment}</p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                </div>
+
+                {
+                    context.user.token ?
+                        <div>
+                            <form className={styles.addComment} onSubmit={handleSubmit}>
+                                <label htmlFor="">Comment</label>
                                 <br />
-                                <h3>{com.user_name}</h3>
-                                User ID: #{com.user_id}
-                            </div>
-                            <p>{com.comment}</p>
-
+                                <input type="text"
+                                    placeholder='Enter your comment...'
+                                    name='comment'
+                                    value={commentPost.comment}
+                                    onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value, createdAt: moment().format() })}
+                                />
+                                <button className={styles.btn_post} type='submit'>Post</button>
+                            </form>
+              
                         </div>
-                    </div>
-                </div>
-            ))}
+                            : <p className={styles.notification}> You have to login to comment on this post! </p>
+                   }
             </div>
-            <AuthGuard moveTo="/login">
-                <div>
-                    <form className={styles.addComment} onSubmit={handleSubmit}>
-                        <label htmlFor="">Comment</label>
-                        <br />
-                        <input type="text"
-                            placeholder='Enter your comment...'
-                            name='comment'
-                            value={commentPost.comment}
-                            onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value, createdAt: moment().format() })}
-                        />
-                        <button className={styles.btn_post} type='submit'>Post</button>
-                    </form>
-                </div>
-            </AuthGuard>
-        </div>
+            <Footer />
+
+        </>
     )
 }

@@ -5,6 +5,7 @@ import { UserContext } from '../../../../context/UserContext'
 import { changeUserById } from '../../../../apis/users-apis'
 import { useNavigate } from 'react-router-dom'
 import styles from './ChangeProfile.module.css'
+import swal from 'sweetalert';
 
 
 interface FormValues {
@@ -27,7 +28,7 @@ export default function ChangeProfile() {
 
         changeUserById(user.id, user.token, value.firstName, value.lastName, value.birthday, value.gender, value.phone, value.address, value.introduce)
             .then(res => {
-                alert('Information is changed successfully')
+                swal("Success", "you have successfully changed", "success");
                 localStorage.setItem('user', JSON.stringify({
                     ...user,
                     firstName: value.firstName,
@@ -180,7 +181,7 @@ export default function ChangeProfile() {
                     </Form.Group>
                     <ErrorMessage name="introduce" render={renderMessageError} />
 
-                    <button className="btn btn-primary" type='submit'>Submit</button>
+                    <button className="btn text-white" type='submit' style={{ backgroundColor: '#615dfa'}}>Submit</button>
                 </FormikForm>
             </Formik>
         </div >
