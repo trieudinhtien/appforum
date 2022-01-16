@@ -4,8 +4,8 @@ import { callApiRegister } from '../../../apis/api'
 import styled from './register.module.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { v4 } from 'uuid'
-
-
+import userImg from '../../../images/avatar/user.png'
+import coverImg from '../../../images/cover/cover-page.jpg'
 
 export const Register = () => {
     let navigate = useNavigate();
@@ -16,8 +16,8 @@ export const Register = () => {
         "username": "",
         "email": "",
         "password": "",
-        "cover": "",
-        "avatar": "",
+        "cover": coverImg,
+        "avatar": userImg,
         "gender": "",
         "followings_id": [] as number[],
         "socialMedia": {
@@ -73,10 +73,8 @@ export const Register = () => {
         }else{
             errors.phone = '';
         }
-        
-       
+    
         setFormErr(errors);
-        
     }
 
     function handleFormChange(fieldName: string, value: string) {
