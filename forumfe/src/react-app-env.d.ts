@@ -22,15 +22,15 @@ interface Post {
   content: string;
 }
 
-interface Author{
+interface Author {
   author_id: number;
   author_name: string;
   author_img: string;
 }
 
-interface Like{
-  id: number; 
-  user_id: number; 
+interface Like {
+  id: number;
+  user_id: number;
   createdAt: string
 }
 
@@ -104,4 +104,14 @@ interface Following {
     youtube: string;
   };
   introduce: string;
+}
+
+interface FeildValidate {
+  firstName: string,
+  lastName: string,
+  username:string,
+  email: string
+  password: string
+  address: string
+  phone: string
 }
