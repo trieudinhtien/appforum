@@ -7,6 +7,8 @@ import { UserContext } from '../../../context/UserContext';
 import { UnauthGuard } from '../guard/UnauthGuard';
 import Logo from "../../../images/logo.png"
 import styles from './Login.module.css'
+import swal from 'sweetalert';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -17,6 +19,7 @@ interface Ilogin {
 
 
 const Login: FC<{}> = () => {
+    let navigate = useNavigate();
 
     const context = useContext(UserContext)
     const [showPassword, setShowpassword] = useState<boolean>(false)
@@ -70,8 +73,12 @@ const Login: FC<{}> = () => {
         if(formData.email && formData.password){
             login(formData)
                 .then((user: User) => {
-                    localStorage.setItem("user", JSON.stringify(user))
-                    context.setUser(user)
+                    if(user){
+                        localStorage.setItem("user", JSON.stringify(user))
+                        context.setUser(user)
+                    }else{
+                        swal("Email or Password is incorrect");
+                    }
                 })
         }
         
