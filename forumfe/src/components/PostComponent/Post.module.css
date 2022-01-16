@@ -71,6 +71,8 @@ h6 {
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 10px;
+  width: 80%;
+  position: relative;
 }
 .content img {
   max-width: 69rem;
@@ -87,13 +89,14 @@ h6 {
   border-radius: 50%;
   border: 2px solid #615dfa;
   background-color: #615dfa;
+  object-fit: cover;
 }
 .author {
   text-align: center;
   width: 7rem;
   margin: 1rem;
 }
-.author h3{
+.author h3 {
   margin-top: 1rem;
 }
 .postContent img {
@@ -101,40 +104,60 @@ h6 {
   margin: auto;
 }
 .btn_follow {
-  position: absolute;
-  right: 27rem;
-  top: 34rem;
   font-weight: 600;
   font-size: 18px;
-  background-color: #23d2e2;
-  color: #fff;
+  color: #615dfa;
   padding: 4px 20px;
+  background-color: #fff;
   border: none;
   border-radius: 4px;
+  width: 49.5%;
+
 }
 .btn_followed {
-  position: absolute;
-  right: 27rem;
-  top: 34rem;
+  width: 49.5%;
   font-weight: 600;
   font-size: 18px;
-  background-color: rgba(255, 9, 9, 0.726);
-  color: #fff;
+  color: rgba(255, 9, 9, 0.726);
+  background-color: #fff;
+
   padding: 4px 20px;
-  box-shadow: 0px 0px 5px 1px #000;
   border: none;
   border-radius: 4px;
+
+}
+.btn_comment {
+  font-weight: 600;
+  font-size: 18px;
+  color: #615dfa;
+  background-color: #fff;
+  padding: 4px 20px;
+  border: none;
+  border-radius: 4px;
+  width: 49.5%;
+}
+.function {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  /* border-top: 1px solid black;
+  border-bottom: 1px solid black; */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
 }
 
 .postComment {
   background-color: #fff;
   padding: 1.5rem;
-  margin-top: 1rem;
   border-radius: 10px;
+  width: 80%;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
 }
 .postComment_text img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border: 2px solid #615dfa;
   background-color: #615dfa;
@@ -159,10 +182,10 @@ h6 {
   align-items: center;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
   width: 13rem;
   padding: 1rem;
-  justify-content: flex-start;
+  justify-content: center;
   height: 5rem;
 }
 .infoTag i {
@@ -173,10 +196,10 @@ h6 {
   padding: 1rem;
 }
 .info {
-  position: absolute;
+  /* position: absolute;
   transform: translate(50%, -50%);
-  right: 17rem;
-  top: 37.2rem;
+  right: 26.3%;
+  top: 37.2rem; */
 }
 .infoTag_text {
   padding-left: 1rem;
@@ -197,7 +220,7 @@ h6 {
   font-size: 1rem;
 }
 .addComment input {
-  width: 91%;
+  width: 89%;
   height: 3rem;
 }
 .addComment {
@@ -207,6 +230,7 @@ h6 {
   border-radius: 5px;
   padding: 1rem;
   padding-bottom: 2rem;
+  width: 80%;
 }
 .addComment label {
   font-weight: 700;
@@ -221,4 +245,27 @@ h6 {
   padding: 4px 20px;
   border: none;
   border-radius: 4px;
+}
+.bodyPost {
+  display: flex;
+  justify-content: space-between;
+}
+.authorContent{
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+.post_item_user{
+  margin-bottom: 5rem;
+}
+.btn_delete{
+  border:none;
+  background-color: #fff;
+}
+.btn_delete i{
+  
+  color: #fa5d5d;
+}
+.commentHeader{
+  display: flex;
+  justify-content: space-between;
 }
