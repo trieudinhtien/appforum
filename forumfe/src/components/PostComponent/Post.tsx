@@ -215,7 +215,10 @@ export default function Post() {
 
                             <div className={styles.commentHeader}>
                                 Replied {moment(com?.createdAt).fromNow()}
-                                <button onClick={() => handleDeleteComment(com.id)} className={styles.btn_delete}><i className="fas fa-trash"></i></button>
+                                {
+                                    postDetail.author.author_id === context.user.id ?
+                                        <button onClick={() => handleDeleteComment(com.id)} className={styles.btn_delete}><i className="fas fa-trash"></i></button> : " "
+                                }
                             </div>
                             <div className={styles.postComment_text}>
                                 <div className={""}>
@@ -230,21 +233,25 @@ export default function Post() {
                     </div>
                 ))}
                 </div>
-                <AuthGuard moveTo="/login">
-                    <div>
-                        <form className={styles.addComment} onSubmit={handleSubmit}>
-                            <label htmlFor="">Comment</label>
-                            <br />
-                            <input type="text"
-                                placeholder='Enter your comment...'
-                                name='comment'
-                                value={commentPost.comment}
-                                onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value, createdAt: moment().format() })}
-                            />
-                            <button className={styles.btn_post} type='submit'>Post</button>
-                        </form>
-                    </div>
-                </AuthGuard>
+
+                {
+                    context.user.token ?
+                        <div>
+                            <form className={styles.addComment} onSubmit={handleSubmit}>
+                                <label htmlFor="">Comment</label>
+                                <br />
+                                <input type="text"
+                                    placeholder='Enter your comment...'
+                                    name='comment'
+                                    value={commentPost.comment}
+                                    onChange={(e) => setCommentPost({ ...commentPost, comment: e.target.value, createdAt: moment().format() })}
+                                />
+                                <button className={styles.btn_post} type='submit'>Post</button>
+                            </form>
+              
+                        </div>
+                            : <p className={styles.notification}> You have to login to comment on this post! </p>
+                   }
             </div>
             <Footer />
 
