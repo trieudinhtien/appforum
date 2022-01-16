@@ -212,7 +212,7 @@ export default function Post() {
                             <div className={styles.commentHeader}>
                                 Replied {moment(com?.createdAt).fromNow()}
                                 {
-                                    postDetail.author.author_id === com.user_id ?
+                                    postDetail.author.author_id === context.user.id || com.user_id === context.user.id ?
                                         <button onClick={() => handleDeleteComment(com.id)} className={styles.btn_delete}><i className="fas fa-trash"></i></button> : " "
                                 }
                             </div>
