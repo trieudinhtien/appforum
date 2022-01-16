@@ -6,6 +6,7 @@ import { changeUserById } from '../../../../apis/users-apis'
 import { useNavigate } from 'react-router-dom'
 import styles from './ChangeProfile.module.css'
 import swal from 'sweetalert';
+import Swal from 'sweetalert2'
 
 
 interface FormValues {
@@ -15,7 +16,10 @@ interface FormValues {
     birthday: string,
     phone: string,
     address: string,
-    introduce: string
+    introduce: string,
+    facebook: string,
+    instagram: string,
+    youtube: string,
 }
 
 export default function ChangeProfile() {
@@ -26,9 +30,9 @@ export default function ChangeProfile() {
 
     const _onSubmit = (value: FormValues) => {
 
-        changeUserById(user.id, user.token, value.firstName, value.lastName, value.birthday, value.gender, value.phone, value.address, value.introduce)
+        changeUserById(user.id, user.token, value.firstName, value.lastName, value.birthday, value.gender, value.phone, value.address, value.introduce, value.facebook, value.instagram, value.youtube)
             .then(res => {
-                swal("Success", "you have successfully changed", "success");
+                Swal.fire("Success", "you have successfully changed", "success");
                 localStorage.setItem('user', JSON.stringify({
                     ...user,
                     firstName: value.firstName,
@@ -37,7 +41,12 @@ export default function ChangeProfile() {
                     gender: value.gender,
                     phone: value.phone,
                     address: value.address,
-                    introduce: value.introduce
+                    introduce: value.introduce,
+                    socialMedia: {
+                        youtube: value.youtube,
+                        facebook: value.facebook,
+                        instagram: value.instagram,
+                    }
                 }))
                 context.setUser({
                     ...user,
@@ -47,7 +56,12 @@ export default function ChangeProfile() {
                     gender: value.gender,
                     phone: value.phone,
                     address: value.address,
-                    introduce: value.introduce
+                    introduce: value.introduce,
+                    socialMedia: {
+                        youtube: value.youtube,
+                        facebook: value.facebook,
+                        instagram: value.instagram,
+                    }
                 })
                 navigate('/profile/about')
             })
@@ -83,7 +97,7 @@ export default function ChangeProfile() {
 
     return (
         <div>
-            <h4 className="px-4" style={{ fontSize: '20px' }}>Change your information here:</h4>
+            <h4 className="px-4" style={{ fontSize: '20px', color: '#605cf8' }}>Change your information here:</h4>
             <Formik
                 initialValues={{
                     firstName: user.firstName,
@@ -92,7 +106,10 @@ export default function ChangeProfile() {
                     birthday: user.birthday,
                     phone: user.phone,
                     address: user.address,
-                    introduce: user.introduce
+                    introduce: user.introduce,
+                    youtube: user.socialMedia.youtube,
+                    facebook: user.socialMedia.facebook,
+                    instagram: user.socialMedia.instagram
                 }}
                 onSubmit={_onSubmit}
                 validate={_validate}
@@ -168,6 +185,39 @@ export default function ChangeProfile() {
                         />
                     </Form.Group>
                     <ErrorMessage name="address" render={renderMessageError} />
+
+                    <Form.Group className="d-flex align-items-center mb-3">
+                        <Form.Label htmlFor='facebook' className="my-0 mr-3 col-2 p-0 font-weight-bold">Facebook :</Form.Label>
+                        <Field
+                            as={Form.Control}
+                            name='facebook'
+                            type='text'
+                            id='facebook'
+                            className=''
+                        />
+                    </Form.Group>
+
+                    <Form.Group className="d-flex align-items-center mb-3">
+                        <Form.Label htmlFor='instagram' className="my-0 mr-3 col-2 p-0 font-weight-bold">Instagram :</Form.Label>
+                        <Field
+                            as={Form.Control}
+                            name='instagram'
+                            type='text'
+                            id='instagram'
+                            className=''
+                        />
+                    </Form.Group>
+
+                    <Form.Group className="d-flex align-items-center mb-3">
+                        <Form.Label htmlFor='youtube' className="my-0 mr-3 col-2 p-0 font-weight-bold">Youtube :</Form.Label>
+                        <Field
+                            as={Form.Control}
+                            name='youtube'
+                            type='text'
+                            id='youtube'
+                            className=''
+                        />
+                    </Form.Group>
 
                     <Form.Group className="d-flex align-items-center mb-3">
                         <Form.Label htmlFor='introduce' className="my-0 mr-3 col-2 p-0 font-weight-bold">Introduce yourself :</Form.Label>

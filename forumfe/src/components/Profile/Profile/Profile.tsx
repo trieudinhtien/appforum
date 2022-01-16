@@ -7,6 +7,7 @@ import { AuthGuard } from "../../auth/guard/AuthGuard"
 import { getPosts, changeAuthorInfoOfPost, changeUserInfoOfComment } from '../../../apis/posts-apis'
 import Navigation from '../../Navigation/Navigation'
 import Footer from "../../Footer/Footer"
+import {Form} from 'react-bootstrap'
 
 export default function Profile() {
 
@@ -14,6 +15,7 @@ export default function Profile() {
     const user = context.user
     const [followers, setFollowers] = useState(0)
     const [posts, setPosts] = useState(0)
+    const [socialMedia, setSocialMedia] = useState(user.socialMedia)
     const avatarRef = useRef<HTMLInputElement>(null)
     const coverRef = useRef<HTMLInputElement>(null)
 
@@ -39,8 +41,8 @@ export default function Profile() {
                                 }
                                 if (post.comments.length > 0) {
                                     const commentUpdated = post.comments.map(comment => {
-                                        if(comment.user_id === user.id) {
-                                            return {...comment, user_img: res.path}
+                                        if (comment.user_id === user.id) {
+                                            return { ...comment, user_img: res.path }
                                         }
                                         return comment
                                     })
@@ -101,6 +103,18 @@ export default function Profile() {
             })
     }, [])
 
+    const _onChangeFB = (value: string) => {
+        setSocialMedia({...socialMedia, facebook: value})
+    }
+
+    const _onChangeIG = (value: string) => {
+        setSocialMedia({...socialMedia, instagram: value})
+    }
+
+    const _onChangeYT = (value: string) => {
+        setSocialMedia({...socialMedia, youtube:value})
+    }
+
     return (
         <AuthGuard moveTo='/login'>
             <Navigation />
@@ -142,16 +156,29 @@ export default function Profile() {
                                 {user.email}
                             </div>
                         </div>
-                        <div className={"text-center col d-flex justify-content-center " + styles.description_inner}>
-                            <a className={styles.des_social} href={user.socialMedia?.facebook ? user.socialMedia.facebook : "#"} style={{ backgroundColor: '#3763d2' }}>
-                                <i className="fab fa-facebook-square"></i>
-                            </a>
-                            <a className={styles.des_social} href={user.socialMedia?.instagram ? user.socialMedia.instagram : "#"} style={{ backgroundColor: '#f8468d' }}>
-                                <i className="fab fa-instagram"></i>
-                            </a>
-                            <a className={styles.des_social} href={user.socialMedia?.youtube ? user.socialMedia.youtube : "#"} style={{ backgroundColor: '#fd434f' }}>
-                                <i className="fab fa-youtube"></i>
-                            </a>
+                        <div className={"text-center col d-flex justify-content-center align-items-center " + styles.description_inner}>
+                            <div className={"text-center col d-flex justify-content-center align-items-center " + styles.description_inner}>
+                                {
+                                    user.socialMedia.facebook &&
+                                    <a className={styles.des_social} href={user.socialMedia.facebook} style={{ backgroundColor: '#3763d2' }}>
+                                        <i className="fab fa-facebook-square"></i>
+                                    </a>
+                                }
+                                {
+                                    user.socialMedia.instagram &&
+                                    <a className={styles.des_social} href={user.socialMedia.instagram} style={{ backgroundColor: '#f8468d' }}>
+                                        <i className="fab fa-instagram"></i>
+                                    </a>
+                                }
+                                {
+                                    user.socialMedia.youtube &&
+                                    <a className={styles.des_social} href={user.socialMedia.youtube} style={{ backgroundColor: '#fd434f' }}>
+                                        <i className="fab fa-youtube"></i>
+                                    </a>
+                                }
+                            </div>
+                            <div className='d-flex align-items-center'>
+                            </div>
                         </div>
                     </div>
                 </div>

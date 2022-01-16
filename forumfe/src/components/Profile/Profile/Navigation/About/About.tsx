@@ -125,8 +125,20 @@ export default function About() {
                         <p className="col-8">{user.firstName + " " + user.lastName}</p>
                         <p className="col-4 text-muted">Email</p>
                         <p className="col-8">{user.email}</p>
-                        <p className="col-4 text-muted">Birthday</p>
-                        <p className="col-8">{moment(user.birthday).format('LL')}</p>
+                        {
+                            user.birthday &&
+                            <>
+                                <p className="col-4 text-muted">Birthday</p>
+                                <p className="col-8">{moment(user.birthday).format('LL')}</p>
+                            </>
+                        }
+                        {
+                            user.gender &&
+                            <>
+                                <p className="col-4 text-muted">Gender</p>
+                                <p className="col-8">{user.gender}</p>
+                            </>
+                        }
                         <p className="col-4 text-muted">Phone</p>
                         <p className="col-8">{user.phone}</p>
                         <p className="col-4 text-muted">Address</p>

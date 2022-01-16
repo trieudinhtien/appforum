@@ -45,7 +45,7 @@ export function changePasswordById(id: number, token: string, password: string) 
         .catch(err => console.log(err))
 }
 
-export function changeUserById(id: number, token: string, firstName: string, lastName: string, birthday: string, gender: string, phone: string, address: string, introduce: string) {
+export function changeUserById(id: number, token: string, firstName: string, lastName: string, birthday: string, gender: string, phone: string, address: string, introduce: string, facebook: string, instagram: string, youtube: string) {
     return axios({
         method: "PATCH",
         url: `http://localhost:3000/users/${id}`,
@@ -59,7 +59,12 @@ export function changeUserById(id: number, token: string, firstName: string, las
             "gender": gender,
             "phone": phone,
             "address": address,
-            "introduce": introduce
+            "introduce": introduce,
+            "socialMedia": {
+                "facebook": facebook,
+                "instagram": instagram,
+                "youtube": youtube
+            }
         }
     }).then(res => res.data)
         .catch(err => console.log(err))

@@ -350,7 +350,7 @@ const Header: FC<{}> = () => {
               <ul>
                 <li>
                   <div className={styles.settings_header}>
-                    <img src={user && user.avatar} alt="avatar" />
+                    <img src={user && user.avatar} style={{objectFit: 'cover'}} alt="avatar" />
                     <p>Hi {user && user.username!}!</p>
                   </div>
                   <hr />
@@ -383,9 +383,10 @@ const Header: FC<{}> = () => {
         {/* Login */}
         {localStorage.getItem("user") ? (
           <img
-            className="rounded-circle mr-2"
-            width={50}
-            height={50}
+            className="rounded-circle mr-2 border"
+            width={44}
+            height={44}
+            style={{objectFit: 'cover'}}
             src={user && user.avatar}
             alt="avatar"
           />

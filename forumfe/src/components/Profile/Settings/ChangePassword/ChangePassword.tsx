@@ -77,7 +77,7 @@ export default function ChangePassword() {
 
     return (
         <div>
-            <h3 className="mx-4" style={{ fontSize: '20px'}}>Change your password here: </h3>
+            <h3 className="mx-4" style={{ fontSize: '20px', color: '#605cf8'}}>Change your password here: </h3>
             <Formik
                 initialValues={{
                     password: '',
