@@ -302,14 +302,6 @@
           "createdAt": "2022-01-15T11:11:33+07:00",
           "user_name": "admin",
           "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
-        },
-        {
-          "id": 1642219893199,
-          "user_id": 1,
-          "comment": "Chan the",
-          "createdAt": "2022-01-15T11:11:33+07:00",
-          "user_name": "admin",
-          "user_img": "http://localhost:3000/uploads/avatar1642093284017.jpg"
         }
       ],
       "tags": [
@@ -525,7 +517,7 @@
       ],
       "comments": [
         {
-          "id": 1642184901868,
+          "id": 1642318084416,
           "user_id": 1,
           "comment": "minh meo",
           "createdAt": "2022-01-15T01:28:21+07:00",
