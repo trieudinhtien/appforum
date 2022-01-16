@@ -121,10 +121,11 @@ export default function UserProfile() {
 
     const currentUsers = postsOdUserFolowing.slice(indexOfFirstUsers, indexOfLastUsers);
     const pageNumbers = [];
-    const paginate = (pageNumber:number) =>{ 
-        setCurrentPage(pageNumber)}
+    const paginate = (pageNumber: number) => {
+        setCurrentPage(pageNumber)
+    }
 
-    for(let i=1; i<= Math.ceil(postsOdUserFolowing.length / usersPerPage); i++){
+    for (let i = 1; i <= Math.ceil(postsOdUserFolowing.length / usersPerPage); i++) {
         pageNumbers.push(i);
     }
 
@@ -217,53 +218,44 @@ export default function UserProfile() {
                     <div className={styles.main_center}>
                         <h3>List of Posts here</h3>
                         {
-                            followed ?  
-                        
-                        (<div className={stylesFromHome.post}>
-                            <div className={styles.post_title}>
-                                <div><b>POSTS <i className="fas fa-file-alt" style={{ color: '#5c3c92' }}></i></b></div>
-                                <div><b><i className="fas fa-heart" style={{ color: '#d72631' }}></i></b></div>
-                                <div><b><i className="fas fa-comment" style={{ color: '#1868ae' }}></i></b></div>
-                            </div>
-                            <div className={stylesFromHome.post_content}>
-                                {
-                                    currentUsers?.map(item => (
-                                        <div className={styles.post_row} onClick={() => navigate(`/post/${item.id}`)} key={item.id}>
-                                            <div className='d-flex align-items-center'>
-                                                <div>
-                                                    <div className={styles.post_item_title}>{item.title}</div>
-                                                    <div className={stylesFromHome.post_item_user}>{moment(item.createdAt).fromNow()}</div>
-                                                </div>
-                                            </div>
-                                            <div>{item.likes.length}</div>
-                                            <div>{item.comments?.length}</div>
-                                            {/* <div>{item.tags?.map(tag => (
-                                                tag + " "
-                                            ))}</div> */}
-
-                                        </div>))
-                                }
-                            </div>
-                            <ul className={styles.pagination}>
-                                <li className={styles.itemPagi} onClick={() => _onClickPrevious()}><i className="fas fa-arrow-left"></i></li>
-                                {
-                                    pageNumbers.length === 1 ? "" :
-                                        pageNumbers.map(number => (
-                                            <li onClick={() => paginate(number)} key={number} className={currentPage === number ? `${styles.itemPagi} ${styles.mark}` : `${styles.itemPagi}`}>
-                                                {number}
-                                            </li>
-                                        ))
-                                }
-                                <li className={styles.itemPagi} onClick={() => _onClickNext()}><i className="fas fa-arrow-right"></i></li>
-                            </ul>
-                        </div>): <div>User has no posts</div>
+                            followed ?
+                                (postsOdUserFolowing.length === 0 ? "user has no posts" :
+                                    <div className={stylesFromHome.post}>
+                                        <div className={styles.post_title}>
+                                            <div><b>POSTS <i className="fas fa-file-alt" style={{ color: '#5c3c92' }}></i></b></div>
+                                            <div><b><i className="fas fa-heart" style={{ color: '#d72631' }}></i></b></div>
+                                            <div><b><i className="fas fa-comment" style={{ color: '#1868ae' }}></i></b></div>
+                                        </div>
+                                        <div className={stylesFromHome.post_content}>
+                                            {
+                                                currentUsers?.map(item => (
+                                                    <div className={styles.post_row} onClick={() => navigate(`/post/${item.id}`)} key={item.id}>
+                                                        <div className='d-flex align-items-center'>
+                                                            <div>
+                                                                <div className={styles.post_item_title}>{item.title}</div>
+                                                                <div className={stylesFromHome.post_item_user}>{moment(item.createdAt).fromNow()}</div>
+                                                            </div>
+                                                        </div>
+                                                        <div>{item.likes.length}</div>
+                                                        <div>{item.comments?.length}</div>
+                                                    </div>))
+                                            }
+                                        </div>
+                                        <ul className={styles.pagination}>
+                                            <li className={styles.itemPagi} onClick={() => _onClickPrevious()}><i className="fas fa-arrow-left"></i></li>
+                                            {
+                                                pageNumbers.length === 1 ? "" :
+                                                    pageNumbers.map(number => (
+                                                        <li onClick={() => paginate(number)} key={number} className={currentPage === number ? `${styles.itemPagi} ${styles.mark}` : `${styles.itemPagi}`}>
+                                                            {number}
+                                                        </li>
+                                                    ))
+                                            }
+                                            <li className={styles.itemPagi} onClick={() => _onClickNext()}><i className="fas fa-arrow-right"></i></li>
+                                        </ul>
+                                    </div>) : <div>Follow to connect with them</div>
                         }
-                        {/* {postsOdUserFolowing.map((item)=>(
-                            <div key={item.id}>
-                                {item.title}
-                            </div>
-
-                        ))} */}
+                        
                     </div>
                     <div className={styles.main_right}>
                         <h3>Personal Info</h3>

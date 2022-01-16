@@ -130,7 +130,7 @@ export const Register = () => {
                     }
                     navigate('/login');
                   });
-            }).catch(err => console.log(err))
+            }).catch(err => swal("The email already exists. Please use a different email!"))
         }
     }
 
