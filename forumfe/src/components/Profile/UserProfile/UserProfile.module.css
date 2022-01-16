@@ -208,3 +208,36 @@
 .mark{
     color: #615DFA;
 }
+
+.post_title {
+    display: flex;
+    padding: 14px 28px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #3e3f5e;
+    line-height: 1em;
+    margin-bottom: 10px;
+  }
+  
+  .post_title > div:nth-child(1), .post_row > div:nth-child(1) {
+    width: 80%;
+    margin-right: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .post_title > div:nth-child(2),.post_row > div:nth-child(2) {
+    width: 10%;
+    text-align: center;
+  }
+  
+  .post_title > div:nth-child(3),.post_row > div:nth-child(3) {
+    width: 10%;
+    text-align: center;
+    padding-left: 1rem;
+  }
+  .post_item_title{
+      font-weight: 700;
+      line-height: 17px;
+  }
+  
+  

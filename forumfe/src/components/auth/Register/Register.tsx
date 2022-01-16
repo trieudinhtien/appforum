@@ -3,7 +3,6 @@ import { Button, Form } from 'react-bootstrap'
 import { callApiRegister } from '../../../apis/api'
 import styled from './register.module.css'
 import { Link, useNavigate } from 'react-router-dom';
-import { v4 } from 'uuid'
 import userImg from '../../../images/avatar/user.png'
 import coverImg from '../../../images/cover/cover-page.jpg'
 
@@ -34,13 +33,11 @@ export const Register = () => {
         "modifiedAt": 0,
         "token": ""
     }
-    // const uuidv4 = v4();
     const [formData, setDataForm] = useState<User>(initialData);
     const [formErr, setFormErr] = useState<User>(initialData);
 
     function validate(formData: User) {
         const errors = initialData;
-        const feildValiDate = ['firstName', 'lastName', 'email','password','phone','address'];
         if(!formData.firstName){
             errors.firstName = `First Name is required`;
         }else{
@@ -50,6 +47,11 @@ export const Register = () => {
             errors.lastName = `Last Name is required`;
         }else{
             errors.lastName = '';
+        }
+        if(!formData.username){
+            errors.username = `User name is required`;
+        }else{
+            errors.username = '';
         }
         if(!formData.email){
             errors.email = `Email is required`;
@@ -88,14 +90,13 @@ export const Register = () => {
         e.preventDefault();
         console.log("formData:", formData)
 
-        const daatRegister = {
+        const dataRegister = {
             ...formData,
             id: (new Date()).getTime()
         }
         validate(formData);
-        if(!formErr.email && !formErr.password && !formErr.firstName && !formErr.lastName && !formErr.phone && !formErr.address){
-            console.log("adu")
-            callApiRegister(daatRegister).then((data) => {
+        if(formData.username && formData.email && formData.password && formData.firstName && formData.lastName && formData.phone && formData.address){
+            callApiRegister(dataRegister).then((data) => {
                 console.log(data)
                 alert('Register Successfully')
                 navigate('/login');
@@ -121,9 +122,10 @@ export const Register = () => {
                             <div className={styled.subTitleForm1}>Connect to with frends and the wourld around you</div>
                             <div className='d-flex w-100'>
 
-                            <Form.Group className='w-50 mb-2' controlId="formBasicEmail">
+                            <Form.Group className='w-50 mb-4'>
                                 <Form.Control
                                     className={styled.formInput1}
+                                    style={{width:"95%"}}
                                     type="text"
                                     placeholder="First Name"
                                     value={formData.firstName}
@@ -132,14 +134,14 @@ export const Register = () => {
                                 {
                                         formErr.firstName
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styled.textErr}>
                                                     {formErr.firstName}
                                                 </Form.Text>
                                             )
                                             : null
                                 }
                                 </Form.Group>
-                                <Form.Group className='w-50 mb-2' controlId="formBasicEmail">
+                                <Form.Group className='w-50 mb-4' controlId="formBasicEmail">
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="text"
@@ -150,7 +152,7 @@ export const Register = () => {
                                 {
                                         formErr.lastName
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styled.textErr}>
                                                     {formErr.lastName}
                                                 </Form.Text>
                                             )
@@ -158,7 +160,25 @@ export const Register = () => {
                                 }
                             </Form.Group>
                             </div>
-                            <Form.Group className='mb-2' controlId="formBasicEmail">
+                            <Form.Group className='mb-4'>
+                                <Form.Control
+                                    className={styled.formInput1}
+                                    type="text"
+                                    placeholder="Username"
+                                    value={formData.username}
+                                    onChange={(e) => { handleFormChange('username', e.target.value) }}
+                                />
+                                {
+                                        formErr.username
+                                            ? (
+                                                <Form.Text className={"text-danger "+ styled.textErr}>
+                                                    {formErr.username}
+                                                </Form.Text>
+                                            )
+                                            : null
+                                }
+                            </Form.Group>
+                            <Form.Group className='mb-4' controlId="formBasicEmail">
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="email"
@@ -169,7 +189,7 @@ export const Register = () => {
                                 {
                                         formErr.email
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styled.textErr}>
                                                     {formErr.email}
                                                 </Form.Text>
                                             )
@@ -179,10 +199,11 @@ export const Register = () => {
                             <div className='d-flex w-100'>
 
                             
-                            <Form.Group className='w-50 mb-2' controlId="formBasicPassword">
+                            <Form.Group className='w-50 mb-4' controlId="formBasicPassword">
                                
                                 <Form.Control
                                     className={styled.formInput1}
+                                    style={{width:"95%"}}
                                     type="password"
                                     placeholder="Password"
                                     value={formData.password}
@@ -191,14 +212,14 @@ export const Register = () => {
                                 {
                                         formErr.password
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styled.textErr}>
                                                     {formErr.password}
                                                 </Form.Text>
                                             )
                                             : null
                                 }
                             </Form.Group>
-                            <Form.Group className='w-50 mb-2' controlId="formBasicPassword">
+                            <Form.Group className='w-50 mb-4' controlId="formBasicPassword">
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="number"
@@ -209,7 +230,7 @@ export const Register = () => {
                                 {
                                         formErr.phone
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styled.textErr}>
                                                     {formErr.phone}
                                                 </Form.Text>
                                             )
@@ -217,7 +238,7 @@ export const Register = () => {
                                 }
                             </Form.Group>
                             </div>
-                            <Form.Group className='mb-2'>
+                            <Form.Group className='mb-4'>
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="text"
@@ -228,7 +249,7 @@ export const Register = () => {
                                 {
                                         formErr.address
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styled.textErr}>
                                                     {formErr.address}
                                                 </Form.Text>
                                             )

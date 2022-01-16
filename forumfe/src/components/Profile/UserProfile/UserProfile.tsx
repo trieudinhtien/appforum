@@ -221,31 +221,26 @@ export default function UserProfile() {
                             followed ?  
                         
                         (<div className={stylesFromHome.post}>
-                            <div className={stylesFromHome.post_title}>
+                            <div className={styles.post_title}>
                                 <div><b>POSTS <i className="fas fa-file-alt" style={{ color: '#5c3c92' }}></i></b></div>
                                 <div><b><i className="fas fa-heart" style={{ color: '#d72631' }}></i></b></div>
                                 <div><b><i className="fas fa-comment" style={{ color: '#1868ae' }}></i></b></div>
-                                <div><b><i className="fas fa-tags" style={{ color: '#a2d5c6' }}></i></b></div>
                             </div>
                             <div className={stylesFromHome.post_content}>
                                 {
                                     currentUsers?.map(item => (
-                                        <div className={stylesFromHome.post_row} onClick={() => navigate(`/post/${item.id}`)} key={item.id}>
+                                        <div className={styles.post_row} onClick={() => navigate(`/post/${item.id}`)} key={item.id}>
                                             <div className='d-flex align-items-center'>
                                                 <div>
-                                                    <div className={stylesFromHome.post_item_title}>{item.title}</div>
-                                                    <div className={stylesFromHome.post_item_user}>Created by&nbsp;
-                                                        <Link to={`/user/${item.author.author_id}`} onClick={e => _onClickProfile(e)}>
-                                                            {item.author.author_name}
-                                                        </Link>
-                                                        &nbsp;{moment(item.createdAt).fromNow()}</div>
+                                                    <div className={styles.post_item_title}>{item.title}</div>
+                                                    <div className={stylesFromHome.post_item_user}>{moment(item.createdAt).fromNow()}</div>
                                                 </div>
                                             </div>
                                             <div>{item.likes.length}</div>
                                             <div>{item.comments?.length}</div>
-                                            <div>{item.tags?.map(tag => (
+                                            {/* <div>{item.tags?.map(tag => (
                                                 tag + " "
-                                            ))}</div>
+                                            ))}</div> */}
 
                                         </div>))
                                 }

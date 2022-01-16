@@ -106,7 +106,7 @@ const Login: FC<{}> = () => {
                                     <img src={Logo} alt="logo" />
                                 </div>
                                 <div className={styles.titleForm}>Wellcome!</div>
-                                <Form.Group controlId="formBasicEmail">
+                                <Form.Group className='mb-4' controlId="formBasicEmail">
                                     <Form.Control
                                         className={styles.formInput}
                                         type="email"
@@ -117,14 +117,14 @@ const Login: FC<{}> = () => {
                                     {
                                         formErr.email
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styles.textErr}>
                                                     {formErr.email}
                                                 </Form.Text>
                                             )
                                             : null
                                     }
                                 </Form.Group>
-                                <Form.Group className={styles.showPass}>
+                                <Form.Group className={styles.showPass + " mb-4"}>
                                     <Form.Control
                                         id="pass"
                                         className={styles.formInput}
@@ -144,7 +144,7 @@ const Login: FC<{}> = () => {
                                     {
                                         formErr.password
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styles.textErr}>
                                                     {formErr.password}
                                                 </Form.Text>
                                             )
