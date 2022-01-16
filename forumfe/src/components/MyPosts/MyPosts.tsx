@@ -11,6 +11,7 @@ import { AuthGuard } from "../auth/guard/AuthGuard";
 import { UserContext } from "../../context/UserContext";
 import Footer from "../Footer/Footer";
 import Navigation from "../Navigation/Navigation";
+import { useNavigate } from "react-router-dom";
 
 const MyPosts: FC<{}> = () => {
   const userContext = useContext(UserContext);
@@ -21,6 +22,7 @@ const MyPosts: FC<{}> = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [currentPosts, setCurrentPosts] = useState<Post[]>([]);
   const amount = 5;
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -156,9 +158,9 @@ const MyPosts: FC<{}> = () => {
               return <MyPostItem key={item.id} post={item} />;
             })
           ) : (
-            <></>
+            <>There is no post. Would you want to<button className={styles.create} onClick={() => navigate("/createpost")}>create</button>post?</>
           )}
-          <p className={styles.showing}>Showing {currentPage} - {Math.ceil(postContext.posts.length/amount)} out of {Math.ceil(postContext.posts.length/amount)} results</p>
+          <p className={styles.showing}>Showing {Math.ceil(postContext.posts.length/amount) === 0 ? 0 :currentPage} - {Math.ceil(postContext.posts.length/amount)} out of {Math.ceil(postContext.posts.length/amount)} results</p>
         </div>
         
         <MyPostPagination
