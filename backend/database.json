@@ -436,24 +436,8 @@
           "user_img": "http://localhost:3000/uploads/avatar1642244187554.jpg"
         },
         {
-          "id": 1642173818112,
-          "user_id": 1,
-          "comment": "helllo",
-          "createdAt": "2022-01-14T22:23:38+07:00",
-          "user_name": "admin",
-          "user_img": "http://localhost:3000/uploads/avatar1642244187554.jpg"
-        },
-        {
           "id": 1642174203519,
           "user_id": 2,
-          "comment": "minh meo",
-          "createdAt": "2022-01-14T22:30:03+07:00",
-          "user_name": "admin",
-          "user_img": "http://localhost:3000/uploads/avatar1642244187554.jpg"
-        },
-        {
-          "id": 1642174203519,
-          "user_id": 1,
           "comment": "minh meo",
           "createdAt": "2022-01-14T22:30:03+07:00",
           "user_name": "admin",
