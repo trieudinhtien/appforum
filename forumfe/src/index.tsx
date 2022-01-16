@@ -13,7 +13,7 @@ ReactDOM.render(
     <UserContextProvider>
       <AuthContextProvider>
         <PostContextProvider>
-          <App />
+            <App />
         </PostContextProvider>
       </AuthContextProvider>
     </UserContextProvider>

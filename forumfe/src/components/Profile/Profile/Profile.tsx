@@ -135,7 +135,7 @@ export default function Profile() {
                         </div>
                         <div className={"text-center col " + styles.description_inner}>
                             <div className={"" + styles.des_name}>
-                                {user.firstName + " " + user.lastName}
+                                {user.username}
                                 <i className="fas fa-check-circle pl-2" style={{ fontSize: '20px', color: '#1DA1F2' }}></i>
                             </div>
                             <div className={"" + styles.des_email}>

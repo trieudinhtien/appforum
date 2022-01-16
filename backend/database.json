@@ -246,8 +246,8 @@
     },
     {
       "id": 1642270854045,
-      "firstName": "dat",
-      "lastName": "do",
+      "firstName": "Đỗ Ngọc",
+      "lastName": "Đạt",
       "username": "",
       "email": "minhdat@gmail.com",
       "password": "123",
@@ -262,13 +262,13 @@
         "instagram": "",
         "youtube": ""
       },
-      "introduce": "",
+      "introduce": "Hello ! My name is Dat but some people may know me as GameHuntress! I have a Twitch channel where I stream, play and review all the newest games.",
       "phone": "0964646631",
       "birthday": "",
       "address": "15D ngách 17 ngõ 55 Chinh Kinh",
       "status": false,
       "createdAt": 0,
-      "modifiedAt": 1642274282410,
+      "modifiedAt": 1642307459789,
       "token": ""
     }
   ],
@@ -556,31 +556,6 @@
         "user_name": "admin",
         "user_img": "http://localhost:3000/uploads/avatar1642240328769.jpg"
       }
-    },
-    {
-      "id": 1642275312912,
-      "author": {
-        "author_id": 1642270854045,
-        "author_name": "",
-        "author_img": "/static/media/user.a6143582309785dca610.png"
-      },
-      "title": "Self-Care is Not the Solution for Burnout",
-      "createdAt": "2022-01-16T02:35:12+07:00",
-      "likes": [
-        {
-          "id": 1642278288869,
-          "user_id": 1642270854045,
-          "createdAt": "2022-01-16T03:24:48+07:00"
-        }
-      ],
-      "comments": [],
-      "tags": [
-        "health",
-        "sharing"
-      ],
-      "img": "",
-      "content": "<div class=\"kh\" style=\"box-sizing: inherit; clear: both; color: rgba(0, 0, 0, 0.8); font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><div class=\"n p\" style=\"box-sizing: inherit; display: flex; justify-content: center;\"><div class=\"ki kj kk kl km kn at ko au kp aw w\" style=\"box-sizing: inherit; width: 1191.99px; min-width: 0px; margin: 0px 64px; max-width: 1192px;\"><figure class=\"kr ks kt ku kv kh kw kx paragraph-image\" style=\"box-sizing: inherit; margin: 56px 0px 0px; clear: both; padding-bottom: 5px; padding-top: 5px;\"><div role=\"button\" tabindex=\"0\" class=\"ky kz ap la w lb\" style=\"box-sizing: inherit; width: 1191.99px; position: relative; cursor: zoom-in; z-index: auto; transition: transform 300ms cubic-bezier(0.2, 0, 0.2, 1) 0s;\"><div class=\"gu gv kq\" style=\"box-sizing: inherit; margin-left: auto; margin-right: auto; max-width: 1920px;\"><img alt=\"\" class=\"w lc ld\" src=\"https://miro.medium.com/max/2000/0*dDpUwQ3Yn4fnNh5Q.jpg\" width=\"1000\" height=\"667\" role=\"presentation\" style=\"box-sizing: inherit; vertical-align: middle; width: 1191.99px; max-width: 100%; height: auto;\"></div></div><figcaption class=\"le lf gw gu gv lg lh bb b bc bd et\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; font-weight: 400; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 14px; line-height: 20px; color: rgb(117, 117, 117); margin-left: auto; margin-right: auto; max-width: 728px; margin-top: 10px; text-align: center;\">Photo by Emilio Küffer,<span>&nbsp;</span><a class=\"de li\" href=\"https://commons.wikimedia.org/w/index.php?curid=36895105\" rel=\"noopener ugc nofollow\" target=\"_blank\" style=\"box-sizing: inherit; color: inherit; text-decoration: underline; -webkit-tap-highlight-color: transparent;\">https://commons.wikimedia.org/w/index.php?curid=36895105</a></figcaption></figure></div></div></div><div class=\"n p\" style=\"box-sizing: inherit; display: flex; justify-content: center; color: rgba(0, 0, 0, 0.8); font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\"><div class=\"aq ar as at au hk aw w\" style=\"box-sizing: inherit; width: 679.988px; min-width: 0px; max-width: 680px; margin: 0px 64px;\"><p id=\"7b1b\" class=\"jo jp hm bb b jq lj jr js jt lk ju jv jw ll jx jy jz lm ka kb kc ln kd ke kg cx ij lo\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; clear: left; font-size: 21px;\"><span class=\"s lp lq lr cy ls lt lu lv lw ap\" style=\"box-sizing: inherit; display: block; position: relative; margin-right: 12px; float: left; font-size: 66px; line-height: 0.83; padding-top: 7px;\">It</span>was the autumn season and the large counseling center that I worked for was teeming with prospective clients seeking help. As the clinical director, my job was to ensure we were adequately addressing both providers’ and clients’ needs. This was a tall order to fulfill: counselors’ caseloads were full, our waitlist had swollen to well over a hundred, and team morale was at an all-time low.</p><p id=\"4d77\" class=\"jo jp hm bb b jq lj jr js jt lk ju jv jw ll jx jy jz lm ka kb kc ln kd ke kg cx ij\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-size: 21px;\">The executive director<span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span id=\"rmm\" style=\"box-sizing: inherit;\"><span>&nbsp;</span></span></span></span></span></span></span></span></span></span></span></span></span></span>of the center convened a meeting to address the growing demand for services and to discuss various options. Members of the center expressed their overwhelm and disappointment that they can’t seem to meet the demands of their caseloads, felt their weekly schedules swollen with action items, expressed discontent over the lack of schedule flexibility, and generally felt disconnected from the altruistic values that got them into the helping profession.</p><p id=\"41a7\" class=\"jo jp hm bb b jq lj jr js jt lk ju jv jw ll jx jy jz lm ka kb kc ln kd ke kg cx ij\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-size: 21px;\">Like many team leaders, the director’s knee-jerk reaction was to tell everyone to employ<span>&nbsp;</span><em class=\"lx\" style=\"box-sizing: inherit; font-style: italic;\">self-care</em><span>&nbsp;</span>to make it through this rough period. The providers and staff reacted as expected. You could feel what little energy people had left simply deflate like a month-old birthday balloon that finally gave its last breath. One coworker hid the few tears that started spilling onto her cheeks. Another rolled their eyes in irritation. It was evident to me that this type of leadership in moments of intense stress was harmful and I wanted to learn more about alternatives.</p><p id=\"0a0b\" class=\"jo jp hm bb b jq lj jr js jt lk ju jv jw ll jx jy jz lm ka kb kc ln kd ke kg cx ij\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-size: 21px;\">In the years since that overwhelming autumn, I have been a part of countless discussions of burnout and self-care in workplaces. All of these conversations have had a predictable framework that placed the problem (burnout) and the solution (self-care) as being something that is within the individual person’s purview to address.</p><p id=\"7f91\" class=\"jo jp hm bb b jq lj jr js jt lk ju jv jw ll jx jy jz lm ka kb kc ln kd ke kg cx ij\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-size: 21px;\">But is burnout simply the result of insufficient self-care?</p><p id=\"9e0f\" class=\"jo jp hm bb b jq lj jr js jt lk ju jv jw ll jx jy jz lm ka kb kc ln kd ke kg cx ij\" data-selectable-paragraph=\"\" style=\"box-sizing: inherit; margin: 2em 0px -0.46em; font-weight: 400; font-family: charter, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; word-break: break-word; font-style: normal; color: rgb(41, 41, 41); line-height: 32px; letter-spacing: -0.003em; font-size: 21px;\">My years of experience as a mental health provider, academic, and healthcare administrator have shown me that burnout is much more complex than worker behaviors. We have to widen our perspective to truly understand the contributory factors of burnout. Only then can we attempt to prevent burnout or address it when it's consuming us.</p></div></div>",
-      "modifiedAt": 1642278290318
     }
   ]
 }

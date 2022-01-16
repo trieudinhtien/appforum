@@ -17,7 +17,7 @@ export default function UserProfile() {
     const [followers, setFollowers] = useState(0)
     const [followed, setFollowed] = useState(false)
     const [posts, setPosts] = useState([] as Post[])
-    const [postsOdUserFolowing, setPostsOfUserFollowing] = useState([] as Post[])
+    const [postsOfUserFollowing, setPostsOfUserFollowing] = useState([] as Post[])
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [usersPerPage] = useState<number>(3);
 
@@ -42,12 +42,13 @@ export default function UserProfile() {
                 .catch(err => console.error(err))
         }
     }, [followed])
+
     useEffect(() => {
         getPosts()
             .then((listOfPosts: Post[]) => {
                 const postsOfUser = [] as Post[]
                 listOfPosts.forEach((post: Post) => {
-                    if (post.id === user.id) {
+                    if (post.author.author_id === user.id) {
                         postsOfUser.push(post)
                     }
                 })
@@ -109,7 +110,7 @@ export default function UserProfile() {
         }
     }
     const _onClickNext = () => {
-        if (currentPage === (postsOdUserFolowing.length / usersPerPage)) {
+        if (currentPage === (postsOfUserFollowing.length / usersPerPage)) {
             setCurrentPage(currentPage)
         } else {
             setCurrentPage(currentPage + 1)
@@ -119,12 +120,12 @@ export default function UserProfile() {
     const indexOfLastUsers = currentPage * usersPerPage;
     const indexOfFirstUsers = indexOfLastUsers - usersPerPage;
 
-    const currentUsers = postsOdUserFolowing.slice(indexOfFirstUsers, indexOfLastUsers);
+    const currentUsers = postsOfUserFollowing.slice(indexOfFirstUsers, indexOfLastUsers);
     const pageNumbers = [];
     const paginate = (pageNumber:number) =>{ 
         setCurrentPage(pageNumber)}
 
-    for(let i=1; i<= Math.ceil(postsOdUserFolowing.length / usersPerPage); i++){
+    for(let i=1; i<= Math.ceil(postsOfUserFollowing.length / usersPerPage); i++){
         pageNumbers.push(i);
     }
 
@@ -173,7 +174,7 @@ export default function UserProfile() {
                     <div className={"d-flex align-items-center " + styles.profile_inner_description}>
                         <div className={"d-flex col align-items-center " + styles.description_inner}>
                             <div className={"text-center " + styles.des_left}>
-                                <p className={"m-0"}>{posts.length}</p>
+                                <p className={"m-0"}>{postsOfUserFollowing.length}</p>
                                 <p className={"text-muted"}>POSTS</p>
                             </div>
                             <div className={styles.divide}></div>
@@ -189,7 +190,7 @@ export default function UserProfile() {
                         </div>
                         <div className={"text-center col " + styles.description_inner}>
                             <div className={"" + styles.des_name}>
-                                {user.firstName + " " + user.lastName}
+                                {user.username}
                                 <i className="fas fa-check-circle pl-2" style={{ fontSize: '20px', color: '#1DA1F2' }}></i>
                             </div>
                             <div className={"" + styles.des_email}>
@@ -263,7 +264,7 @@ export default function UserProfile() {
                             </ul>
                         </div>): <div>User has no posts</div>
                         }
-                        {/* {postsOdUserFolowing.map((item)=>(
+                        {/* {postsOfUserFollowing.map((item)=>(
                             <div key={item.id}>
                                 {item.title}
                             </div>
@@ -273,6 +274,8 @@ export default function UserProfile() {
                     <div className={styles.main_right}>
                         <h3>Personal Info</h3>
                         <div className="d-flex flex-wrap">
+                            <p className="col-4 text-muted">Full Name</p>
+                            <p className="col-8">{user.firstName + " " + user.lastName}</p>
                             <p className="col-4 text-muted">Email</p>
                             <p className="col-8">{user.email}</p>
                             <p className="col-4 text-muted">Birthday</p>
