@@ -61,11 +61,11 @@
       "followings_id": [
         3,
         4,
-        5,
         6,
         7,
         8,
-        1
+        1,
+        5
       ],
       "introduce": "I will post really cool images of all street art from around the country!",
       "phone": "933-658-1213",
@@ -73,7 +73,7 @@
       "address": "Long Island, New York United States",
       "status": true,
       "createdAt": 1609483221000,
-      "modifiedAt": 1642234932610
+      "modifiedAt": 1642345603755
     },
     {
       "id": 3,
@@ -424,6 +424,81 @@
       "status": false,
       "createdAt": 0,
       "modifiedAt": 1642349189710,
+      "token": ""
+    },
+    {
+      "id": 1642344344691,
+      "firstName": "qwe",
+      "lastName": "qwe",
+      "username": "qwe",
+      "email": "qwe@gmail.com",
+      "password": "123",
+      "cover": "/static/media/cover-page.a9c473d0a909ca748d34.jpg",
+      "avatar": "/static/media/user.a6143582309785dca610.png",
+      "gender": "",
+      "followings_id": [],
+      "socialMedia": {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      },
+      "introduce": "",
+      "phone": "0914799597",
+      "birthday": "",
+      "address": "1234Trieukhuc",
+      "status": false,
+      "createdAt": 0,
+      "modifiedAt": 1642344344705,
+      "token": ""
+    },
+    {
+      "id": 1642346903220,
+      "firstName": "qwe",
+      "lastName": "qwe",
+      "username": "qwe1",
+      "email": "qwe1@gmail.com",
+      "password": "122333",
+      "cover": "/static/media/cover-page.a9c473d0a909ca748d34.jpg",
+      "avatar": "/static/media/user.a6143582309785dca610.png",
+      "gender": "",
+      "followings_id": [],
+      "socialMedia": {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      },
+      "introduce": "",
+      "phone": "0914799597",
+      "birthday": "",
+      "address": "123 tran trieu",
+      "status": false,
+      "createdAt": 0,
+      "modifiedAt": 1642346903235,
+      "token": ""
+    },
+    {
+      "id": 1642349176433,
+      "firstName": "qwe",
+      "lastName": "qwe",
+      "username": "qwe12",
+      "email": "qwe12@gmail.com",
+      "password": "123",
+      "cover": "/static/media/cover-page.a9c473d0a909ca748d34.jpg",
+      "avatar": "/static/media/user.a6143582309785dca610.png",
+      "gender": "",
+      "followings_id": [],
+      "socialMedia": {
+        "facebook": "",
+        "instagram": "",
+        "youtube": ""
+      },
+      "introduce": "",
+      "phone": "1233321312312",
+      "birthday": "",
+      "address": "1231231231",
+      "status": false,
+      "createdAt": 0,
+      "modifiedAt": 1642349176442,
       "token": ""
     }
   ],

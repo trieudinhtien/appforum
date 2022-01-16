@@ -238,10 +238,6 @@ export default function UserProfile() {
                                             </div>
                                             <div>{item.likes.length}</div>
                                             <div>{item.comments?.length}</div>
-                                            {/* <div>{item.tags?.map(tag => (
-                                                tag + " "
-                                            ))}</div> */}
-
                                         </div>))
                                 }
                             </div>
@@ -259,12 +255,6 @@ export default function UserProfile() {
                             </ul>
                         </div>): <div>User has no posts</div>
                         }
-                        {/* {postsOfUserFollowing.map((item)=>(
-                            <div key={item.id}>
-                                {item.title}
-                            </div>
-
-                        ))} */}
                     </div>
                     <div className={styles.main_right}>
                         <h3>Personal Info</h3>

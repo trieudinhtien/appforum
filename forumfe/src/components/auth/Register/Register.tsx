@@ -121,19 +121,8 @@ export const Register = () => {
                 if(data?.response?.status){
                     swal("Success", "Account has been created", "success");
                     navigate('/login');
-                }
-
-                if (data?.response!.status === 400) {
-                    swal(
-                        {
-                            title: "Error",
-                            text: "Email or Username was used",
-                            icon: "warning",
-                            dangerMode: true,
-                        }
-                    )
-                }
-            })
+                  }
+            }).catch(err => swal("The email already exists. Please use a different email!"))
         }
     }
 
