@@ -33,7 +33,7 @@ const MyPostItem: FC<{ post: Post }> = ({ post }) => {
   return (
     <div className={styles.mypost_item}>
       <div>
-        <div className={styles.mypost_item_title} onClick={() => navigate(`/myposts/${post.id}`)}>{post.title}</div>
+        <div className={styles.mypost_item_title} onClick={() => navigate(`/post/${post.id}`)}>{post.title}</div>
         <div className={styles.mypost_item_user}>
           Created {moment(post.createdAt).fromNow()}
         </div>

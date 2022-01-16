@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap'
 import { UserContext } from '../../../context/UserContext'
 import { useNavigate } from 'react-router-dom';
+import styles from "./Logout.module.css";
 export const Logout = () => {
     let navigate = useNavigate();
     const context = useContext(UserContext)
@@ -39,7 +40,7 @@ export const Logout = () => {
     }
     return (
         <div>
-            <Button onClick={onLogout}>Logout</Button>
+            <Button onClick={onLogout} className={styles.logout}>Logout</Button>
         </div>
     )
 }

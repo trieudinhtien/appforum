@@ -1,11 +1,11 @@
 import styles from "./Profile.module.css"
 import { useContext, useState, useEffect, useRef } from "react"
-import Navigation from "./Navigation/Navigation"
+import NavigationProfile from "./Navigation/Navigation"
 import { UserContext } from '../../../context/UserContext'
 import { getAllUser, saveImg, changeAvatar, changeCover } from '../../../apis/users-apis'
 import { AuthGuard } from "../../auth/guard/AuthGuard"
-import { getPosts } from '../../../apis/posts-apis'
-
+import { getPosts, changeAuthorInfoOfPost, changeUserInfoOfComment } from '../../../apis/posts-apis'
+import Navigation from '../../Navigation/Navigation'
 import Footer from "../../Footer/Footer"
 
 export default function Profile() {
@@ -23,10 +23,36 @@ export default function Profile() {
             formData.append("file", avatarRef.current.files[0], `avatar${Number(new Date())}.jpg`)
             saveImg(formData)
                 .then((res: { path: string }) => {
-                    localStorage.setItem('user', JSON.stringify({...user, avatar: res.path}))
+                    localStorage.setItem('user', JSON.stringify({ ...user, avatar: res.path }))
                     context.setUser({ ...user, avatar: res.path })
+
                     changeAvatar(user.id, user.token, res.path)
                         .then(res => console.log(res))
+                        .catch(err => console.log(err));
+
+                    getPosts()
+                        .then((posts: Post[]) => {
+                            const postsPromise = [] as Promise<Post>[]
+                            posts.forEach((post) => {
+                                if (post.author.author_id === user.id) {
+                                    postsPromise.push(changeAuthorInfoOfPost(post.id, user.token, { ...post.author, author_img: res.path }))
+                                }
+                                if (post.comments.length > 0) {
+                                    const commentUpdated = post.comments.map(comment => {
+                                        if(comment.user_id === user.id) {
+                                            return {...comment, user_img: res.path}
+                                        }
+                                        return comment
+                                    })
+                                    postsPromise.push(changeUserInfoOfComment(post.id, user.token, commentUpdated))
+                                }
+                            })
+                            if (postsPromise.length > 0) {
+                                Promise.all(postsPromise)
+                                    .then(res => console.log(res))
+                                    .catch(err => console.log(err))
+                            }
+                        })
                         .catch(err => console.log(err))
                 })
                 .catch(err => console.log(err))
@@ -39,7 +65,7 @@ export default function Profile() {
             formData.append("file", coverRef.current.files[0], `cover${Number(new Date())}.jpg`)
             saveImg(formData)
                 .then((res: { path: string }) => {
-                    localStorage.setItem('user', JSON.stringify({...user, cover: res.path}))
+                    localStorage.setItem('user', JSON.stringify({ ...user, cover: res.path }))
                     context.setUser({ ...user, cover: res.path })
                     changeCover(user.id, user.token, res.path)
                         .then(res => console.log(res))
@@ -67,7 +93,7 @@ export default function Profile() {
             .then((posts: Post[]) => {
                 let count = 0
                 posts.forEach((post: Post) => {
-                    if(post.author.author_id === user.id) {
+                    if (post.author.author_id === user.id) {
                         count++
                     }
                 })
@@ -77,6 +103,7 @@ export default function Profile() {
 
     return (
         <AuthGuard moveTo='/login'>
+            <Navigation />
             <div className={styles.profile}>
                 <div className={styles.profile_inner}>
                     <img className={styles.profile_inner_img} src={user && user.cover} alt="cover" />
@@ -128,7 +155,7 @@ export default function Profile() {
                         </div>
                     </div>
                 </div>
-                <Navigation />
+                <NavigationProfile />
             </div>
             <Footer />
         </AuthGuard>

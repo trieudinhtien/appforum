@@ -1,6 +1,7 @@
 import styles from './UserProfile.module.css'
-import { useContext, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import stylesFromHome from '../../Home/Home.module.css'
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getUserById, getAllUser, changeFollowings } from '../../../apis/users-apis'
 import { UserContext } from '../../../context/UserContext'
 import moment from 'moment'
@@ -9,20 +10,44 @@ import Footer from '../../Footer/Footer'
 import Navigation from '../../Navigation/Navigation'
 
 export default function UserProfile() {
-
+    const navigate = useNavigate();
     const context = useContext(UserContext)
     const [user, setUser] = useState({} as User)
     const { id } = useParams()
     const [followers, setFollowers] = useState(0)
     const [followed, setFollowed] = useState(false)
     const [posts, setPosts] = useState([] as Post[])
+    const [postsOdUserFolowing, setPostsOfUserFollowing] = useState([] as Post[])
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [usersPerPage] = useState<number>(3);
 
+
+
+    useEffect(() => {
+        if (id) {
+            getUserById(Number(context.user.id), context.user.token)
+                .then((res: User) => {
+                    if (res.followings_id.includes(Number(id))) {
+                        getPosts().then(allPosts => {
+                            setPostsOfUserFollowing(
+                                allPosts.filter((post) => {
+                                    return post.author?.author_id === Number(id);
+                                })
+                            )
+                        })
+                    } else {
+                        setPostsOfUserFollowing([])
+                    }
+                })
+                .catch(err => console.error(err))
+        }
+    }, [followed])
     useEffect(() => {
         getPosts()
             .then((listOfPosts: Post[]) => {
                 const postsOfUser = [] as Post[]
                 listOfPosts.forEach((post: Post) => {
-                    if(post.id === user.id) {
+                    if (post.id === user.id) {
                         postsOfUser.push(post)
                     }
                 })
@@ -30,7 +55,6 @@ export default function UserProfile() {
             })
             .catch(err => console.log(err))
     }, [id])
-
 
     useEffect(() => {
         if (id) {
@@ -48,6 +72,7 @@ export default function UserProfile() {
                 .then((res: User) => setUser(res))
                 .catch(err => console.error(err))
         }
+
     }, [id])
 
     useEffect(() => {
@@ -74,6 +99,35 @@ export default function UserProfile() {
         }
     }, [followed])
 
+
+
+    const _onClickPrevious = () => {
+        if (currentPage === 1) {
+            setCurrentPage(currentPage)
+        } else {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+    const _onClickNext = () => {
+        if (currentPage === (postsOdUserFolowing.length / usersPerPage)) {
+            setCurrentPage(currentPage)
+        } else {
+            setCurrentPage(currentPage + 1)
+        }
+
+    }
+    const indexOfLastUsers = currentPage * usersPerPage;
+    const indexOfFirstUsers = indexOfLastUsers - usersPerPage;
+
+    const currentUsers = postsOdUserFolowing.slice(indexOfFirstUsers, indexOfLastUsers);
+    const pageNumbers = [];
+    const paginate = (pageNumber:number) =>{ 
+        setCurrentPage(pageNumber)}
+
+    for(let i=1; i<= Math.ceil(postsOdUserFolowing.length / usersPerPage); i++){
+        pageNumbers.push(i);
+    }
+
     const _onClickFollow = () => {
         if (followed) {
             if (id) {
@@ -88,18 +142,22 @@ export default function UserProfile() {
                 setFollowed(false)
             }
         } else {
+            console.log("FOLLOW")
             if (id) {
-                const userIDs = context.user.followings_id
+                const userIDs = context.user?.followings_id
                 userIDs.push(parseInt(id))
                 changeFollowings(context.user.id, context.user.token, userIDs)
                     .then((res: User) => {
-                        context.setUser({ ...context.user, "followings_id": [...res.followings_id] })
-                        localStorage.setItem('user', JSON.stringify({ ...context.user, "followings_id": [...res.followings_id] }))
+                        context.setUser({ ...context.user, "followings_id": [...res?.followings_id] })
+                        localStorage.setItem('user', JSON.stringify({ ...context.user, "followings_id": [...res?.followings_id] }))
                     })
                     .catch(err => console.log(err))
                 setFollowed(true)
             }
         }
+    }
+    const _onClickProfile = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.stopPropagation();
     }
 
     return (
@@ -158,6 +216,59 @@ export default function UserProfile() {
                     </div>
                     <div className={styles.main_center}>
                         <h3>List of Posts here</h3>
+                        {
+                            followed ?  
+                        
+                        (<div className={stylesFromHome.post}>
+                            <div className={stylesFromHome.post_title}>
+                                <div><b>POSTS <i className="fas fa-file-alt" style={{ color: '#5c3c92' }}></i></b></div>
+                                <div><b><i className="fas fa-heart" style={{ color: '#d72631' }}></i></b></div>
+                                <div><b><i className="fas fa-comment" style={{ color: '#1868ae' }}></i></b></div>
+                                <div><b><i className="fas fa-tags" style={{ color: '#a2d5c6' }}></i></b></div>
+                            </div>
+                            <div className={stylesFromHome.post_content}>
+                                {
+                                    currentUsers?.map(item => (
+                                        <div className={stylesFromHome.post_row} onClick={() => navigate(`/post/${item.id}`)} key={item.id}>
+                                            <div className='d-flex align-items-center'>
+                                                <div>
+                                                    <div className={stylesFromHome.post_item_title}>{item.title}</div>
+                                                    <div className={stylesFromHome.post_item_user}>Created by&nbsp;
+                                                        <Link to={`/user/${item.author.author_id}`} onClick={e => _onClickProfile(e)}>
+                                                            {item.author.author_name}
+                                                        </Link>
+                                                        &nbsp;{moment(item.createdAt).fromNow()}</div>
+                                                </div>
+                                            </div>
+                                            <div>{item.likes.length}</div>
+                                            <div>{item.comments?.length}</div>
+                                            <div>{item.tags?.map(tag => (
+                                                tag + " "
+                                            ))}</div>
+
+                                        </div>))
+                                }
+                            </div>
+                            <ul className={styles.pagination}>
+                                <li className={styles.itemPagi} onClick={() => _onClickPrevious()}><i className="fas fa-arrow-left"></i></li>
+                                {
+                                    pageNumbers.length === 1 ? "" :
+                                        pageNumbers.map(number => (
+                                            <li onClick={() => paginate(number)} key={number} className={currentPage === number ? `${styles.itemPagi} ${styles.mark}` : `${styles.itemPagi}`}>
+                                                {number}
+                                            </li>
+                                        ))
+                                }
+                                <li className={styles.itemPagi} onClick={() => _onClickNext()}><i className="fas fa-arrow-right"></i></li>
+                            </ul>
+                        </div>): <div>User has no posts</div>
+                        }
+                        {/* {postsOdUserFolowing.map((item)=>(
+                            <div key={item.id}>
+                                {item.title}
+                            </div>
+
+                        ))} */}
                     </div>
                     <div className={styles.main_right}>
                         <h3>Personal Info</h3>

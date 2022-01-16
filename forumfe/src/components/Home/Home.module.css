@@ -214,7 +214,7 @@ input {
 }
 
 .post_content > div:hover{
-  background-color: #d1cfff;
+  background-color: #e7e6f8;
   color: #fff;
   cursor: pointer;
 }
@@ -325,7 +325,7 @@ input {
   margin: 0 5px 8px 0;
   font-size: 14px;
   border-radius: 10px;
-  background-color: #ccc;
+  background-color: rgb(245, 245, 245);;
   padding: 5px 10px;
   color: #000;
   display: inline-block;

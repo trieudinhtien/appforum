@@ -4,21 +4,20 @@ import { callApiRegister } from '../../../apis/api'
 import styled from './register.module.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { v4 } from 'uuid'
-
-
+import userImg from '../../../images/avatar/user.png'
+import coverImg from '../../../images/cover/cover-page.jpg'
 
 export const Register = () => {
     let navigate = useNavigate();
-    // const uuidv4 = v4();
-    const [formData, setDataForm] = useState<User>({
+    const initialData = {
         "id": 0,
         "firstName": "",
         "lastName": "",
         "username": "",
         "email": "",
         "password": "",
-        "cover": "",
-        "avatar": "",
+        "cover": coverImg,
+        "avatar": userImg,
         "gender": "",
         "followings_id": [] as number[],
         "socialMedia": {
@@ -34,7 +33,49 @@ export const Register = () => {
         "createdAt": 0,
         "modifiedAt": 0,
         "token": ""
-    });
+    }
+    // const uuidv4 = v4();
+    const [formData, setDataForm] = useState<User>(initialData);
+    const [formErr, setFormErr] = useState<User>(initialData);
+
+    function validate(formData: User) {
+        const errors = initialData;
+        const feildValiDate = ['firstName', 'lastName', 'email','password','phone','address'];
+        if(!formData.firstName){
+            errors.firstName = `First Name is required`;
+        }else{
+            errors.firstName = '';
+        }
+        if(!formData.lastName){
+            errors.lastName = `Last Name is required`;
+        }else{
+            errors.lastName = '';
+        }
+        if(!formData.email){
+            errors.email = `Email is required`;
+        }else{
+            errors.email = '';
+        }
+        if(!formData.password){
+            errors.password = `Password is required`;
+        }else{
+            errors.password = '';
+        }
+        if(!formData.address){
+            errors.address = `address is required`;
+        }else{
+            errors.address = '';
+        }
+        if(!formData.phone){
+            errors.phone = `phone is required`;
+        }else if(formData.phone.length < 10){
+            errors.phone = 'Phone number must have 10 digit';
+        }else{
+            errors.phone = '';
+        }
+    
+        setFormErr(errors);
+    }
 
     function handleFormChange(fieldName: string, value: string) {
         setDataForm({
@@ -46,16 +87,22 @@ export const Register = () => {
     const handlerSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("formData:", formData)
-        const dataLogin = {
+
+        const daatRegister = {
             ...formData,
             id: (new Date()).getTime()
         }
-        callApiRegister(dataLogin).then((data) => {
-            console.log(data)
-            alert('Register Successfully')
-            navigate('/login');
-        }).catch(err => alert("The username already exists. Please use a different username!"))
+        validate(formData);
+        if(!formErr.email && !formErr.password && !formErr.firstName && !formErr.lastName && !formErr.phone && !formErr.address){
+            console.log("adu")
+            callApiRegister(daatRegister).then((data) => {
+                console.log(data)
+                alert('Register Successfully')
+                navigate('/login');
+            }).catch(err => console.log(err))
+        }
     }
+    
     
     return (
         <div className='container-fluid'>
@@ -72,8 +119,9 @@ export const Register = () => {
                         <Form className={styled.wrapperForm1} onSubmit={(e) => handlerSubmit(e)}>
                             <div className={styled.titleForm1}>Wellcome to Vikinger4</div>
                             <div className={styled.subTitleForm1}>Connect to with frends and the wourld around you</div>
+                            <div className='d-flex w-100'>
 
-                            <Form.Group className='d-flex mb-2' controlId="formBasicEmail">
+                            <Form.Group className='w-50 mb-2' controlId="formBasicEmail">
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="text"
@@ -81,14 +129,35 @@ export const Register = () => {
                                     value={formData.firstName}
                                     onChange={(e) => { handleFormChange('firstName', e.target.value) }}
                                 />
+                                {
+                                        formErr.firstName
+                                            ? (
+                                                <Form.Text className='text-danger'>
+                                                    {formErr.firstName}
+                                                </Form.Text>
+                                            )
+                                            : null
+                                }
+                                </Form.Group>
+                                <Form.Group className='w-50 mb-2' controlId="formBasicEmail">
                                 <Form.Control
-                                    className={styled.formInput1 + " ml-2"}
+                                    className={styled.formInput1}
                                     type="text"
                                     placeholder="Last Name"
                                     value={formData.lastName}
                                     onChange={(e) => { handleFormChange('lastName', e.target.value) }}
                                 />
+                                {
+                                        formErr.lastName
+                                            ? (
+                                                <Form.Text className='text-danger'>
+                                                    {formErr.lastName}
+                                                </Form.Text>
+                                            )
+                                            : null
+                                }
                             </Form.Group>
+                            </div>
                             <Form.Group className='mb-2' controlId="formBasicEmail">
                                 <Form.Control
                                     className={styled.formInput1}
@@ -97,9 +166,21 @@ export const Register = () => {
                                     value={formData.email}
                                     onChange={(e) => { handleFormChange('email', e.target.value) }}
                                 />
-
+                                {
+                                        formErr.email
+                                            ? (
+                                                <Form.Text className='text-danger'>
+                                                    {formErr.email}
+                                                </Form.Text>
+                                            )
+                                            : null
+                                }
                             </Form.Group>
-                            <Form.Group className='d-flex mb-2' controlId="formBasicPassword">
+                            <div className='d-flex w-100'>
+
+                            
+                            <Form.Group className='w-50 mb-2' controlId="formBasicPassword">
+                               
                                 <Form.Control
                                     className={styled.formInput1}
                                     type="password"
@@ -107,14 +188,35 @@ export const Register = () => {
                                     value={formData.password}
                                     onChange={(e) => { handleFormChange('password', e.target.value) }}
                                 />
+                                {
+                                        formErr.password
+                                            ? (
+                                                <Form.Text className='text-danger'>
+                                                    {formErr.password}
+                                                </Form.Text>
+                                            )
+                                            : null
+                                }
+                            </Form.Group>
+                            <Form.Group className='w-50 mb-2' controlId="formBasicPassword">
                                 <Form.Control
-                                    className={styled.formInput1 + " ml-2"}
+                                    className={styled.formInput1}
                                     type="number"
                                     placeholder="Phone Number"
                                     value={formData.phone}
                                     onChange={(e) => { handleFormChange('phone', e.target.value) }}
                                 />
+                                {
+                                        formErr.phone
+                                            ? (
+                                                <Form.Text className='text-danger'>
+                                                    {formErr.phone}
+                                                </Form.Text>
+                                            )
+                                            : null
+                                }
                             </Form.Group>
+                            </div>
                             <Form.Group className='mb-2'>
                                 <Form.Control
                                     className={styled.formInput1}
@@ -123,6 +225,15 @@ export const Register = () => {
                                     value={formData.address}
                                     onChange={(e) => { handleFormChange('address', e.target.value) }}
                                 />
+                                {
+                                        formErr.address
+                                            ? (
+                                                <Form.Text className='text-danger'>
+                                                    {formErr.address}
+                                                </Form.Text>
+                                            )
+                                            : null
+                                }
                             </Form.Group>
 
                             <Button className={styled.buttonForm1} variant="primary" type="submit">

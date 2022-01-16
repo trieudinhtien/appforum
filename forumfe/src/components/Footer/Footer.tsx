@@ -3,7 +3,6 @@ import styles from "./Footer.module.css";
 import Logo from "../../images/logo.png";
 
 const Footer: FC<{}> = () => {
-  console.log('footer')
   return (
     <div className={styles.footer}>
       <div className={`${styles.content_grid}`}>
@@ -17,7 +16,7 @@ const Footer: FC<{}> = () => {
           </div>
 
           <div className={styles.footer_left_content}>
-            Vikinger4 Forum was created in 2021, by 4 people: Dat, Toan, Minh,
+            Vikinger4 Forum was created in 2022, by 4 people: Dat, Toan, Minh,
             Tien, designed to be a new and exciting way to bring people
             together!
           </div>
@@ -31,36 +30,30 @@ const Footer: FC<{}> = () => {
         </div>
 
         <div className={styles.footer_item}>
-          <p>BuddyPress</p>
+          <p>Vikinger4.vn</p>
           <ul>
-            <li>Profile Timeline</li>
-            <li>Profile About</li>
-            <li>Profile Friends</li>
-            <li>Profile Groups</li>
-            <li>Profile Blog Posts</li>
-            <li>Profile Photos</li>
+            <li>Forum</li>
+            <li>Support</li>
+            <li>Guide</li>
+            <li>Event</li>
+            <li>Contact</li>
+            <li>Reference</li>
             <li>Activity</li>
-            <li>Members</li>
-            <li>Groups</li>
           </ul>
         </div>
 
         <div className={styles.footer_item}>
-          <p>GamiPress</p>
+          <p>Forum</p>
           <ul>
-            <li>Badges</li>
-            <li>Profile Badges</li>
-            <li>Quests</li>
-            <li>Profile Quests</li>
-            <li>Ranks</li>
-            <li>Profile Rank</li>
-            <li>Credits</li>
-            <li>Profile Credits</li>
+            <li>Information</li>
+            <li>Computer</li>
+            <li>Mobile</li>
+            <li>Camera</li>
           </ul>
         </div>
 
         <div className={styles.footer_item}>
-          <p>bbPress</p>
+          <p>Links</p>
           <ul>
             <li>Forums</li>
             <li>SubForums</li>
