@@ -1,4 +1,4 @@
-import axios, {AxiosResponse} from 'axios';
+import axios, {AxiosError, AxiosResponse} from 'axios';
 
 interface User {
   username: string,
@@ -17,6 +17,7 @@ export function callApiRegister(data: User): Promise<any> {
       url: "http://localhost:3000/register",
       data: data,
     }).then((response: AxiosResponse<any>) => response.data)
+    .catch((reason: AxiosError) => reason)
 }
 
 

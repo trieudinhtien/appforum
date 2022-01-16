@@ -86,7 +86,7 @@ export default function Post() {
         let check = false;
         let i = 0;
         postDetail?.comments.map((item, index) => {
-            if (item.id === id && item.user_id === context.user.id) {
+            if (item.id === id && (item.user_id === context.user.id || postDetail.author.author_id === context.user.id)) {
                 check = true;
                 i = index;
             }

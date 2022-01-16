@@ -106,13 +106,16 @@ export default function About() {
                             : <li>You have no activities before</li>
                     }
                 </ul>
-                <div className='d-flex justify-content-between align-items-center'>
-                    <ul className="pagination m-0">
-                        <li className="page-item"><button className="page-link" onClick={_onClickPrevious}><i className="fas fa-arrow-left"></i></button></li>
-                        <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
-                    </ul>
-                    <p className="m-0"> Page <span style={{ color: 'rgb(97, 93, 250)' }}>{page}</span></p>
-                </div>
+                {
+                    postActivity.length > 0 &&
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <ul className="pagination m-0">
+                            <li className="page-item"><button className="page-link" onClick={_onClickPrevious}><i className="fas fa-arrow-left"></i></button></li>
+                            <li className="page-item"><button className="page-link" onClick={_onClickNext}><i className="fas fa-arrow-right"></i></button></li>
+                        </ul>
+                        <p className="m-0"> Page <span style={{ color: 'rgb(97, 93, 250)' }}>{page}</span></p>
+                    </div>
+                }
             </div>
             <div>
                 <div className={styles.main_right}>

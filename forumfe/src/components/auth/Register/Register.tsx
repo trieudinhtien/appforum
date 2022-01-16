@@ -102,7 +102,7 @@ export const Register = () => {
             ...formData,
             [fieldName]: value,
         });
-        
+
     }
 
     const handlerSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -115,22 +115,25 @@ export const Register = () => {
         }
         validate(formData);
         if (formData.username && formData.email && formData.password && formData.firstName && formData.lastName && formData.phone && formData.address) {
-            
+
             callApiRegister(dataRegister).then((data) => {
-                console.log(data)
-                swal({
-                    title: "Are you sure?",
-                    text: "Please make sure the information is correct",
-                    icon: "warning",
-                    dangerMode: true,
-                  })
-                  .then(willDelete => {
-                    if (willDelete) {
-                      swal("Success", "Account has been created", "success");
-                    }
+                console.log("data", data.status)
+                if(data?.response?.status){
+                    swal("Success", "Account has been created", "success");
                     navigate('/login');
-                  });
-            }).catch(err => console.log(err))
+                }
+
+                if (data?.response!.status === 400) {
+                    swal(
+                        {
+                            title: "Error",
+                            text: "Email or Username was used",
+                            icon: "warning",
+                            dangerMode: true,
+                        }
+                    )
+                }
+            })
         }
     }
 
