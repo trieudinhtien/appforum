@@ -12,3 +12,29 @@
     font-weight: bold;
     margin-bottom: 36px;
 }
+
+.selected {
+    color: #615dfa;
+    position: relative;
+}
+
+.selected:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #615dfa;
+    transform: rotate(45deg);
+    left: -15px;
+    top: 3px;
+}
+
+.selected:after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    left: -25px;
+    top: 1px;
+}

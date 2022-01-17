@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useContext, useState } from 'react'
+import { FC, FormEvent, useContext, useState } from 'react'
 import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -7,7 +7,9 @@ import { UserContext } from '../../../context/UserContext';
 import { UnauthGuard } from '../guard/UnauthGuard';
 import Logo from "../../../images/logo.png"
 import styles from './Login.module.css'
-
+import swal from 'sweetalert';
+import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -18,6 +20,7 @@ interface Ilogin {
 
 
 const Login: FC<{}> = () => {
+    let navigate = useNavigate();
 
     const context = useContext(UserContext)
     const [showPassword, setShowpassword] = useState<boolean>(false)
@@ -68,8 +71,12 @@ const Login: FC<{}> = () => {
         if(formData.email && formData.password){
             login(formData)
                 .then((user: User) => {
-                    localStorage.setItem("user", JSON.stringify(user))
-                    context.setUser(user)
+                    if(user){
+                        localStorage.setItem("user", JSON.stringify(user))
+                        context.setUser(user)
+                    }else{
+                        Swal.fire({icon: 'error',text: "Email or Password is incorrect"});
+                    }
                 })
         }
         
@@ -104,7 +111,7 @@ const Login: FC<{}> = () => {
                                     <img src={Logo} alt="logo" />
                                 </div>
                                 <div className={styles.titleForm}>Wellcome!</div>
-                                <Form.Group controlId="formBasicEmail" className='mb-2'>
+                                <Form.Group className='mb-2' controlId="formBasicEmail">
                                     <Form.Control
                                         className={styles.formInput}
                                         type="email"
@@ -115,14 +122,14 @@ const Login: FC<{}> = () => {
                                     {
                                         formErr.email
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styles.textErr}>
                                                     {formErr.email}
                                                 </Form.Text>
                                             )
                                             : null
                                     }
                                 </Form.Group>
-                                <Form.Group className={styles.showPass + ' mb-2'} >
+                                <Form.Group className={styles.showPass + " mb-2"}>
                                     <Form.Control
                                         id="pass"
                                         className={styles.formInput}
@@ -142,7 +149,7 @@ const Login: FC<{}> = () => {
                                     {
                                         formErr.password
                                             ? (
-                                                <Form.Text className='text-danger'>
+                                                <Form.Text className={"text-danger "+ styles.textErr}>
                                                     {formErr.password}
                                                 </Form.Text>
                                             )

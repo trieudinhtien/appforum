@@ -1,9 +1,15 @@
 .app {
   /* background-color: #fff; */
   margin: auto;
-  margin-top: 6rem;
+  margin-top: 118px;
+  margin-bottom: 80px;
+  padding-left: 80px;
+  padding-right: 0;
 }
+
+
 .banner {
+  width: 100%;
   display: flex;
   align-items: center;
   background-image: url("../Home/images/banner-bg.png");
@@ -149,20 +155,28 @@ h6 {
 
 .postComment {
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 10px;
   width: 80%;
   margin-bottom: 1rem;
-  padding-left: 2rem;
 }
 .postComment_text img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid #615dfa;
   background-color: #615dfa;
-  margin-top: 2rem;
 }
+
+.comment_user{
+  border-radius: 12px;
+  background-color: #f8f8fb;
+  min-height: 80px;
+  margin-left: 16px;
+  padding: 12px;
+  text-align: left;
+}
+
 .postComment_text {
   display: flex;
   text-align: center;
@@ -181,8 +195,8 @@ h6 {
   display: flex;
   align-items: center;
   background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  margin-bottom: 4px;
   width: 13rem;
   padding: 1rem;
   justify-content: center;
@@ -207,11 +221,11 @@ h6 {
 
 .tags {
   background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  margin-top: 1rem;
+  margin-top: 4px;
   width: 13rem;
   padding: 1rem;
   padding-left: 1.5rem;
+  border-radius: 12px;
 }
 .infoTag_text h5 {
   font-size: 2rem;
@@ -225,8 +239,8 @@ h6 {
 }
 .addComment {
   background-color: rgb(255, 255, 255);
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 8px;
+  margin-bottom: 14px;
   border-radius: 5px;
   padding: 1rem;
   padding-bottom: 2rem;
@@ -240,19 +254,33 @@ h6 {
   margin-left: 1rem;
   font-weight: 600;
   font-size: 18px;
-  background-color: #615dfa;
+  background-color: #7874ff;
   color: #fff;
   padding: 4px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  position: absolute;
+  height: 48px;
+  right: 1px
 }
+
+.chat{
+  width: 100%!important;
+  outline-color: #aeacff!important;
+}
+
+.chat:focus, .chat:focus-visible{
+  border: 1px solid #7d79fa!important;
+}
+
 .bodyPost {
   display: flex;
   justify-content: space-between;
 }
 .authorContent{
-  margin-bottom: 1rem;
+  margin-bottom: 4px;
   background-color: #fff;
+  border-radius: 12px;
 }
 .post_item_user{
   margin-bottom: 5rem;
@@ -268,6 +296,8 @@ h6 {
 .commentHeader{
   display: flex;
   justify-content: space-between;
+  padding-left: 68px;
+  font-size: 13px;
 }
 
 .checkbox:checked + div{

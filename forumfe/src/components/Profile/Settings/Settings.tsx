@@ -12,10 +12,10 @@ export default function Settings() {
                 <div className={styles.main_left}>
                     <h3>You want to ...</h3>
                     <div>
-                        <NavLink to="/profile/settings/profile">Change Your Profile</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.selected : ''} to="/profile/settings/profile">Change Your Profile</NavLink>
                     </div>
                     <div>
-                        <NavLink to="/profile/settings/password">Change Password</NavLink>
+                        <NavLink className={({isActive}) => isActive ? styles.selected : ''} to="/profile/settings/password">Change Password</NavLink>
                     </div>
                 </div>
             </div>
