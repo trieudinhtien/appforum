@@ -195,8 +195,8 @@ h6 {
   display: flex;
   align-items: center;
   background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  margin-bottom: 4px;
   width: 13rem;
   padding: 1rem;
   justify-content: center;
@@ -221,11 +221,11 @@ h6 {
 
 .tags {
   background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  margin-top: 1rem;
+  margin-top: 4px;
   width: 13rem;
   padding: 1rem;
   padding-left: 1.5rem;
+  border-radius: 12px;
 }
 .infoTag_text h5 {
   font-size: 2rem;
@@ -278,8 +278,9 @@ h6 {
   justify-content: space-between;
 }
 .authorContent{
-  margin-bottom: 1rem;
+  margin-bottom: 4px;
   background-color: #fff;
+  border-radius: 12px;
 }
 .post_item_user{
   margin-bottom: 5rem;

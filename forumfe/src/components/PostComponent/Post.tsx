@@ -10,12 +10,12 @@ import Navigation from '../Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import Swal from 'sweetalert2'
 
+
 export default function Post() {
     const params = useParams();
     const context = useContext(UserContext)
     const [postDetail, setPostDetail] = useState<Post>();
     const [liked, setLiked] = useState(false)
-
 
     const [like, setLike] = useState<Like>({
         id: Date.now(),
@@ -173,7 +173,6 @@ export default function Post() {
                                 <div className={styles.post_item_user}>
                                     {moment(postDetail?.createdAt).format("MMMM DD, YYYY")} at {moment(postDetail?.createdAt).format("hh:mm a")}
                                 </div>
-
                             </div>
 
                             <div dangerouslySetInnerHTML={{ __html: `${postDetail?.content}` }} className={styles.postContent}></div>
@@ -214,7 +213,7 @@ export default function Post() {
                             <div className={styles.tags}>
                                 <p>TAGS</p>
                                 <h5>{postDetail?.tags.map(item => (
-                                    item + ";  "
+                                    item + " , "
                                 ))}</h5>
                             </div>
                         </div>

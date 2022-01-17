@@ -4,6 +4,7 @@ import { useContext, useState } from 'react'
 import { UserContext } from '../../../../context/UserContext'
 import { getUserById, changePasswordById } from '../../../../apis/users-apis'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 interface FormValues {
@@ -27,7 +28,7 @@ export default function ChangePassword() {
                 if (value.password === userInfo.password) {
                     changePasswordById(user.id, user.token, value.newPassword)
                         .then((res) => {
-                            alert('password is changed successfully')
+                            Swal.fire({icon: 'success', title: 'password is changed successfully'})
                             localStorage.setItem('user',JSON.stringify({...user, password: value.newPassword}))
                             context.setUser({...user, password: value.newPassword})
                             navigate('/profile/about')
